@@ -1,0 +1,282 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		74D1C60A1D364CE5004DF0FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D1C6091D364CE5004DF0FE /* AppDelegate.swift */; };
+		74D1C60C1D364CE5004DF0FE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D1C60B1D364CE5004DF0FE /* ViewController.swift */; };
+		74D1C60E1D364CE5004DF0FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74D1C60D1D364CE5004DF0FE /* Assets.xcassets */; };
+		74D1C6111D364CE5004DF0FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74D1C60F1D364CE5004DF0FE /* Main.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		74D1C6061D364CE5004DF0FE /* NOPD Downloader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NOPD Downloader.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		74D1C6091D364CE5004DF0FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		74D1C60B1D364CE5004DF0FE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		74D1C60D1D364CE5004DF0FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		74D1C6101D364CE5004DF0FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		74D1C6121D364CE5004DF0FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		74D1C6031D364CE5004DF0FE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		74D1C5FD1D364CE5004DF0FE = {
+			isa = PBXGroup;
+			children = (
+				74D1C6081D364CE5004DF0FE /* NOPD Downloader */,
+				74D1C6071D364CE5004DF0FE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		74D1C6071D364CE5004DF0FE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				74D1C6061D364CE5004DF0FE /* NOPD Downloader.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		74D1C6081D364CE5004DF0FE /* NOPD Downloader */ = {
+			isa = PBXGroup;
+			children = (
+				74D1C6091D364CE5004DF0FE /* AppDelegate.swift */,
+				74D1C60B1D364CE5004DF0FE /* ViewController.swift */,
+				74D1C60D1D364CE5004DF0FE /* Assets.xcassets */,
+				74D1C60F1D364CE5004DF0FE /* Main.storyboard */,
+				74D1C6121D364CE5004DF0FE /* Info.plist */,
+			);
+			path = "NOPD Downloader";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		74D1C6051D364CE5004DF0FE /* NOPD Downloader */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 74D1C6151D364CE5004DF0FE /* Build configuration list for PBXNativeTarget "NOPD Downloader" */;
+			buildPhases = (
+				74D1C6021D364CE5004DF0FE /* Sources */,
+				74D1C6031D364CE5004DF0FE /* Frameworks */,
+				74D1C6041D364CE5004DF0FE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "NOPD Downloader";
+			productName = "NOPD Downloader";
+			productReference = 74D1C6061D364CE5004DF0FE /* NOPD Downloader.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		74D1C5FE1D364CE5004DF0FE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Giulio Lombardo";
+				TargetAttributes = {
+					74D1C6051D364CE5004DF0FE = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 74D1C6011D364CE5004DF0FE /* Build configuration list for PBXProject "NOPD Downloader" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 74D1C5FD1D364CE5004DF0FE;
+			productRefGroup = 74D1C6071D364CE5004DF0FE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				74D1C6051D364CE5004DF0FE /* NOPD Downloader */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		74D1C6041D364CE5004DF0FE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				74D1C60E1D364CE5004DF0FE /* Assets.xcassets in Resources */,
+				74D1C6111D364CE5004DF0FE /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		74D1C6021D364CE5004DF0FE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				74D1C60C1D364CE5004DF0FE /* ViewController.swift in Sources */,
+				74D1C60A1D364CE5004DF0FE /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		74D1C60F1D364CE5004DF0FE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				74D1C6101D364CE5004DF0FE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		74D1C6131D364CE5004DF0FE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		74D1C6141D364CE5004DF0FE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		74D1C6161D364CE5004DF0FE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "NOPD Downloader/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "domainname.NOPD-Downloader";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		74D1C6171D364CE5004DF0FE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "NOPD Downloader/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "domainname.NOPD-Downloader";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		74D1C6011D364CE5004DF0FE /* Build configuration list for PBXProject "NOPD Downloader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				74D1C6131D364CE5004DF0FE /* Debug */,
+				74D1C6141D364CE5004DF0FE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		74D1C6151D364CE5004DF0FE /* Build configuration list for PBXNativeTarget "NOPD Downloader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				74D1C6161D364CE5004DF0FE /* Debug */,
+				74D1C6171D364CE5004DF0FE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 74D1C5FE1D364CE5004DF0FE /* Project object */;
+}
