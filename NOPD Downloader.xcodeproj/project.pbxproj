@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D626AB90DB2AA8CC16049F3 /* Pods_NOPD_Downloader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 825CEFA8AFE144B68D05333D /* Pods_NOPD_Downloader.framework */; };
 		74D1C60A1D364CE5004DF0FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D1C6091D364CE5004DF0FE /* AppDelegate.swift */; };
 		74D1C60C1D364CE5004DF0FE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D1C60B1D364CE5004DF0FE /* ViewController.swift */; };
 		74D1C60E1D364CE5004DF0FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74D1C60D1D364CE5004DF0FE /* Assets.xcassets */; };
@@ -20,6 +21,9 @@
 		74D1C60D1D364CE5004DF0FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		74D1C6101D364CE5004DF0FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		74D1C6121D364CE5004DF0FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		825CEFA8AFE144B68D05333D /* Pods_NOPD_Downloader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NOPD_Downloader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A179DAB46C0A3AD6E3B181FC /* Pods-NOPD Downloader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NOPD Downloader.release.xcconfig"; path = "Pods/Target Support Files/Pods-NOPD Downloader/Pods-NOPD Downloader.release.xcconfig"; sourceTree = "<group>"; };
+		B81DF471B4DB102891A0BE01 /* Pods-NOPD Downloader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NOPD Downloader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NOPD Downloader/Pods-NOPD Downloader.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,17 +31,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D626AB90DB2AA8CC16049F3 /* Pods_NOPD_Downloader.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		563976887DAC4FA2C0004329 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B81DF471B4DB102891A0BE01 /* Pods-NOPD Downloader.debug.xcconfig */,
+				A179DAB46C0A3AD6E3B181FC /* Pods-NOPD Downloader.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		74D1C5FD1D364CE5004DF0FE = {
 			isa = PBXGroup;
 			children = (
 				74D1C6081D364CE5004DF0FE /* NOPD Downloader */,
 				74D1C6071D364CE5004DF0FE /* Products */,
+				563976887DAC4FA2C0004329 /* Pods */,
+				A94502B31A49B8E7899DA465 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -61,6 +77,14 @@
 			path = "NOPD Downloader";
 			sourceTree = "<group>";
 		};
+		A94502B31A49B8E7899DA465 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				825CEFA8AFE144B68D05333D /* Pods_NOPD_Downloader.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -68,9 +92,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 74D1C6151D364CE5004DF0FE /* Build configuration list for PBXNativeTarget "NOPD Downloader" */;
 			buildPhases = (
+				24FAB11D7A4C1B4F5AF1D81E /* [CP] Check Pods Manifest.lock */,
 				74D1C6021D364CE5004DF0FE /* Sources */,
 				74D1C6031D364CE5004DF0FE /* Frameworks */,
 				74D1C6041D364CE5004DF0FE /* Resources */,
+				D0D5EE85EFB4A3DAE5911DA1 /* [CP] Embed Pods Frameworks */,
+				7958DDEE1E041EE9E4F41C99 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -125,6 +152,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		24FAB11D7A4C1B4F5AF1D81E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		7958DDEE1E041EE9E4F41C99 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NOPD Downloader/Pods-NOPD Downloader-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D0D5EE85EFB4A3DAE5911DA1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NOPD Downloader/Pods-NOPD Downloader-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		74D1C6021D364CE5004DF0FE /* Sources */ = {
@@ -234,6 +309,7 @@
 		};
 		74D1C6161D364CE5004DF0FE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B81DF471B4DB102891A0BE01 /* Pods-NOPD Downloader.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -246,6 +322,7 @@
 		};
 		74D1C6171D364CE5004DF0FE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A179DAB46C0A3AD6E3B181FC /* Pods-NOPD Downloader.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -275,6 +352,7 @@
 				74D1C6171D364CE5004DF0FE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
