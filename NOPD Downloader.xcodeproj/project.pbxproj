@@ -8,18 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		5D626AB90DB2AA8CC16049F3 /* Pods_NOPD_Downloader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 825CEFA8AFE144B68D05333D /* Pods_NOPD_Downloader.framework */; };
+		748F5F551D37A439006E1C05 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 748F5F541D37A439006E1C05 /* MainMenu.xib */; };
+		748F5F571D37A58D006E1C05 /* MainMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748F5F561D37A58D006E1C05 /* MainMenuController.swift */; };
 		74D1C60A1D364CE5004DF0FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D1C6091D364CE5004DF0FE /* AppDelegate.swift */; };
-		74D1C60C1D364CE5004DF0FE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D1C60B1D364CE5004DF0FE /* ViewController.swift */; };
 		74D1C60E1D364CE5004DF0FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74D1C60D1D364CE5004DF0FE /* Assets.xcassets */; };
-		74D1C6111D364CE5004DF0FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74D1C60F1D364CE5004DF0FE /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		748F5F541D37A439006E1C05 /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
+		748F5F561D37A58D006E1C05 /* MainMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuController.swift; sourceTree = "<group>"; };
 		74D1C6061D364CE5004DF0FE /* NOPD Downloader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NOPD Downloader.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		74D1C6091D364CE5004DF0FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		74D1C60B1D364CE5004DF0FE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		74D1C60D1D364CE5004DF0FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		74D1C6101D364CE5004DF0FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		74D1C6121D364CE5004DF0FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		825CEFA8AFE144B68D05333D /* Pods_NOPD_Downloader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NOPD_Downloader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A179DAB46C0A3AD6E3B181FC /* Pods-NOPD Downloader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NOPD Downloader.release.xcconfig"; path = "Pods/Target Support Files/Pods-NOPD Downloader/Pods-NOPD Downloader.release.xcconfig"; sourceTree = "<group>"; };
@@ -69,9 +69,9 @@
 			isa = PBXGroup;
 			children = (
 				74D1C6091D364CE5004DF0FE /* AppDelegate.swift */,
-				74D1C60B1D364CE5004DF0FE /* ViewController.swift */,
+				748F5F561D37A58D006E1C05 /* MainMenuController.swift */,
+				748F5F541D37A439006E1C05 /* MainMenu.xib */,
 				74D1C60D1D364CE5004DF0FE /* Assets.xcassets */,
-				74D1C60F1D364CE5004DF0FE /* Main.storyboard */,
 				74D1C6121D364CE5004DF0FE /* Info.plist */,
 			);
 			path = "NOPD Downloader";
@@ -147,7 +147,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				74D1C60E1D364CE5004DF0FE /* Assets.xcassets in Resources */,
-				74D1C6111D364CE5004DF0FE /* Main.storyboard in Resources */,
+				748F5F551D37A439006E1C05 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,23 +206,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				74D1C60C1D364CE5004DF0FE /* ViewController.swift in Sources */,
 				74D1C60A1D364CE5004DF0FE /* AppDelegate.swift in Sources */,
+				748F5F571D37A58D006E1C05 /* MainMenuController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		74D1C60F1D364CE5004DF0FE /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				74D1C6101D364CE5004DF0FE /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		74D1C6131D364CE5004DF0FE /* Debug */ = {
@@ -312,6 +301,13 @@
 			baseConfigurationReference = B81DF471B4DB102891A0BE01 /* Pods-NOPD Downloader.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_SECURITY_FLOATLOOPCOUNTER = YES;
+				CLANG_ANALYZER_SECURITY_INSECUREAPI_RAND = YES;
+				CLANG_ANALYZER_SECURITY_INSECUREAPI_STRCPY = YES;
+				CLANG_WARN_OBJC_EXPLICIT_OWNERSHIP_TYPE = YES;
+				CLANG_WARN_OBJC_IMPLICIT_ATOMIC_PROPERTIES = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_REPEATED_USE_OF_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "NOPD Downloader/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
@@ -325,11 +321,19 @@
 			baseConfigurationReference = A179DAB46C0A3AD6E3B181FC /* Pods-NOPD Downloader.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_SECURITY_FLOATLOOPCOUNTER = YES;
+				CLANG_ANALYZER_SECURITY_INSECUREAPI_RAND = YES;
+				CLANG_ANALYZER_SECURITY_INSECUREAPI_STRCPY = YES;
+				CLANG_WARN_OBJC_EXPLICIT_OWNERSHIP_TYPE = YES;
+				CLANG_WARN_OBJC_IMPLICIT_ATOMIC_PROPERTIES = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_REPEATED_USE_OF_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "NOPD Downloader/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "domainname.NOPD-Downloader";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 			};
 			name = Release;
 		};

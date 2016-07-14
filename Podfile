@@ -7,4 +7,5 @@ target 'NOPD Downloader' do
 
   # Pods for NOPD Downloader
   pod 'Alamofire', '~> 3.4'
+  pod 'Sparkle'
 end
