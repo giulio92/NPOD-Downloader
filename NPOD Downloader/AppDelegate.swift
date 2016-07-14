@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  NOPD Downloader
+//  NPOD Downloader
 //
 //  Created by Giulio Lombardo on 13/07/16.
 //  Copyright © 2016 Giulio Lombardo. All rights reserved.
