@@ -2,28 +2,70 @@
 //  GrandNetworkDispatch.swift
 //  NPOD Downloader
 //
-//  Created by Giulio Lombardo on 24/05/16.
+//  Created by Giulio Lombardo on 14/07/16.
 //  Copyright © 2016 Giulio Lombardo. All rights reserved.
 //
 
-import Cocoa
 import Alamofire
 
 class GrandNetworkDispatch {
-	class func performGET(requestURL: String, success: (data: NSData) -> Void, failure: (errorData: AnyObject) -> Void) {
+	class func getUbernodesWithURL(requestURL: String, success: (data: Array<Dictionary<String, String>>) -> Void, failure: (errorData: AnyObject) -> Void) {
+		performGET(requestURL, success: {
+			(data) in
+
+			success(data: data["ubernodes"] as! Array<Dictionary<String, String>>)
+			}, failure: {
+				(errorData) in
+
+		})
+	}
+
+	class func getImageDetailsWithNodeURL(nodeURL: String, success: (data: Dictionary<String, String>) -> Void, failure: (errorData: AnyObject) -> Void) {
+		performGET(nodeURL, success: {
+			(data) in
+
+			let imageInformations: Dictionary<String, AnyObject> = data["ubernode"] as! Dictionary<String, AnyObject>
+			let title: String = imageInformations["title"] as! String
+			let description: String = imageInformations["imageFeatureCaption"] as! String
+
+			let imagesContainer: Array<Dictionary<String, AnyObject>> = data["images"] as! Array<Dictionary<String, AnyObject>>
+			let images: Dictionary<String, AnyObject> = imagesContainer.first!
+			let filename: String = images["filename"] as! String
+
+			let returnDictionary: Dictionary<String, String> = [
+				"title": title,
+				"description": description,
+				"url": "https://www.nasa.gov/sites/default/files/thumbnails/image/" + filename
+			]
+
+			success(data: returnDictionary)
+			}, failure: {
+				(errorData) in
+
+		})
+	}
+
+	private class func performGET(requestURL: String, success: (data: Dictionary<String, AnyObject>) -> Void, failure: (errorData: AnyObject) -> Void) {
 		guard NetworkReachabilityManager()!.isReachable else {
-			return
+			return failure(errorData: "")
 		}
 
 		Alamofire.request(.GET, requestURL, parameters: nil, encoding: .JSON, headers: nil).validate().responseData() {
 			response in
 
+			print(response.timeline)
+
+			guard response.response != nil else {
+				return failure(errorData: "")
+			}
+
 			switch response.result {
 			case .Success:
-				success(data: response.data!)
+				success(data: try! NSJSONSerialization.JSONObjectWithData(response.data!, options: .MutableContainers) as! Dictionary<String, AnyObject>)
 				break
 
 			case .Failure(let error):
+
 				break
 			}
 		}

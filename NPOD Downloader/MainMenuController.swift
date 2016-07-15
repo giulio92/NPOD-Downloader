@@ -6,12 +6,12 @@
 //  Copyright © 2016 Giulio Lombardo. All rights reserved.
 //
 
-import Cocoa
+import Alamofire
 
 class MainMenuController: NSObject {
 	@IBOutlet weak var applicationMenu: NSMenu!
 
-	let statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(NSVariableStatusItemLength)
+	let statusItem: NSStatusItem = NSStatusBar.systemStatusBar().statusItemWithLength(NSVariableStatusItemLength)
 
 	override func awakeFromNib() {
 		statusItem.image = NSImage(named: "MenuIcon")
