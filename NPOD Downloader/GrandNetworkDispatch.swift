@@ -32,13 +32,11 @@ class GrandNetworkDispatch {
 			let images: Dictionary<String, AnyObject> = imagesContainer.first!
 			let filename: String = images["filename"] as! String
 
-			let returnDictionary: Dictionary<String, String> = [
+			success(data: [
 				"title": title,
 				"description": description,
 				"url": "https://www.nasa.gov/sites/default/files/thumbnails/image/" + filename
-			]
-
-			success(data: returnDictionary)
+				])
 			}, failure: {
 				(errorData) in
 
@@ -53,7 +51,9 @@ class GrandNetworkDispatch {
 		Alamofire.request(.GET, requestURL, parameters: nil, encoding: .JSON, headers: nil).validate().responseData() {
 			response in
 
-			print(response.timeline)
+			#if DEBUG
+				print(response.timeline)
+			#endif
 
 			guard response.response != nil else {
 				return failure(errorData: "")
