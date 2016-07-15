@@ -16,7 +16,7 @@ class GrandNetworkDispatch {
 			success(data: data["ubernodes"] as! Array<Dictionary<String, String>>)
 			}, failure: {
 				(errorData) in
-
+				failure(errorData: "")
 		})
 	}
 
@@ -39,8 +39,28 @@ class GrandNetworkDispatch {
 				])
 			}, failure: {
 				(errorData) in
-
+				failure(errorData: "")
 		})
+	}
+
+	class func downloadImage(imageURL: String, progressUpdate: (percentage: Float) -> Void, success: (downloadedPath: NSURL) -> Void, failure: (errorData: AnyObject) -> Void) {
+		guard NetworkReachabilityManager()!.isReachable else {
+			return failure(errorData: "")
+		}
+
+		Alamofire.download(.GET, imageURL, destination: Alamofire.Request.suggestedDownloadDestination(directory: .PicturesDirectory, domain: .UserDomainMask)).progress {
+			bytesRead, totalBytesRead, totalBytesExpectedToRead in
+
+			// This closure is NOT called on the main queue for performance
+			// reasons. To update your ui, dispatch to the main queue.
+			dispatch_async(dispatch_get_main_queue(), {
+				progressUpdate(percentage: Float(totalBytesRead/totalBytesExpectedToRead))
+			})
+			}.response {
+				request, response, data, error in
+
+				success(downloadedPath: NSFileManager.defaultManager().URLsForDirectory(.PicturesDirectory, inDomains: .UserDomainMask).first!.URLByAppendingPathComponent(response!.suggestedFilename!))
+		}
 	}
 
 	private class func performGET(requestURL: String, success: (data: Dictionary<String, AnyObject>) -> Void, failure: (errorData: AnyObject) -> Void) {
@@ -61,11 +81,15 @@ class GrandNetworkDispatch {
 
 			switch response.result {
 			case .Success:
-				success(data: try! NSJSONSerialization.JSONObjectWithData(response.data!, options: .MutableContainers) as! Dictionary<String, AnyObject>)
+				do {
+					success(data: try NSJSONSerialization.JSONObjectWithData(response.data!, options: .MutableContainers) as! Dictionary<String, AnyObject>)
+				} catch let error as NSError {
+					failure(errorData: "")
+				}
 				break
 
 			case .Failure(let error):
-
+				failure(errorData: "")
 				break
 			}
 		}
