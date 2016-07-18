@@ -49,15 +49,15 @@ class GrandNetworkDispatch {
 		}
 
 		Alamofire.download(.GET, imageURL, destination: Alamofire.Request.suggestedDownloadDestination(directory: .PicturesDirectory, domain: .UserDomainMask)).progress {
-			bytesRead, totalBytesRead, totalBytesExpectedToRead in
+			(bytesRead, totalBytesRead, totalBytesExpectedToRead) in
 
 			// This closure is NOT called on the main queue for performance
-			// reasons. To update your ui, dispatch to the main queue.
+			// reasons. To update your UI, dispatch to the main queue.
 			dispatch_async(dispatch_get_main_queue(), {
 				progressUpdate(percentage: Float(totalBytesRead/totalBytesExpectedToRead))
 			})
 			}.response {
-				request, response, data, error in
+				(request, response, data, error) in
 
 				success(downloadedPath: NSFileManager.defaultManager().URLsForDirectory(.PicturesDirectory, inDomains: .UserDomainMask).first!.URLByAppendingPathComponent(response!.suggestedFilename!))
 		}
@@ -69,7 +69,7 @@ class GrandNetworkDispatch {
 		}
 
 		Alamofire.request(.GET, requestURL, parameters: nil, encoding: .JSON, headers: nil).validate().responseData() {
-			response in
+			(response) in
 
 			#if DEBUG
 				print(response.timeline)
@@ -93,5 +93,9 @@ class GrandNetworkDispatch {
 				break
 			}
 		}
+	}
+
+	class func cancelAllRequests() {
+
 	}
 }

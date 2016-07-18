@@ -22,7 +22,7 @@
 		74B467851D37C53900FD830E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		74B467861D37C53900FD830E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		74B467871D37C53900FD830E /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
-		74B467881D37C53900FD830E /* MainMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuController.swift; sourceTree = "<group>"; };
+		74B467881D37C53900FD830E /* MainMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuController.swift; sourceTree = "<group>"; usesTabs = 1; };
 		74D1C6061D364CE5004DF0FE /* NPOD Downloader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NPOD Downloader.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B40FC121AAB4C7EFDC20AC45 /* Pods-NPOD Downloader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NPOD Downloader.release.xcconfig"; path = "Pods/Target Support Files/Pods-NPOD Downloader/Pods-NPOD Downloader.release.xcconfig"; sourceTree = "<group>"; };
 		EDB09582C1E186265401AC9A /* Pods_NPOD_Downloader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NPOD_Downloader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -101,6 +101,7 @@
 				74D1C6041D364CE5004DF0FE /* Resources */,
 				D0D5EE85EFB4A3DAE5911DA1 /* [CP] Embed Pods Frameworks */,
 				7958DDEE1E041EE9E4F41C99 /* [CP] Copy Pods Resources */,
+				7420939E1D3CC64900126A52 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -171,6 +172,19 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
+		};
+		7420939E1D3CC64900126A52 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 12;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 38b278f897f4b208e8e5af7de2f5e16c8f0484d0 cc8734d8495cb3b6145d6414a34480fb6fda713b890787184a86906aad09365c";
 		};
 		7958DDEE1E041EE9E4F41C99 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -312,6 +326,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_REPEATED_USE_OF_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				INFOPLIST_FILE = "$(SRCROOT)/NPOD Downloader/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -DDEBUG";

@@ -8,4 +8,7 @@ target 'NPOD Downloader' do
   # Pods for NPOD Downloader
   pod 'Alamofire', '~> 3.4'
   pod 'Sparkle'
+  pod 'Fabric'
+  pod 'Crashlytics'
+  
 end
