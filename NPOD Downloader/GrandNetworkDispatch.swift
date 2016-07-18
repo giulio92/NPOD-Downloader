@@ -16,6 +16,7 @@ class GrandNetworkDispatch {
 			success(data: data["ubernodes"] as! Array<Dictionary<String, String>>)
 			}, failure: {
 				(errorData) in
+
 				failure(errorData: "")
 		})
 	}
@@ -39,6 +40,7 @@ class GrandNetworkDispatch {
 				])
 			}, failure: {
 				(errorData) in
+
 				failure(errorData: "")
 		})
 	}
@@ -83,12 +85,20 @@ class GrandNetworkDispatch {
 			case .Success:
 				do {
 					success(data: try NSJSONSerialization.JSONObjectWithData(response.data!, options: .MutableContainers) as! Dictionary<String, AnyObject>)
-				} catch let error as NSError {
+				} catch (let error as NSError) {
+					#if DEBUG
+						print(error)
+					#endif
+
 					failure(errorData: "")
 				}
 				break
 
 			case .Failure(let error):
+				#if DEBUG
+					print(error)
+				#endif
+
 				failure(errorData: "")
 				break
 			}
