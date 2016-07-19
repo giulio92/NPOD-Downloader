@@ -25,24 +25,28 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
 		let previousNodes: [String : AnyObject] = NSUserDefaults.standardUserDefaults().dictionaryForKey("previousNIDs")!
 
-		GrandNetworkDispatch.getUbernodes({
-			(data) in
+		let dateComparison: NSComparisonResult = NSCalendar.currentCalendar().compareDate(NSDate(), toDate: previousNodes["downloadDate"] as! NSDate, toUnitGranularity: .Day)
 
-			var previousNIDs: [String : AnyObject] = ["downloadDate": NSDate()]
-			var nodeIDs: [String] = Array()
+		if dateComparison != NSComparisonResult.OrderedSame {
+			GrandNetworkDispatch.getUbernodes({
+				(data) in
 
-			for ubernode in data {
-				nodeIDs.append(ubernode["nid"]!)
-			}
+				var tempDict: [String : AnyObject] = ["downloadDate": NSDate()]
+				var nodeIDs: [String] = Array()
 
-			previousNIDs["nodeIDs"] = nodeIDs
+				for ubernode in data {
+					nodeIDs.append(ubernode["nid"]!)
+				}
 
-			NSUserDefaults.standardUserDefaults().setObject(previousNIDs, forKey: "previousNIDs")
+				tempDict["nodeIDs"] = nodeIDs
 
-			}, failure: {
-				(errorData) in
+				NSUserDefaults.standardUserDefaults().setObject(tempDict, forKey: "previousNIDs")
 
-		})
+				}, failure: {
+					(errorData) in
+					
+			})
+		}
 	}
 
 	func applicationWillTerminate(aNotification: NSNotification) {

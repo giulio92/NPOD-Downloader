@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7479A6881D3815FA00580F63 /* GrandNetworkDispatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7479A6871D3815FA00580F63 /* GrandNetworkDispatch.swift */; };
+		74811C411D3E78910079FE83 /* WallpaperHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74811C401D3E78910079FE83 /* WallpaperHelper.swift */; };
 		74B467891D37C53900FD830E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B467841D37C53900FD830E /* AppDelegate.swift */; };
 		74B4678A1D37C53900FD830E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74B467851D37C53900FD830E /* Assets.xcassets */; };
 		74B4678C1D37C53900FD830E /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74B467871D37C53900FD830E /* MainMenu.xib */; };
@@ -18,6 +19,7 @@
 /* Begin PBXFileReference section */
 		503F2AF988C7A6D68E5344DB /* Pods-NPOD Downloader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NPOD Downloader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NPOD Downloader/Pods-NPOD Downloader.debug.xcconfig"; sourceTree = "<group>"; };
 		7479A6871D3815FA00580F63 /* GrandNetworkDispatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GrandNetworkDispatch.swift; sourceTree = "<group>"; };
+		74811C401D3E78910079FE83 /* WallpaperHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallpaperHelper.swift; sourceTree = "<group>"; };
 		74B467841D37C53900FD830E /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		74B467851D37C53900FD830E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		74B467861D37C53900FD830E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -54,6 +56,7 @@
 				74B467841D37C53900FD830E /* AppDelegate.swift */,
 				74B467881D37C53900FD830E /* MainMenuController.swift */,
 				7479A6871D3815FA00580F63 /* GrandNetworkDispatch.swift */,
+				74811C401D3E78910079FE83 /* WallpaperHelper.swift */,
 				74B467851D37C53900FD830E /* Assets.xcassets */,
 				74B467871D37C53900FD830E /* MainMenu.xib */,
 				74B467861D37C53900FD830E /* Info.plist */,
@@ -223,6 +226,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74811C411D3E78910079FE83 /* WallpaperHelper.swift in Sources */,
 				7479A6881D3815FA00580F63 /* GrandNetworkDispatch.swift in Sources */,
 				74B467891D37C53900FD830E /* AppDelegate.swift in Sources */,
 				74B4678D1D37C53900FD830E /* MainMenuController.swift in Sources */,

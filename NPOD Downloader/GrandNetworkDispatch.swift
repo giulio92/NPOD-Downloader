@@ -59,10 +59,7 @@ class GrandNetworkDispatch {
 		Alamofire.download(.GET, imageURL, destination: {
 			(temporaryURL, response) in
 
-			let directoryURL: NSURL = NSFileManager.defaultManager().URLsForDirectory(.PicturesDirectory, inDomains: .UserDomainMask).first!
-			let filename: String = response.suggestedFilename!
-
-			downloadPath = directoryURL.URLByAppendingPathComponent(filename)
+			downloadPath = NSFileManager.defaultManager().URLsForDirectory(.PicturesDirectory, inDomains: .UserDomainMask).first!.URLByAppendingPathComponent(response.suggestedFilename!)
 
 			return downloadPath!
 		}).progress {
