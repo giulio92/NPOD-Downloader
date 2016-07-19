@@ -19,28 +19,29 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 			Fabric.sharedSDK().debug = true
 		#endif
 
-		NSUserDefaults.standardUserDefaults().registerDefaults(["NSApplicationCrashOnExceptions": "YES"])
-
+		NSUserDefaults.standardUserDefaults().registerDefaults(["NSApplicationCrashOnExceptions": "true"])
+		
 		Fabric.with([Crashlytics.self])
 
-		let downloadDate: NSDate = NSDate()
-		let previusNIDs: NSMutableDictionary = ["downloadDate": downloadDate]
-		let nodeIDs: NSMutableArray = NSMutableArray()
+		let previousNodes: [String : AnyObject] = NSUserDefaults.standardUserDefaults().dictionaryForKey("previousNIDs")!
 
 		GrandNetworkDispatch.getUbernodes({
 			(data) in
 
+			var previousNIDs: [String : AnyObject] = ["downloadDate": NSDate()]
+			var nodeIDs: [String] = Array()
+
 			for ubernode in data {
-				nodeIDs.addObject(ubernode["nid"]!)
+				nodeIDs.append(ubernode["nid"]!)
 			}
 
-			previusNIDs.setObject(nodeIDs, forKey: "nodeIDs")
+			previousNIDs["nodeIDs"] = nodeIDs
 
-			NSUserDefaults.standardUserDefaults().setObject(nodeIDs, forKey: "previousNIDs")
+			NSUserDefaults.standardUserDefaults().setObject(previousNIDs, forKey: "previousNIDs")
 
 			}, failure: {
 				(errorData) in
-				
+
 		})
 	}
 

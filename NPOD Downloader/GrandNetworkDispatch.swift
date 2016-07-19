@@ -9,13 +9,13 @@
 import Alamofire
 
 class GrandNetworkDispatch {
-	class func getUbernodes(success: (data: Array<Dictionary<String, String>>) -> Void, failure: (errorData: AnyObject) -> Void) {
+	class func getUbernodes(success: (data: [[String : String]]) -> Void, failure: (errorData: AnyObject) -> Void) {
 		let ubernodesAPI: String = "https://www.nasa.gov/api/1/query/ubernodes.json?unType%5B%5D=image&routes%5B%5D=1446&page=0&pageSize=24"
 
 		performGET(ubernodesAPI, success: {
 			(data) in
 
-			success(data: data["ubernodes"] as! Array<Dictionary<String, String>>)
+			success(data: data["ubernodes"] as! [[String : String]])
 			}, failure: {
 				(errorData) in
 
@@ -23,18 +23,18 @@ class GrandNetworkDispatch {
 		})
 	}
 
-	class func getImageDetailsWithNodeID(nodeID: String, success: (data: Dictionary<String, String>) -> Void, failure: (errorData: AnyObject) -> Void) {
+	class func getImageDetailsWithNodeID(nodeID: String, success: (data: [String: String]) -> Void, failure: (errorData: AnyObject) -> Void) {
 		let nodeURL: String = "https://www.nasa.gov/api/1/record/node/" + nodeID + ".json"
 
 		performGET(nodeURL, success: {
 			(data) in
 
-			let imageInformations: Dictionary<String, AnyObject> = data["ubernode"] as! Dictionary<String, AnyObject>
+			let imageInformations: [String : AnyObject] = data["ubernode"] as! [String : AnyObject]
 			let title: String = imageInformations["title"] as! String
 			let description: String = imageInformations["imageFeatureCaption"] as! String
 
-			let imagesContainer: Array<Dictionary<String, AnyObject>> = data["images"] as! Array<Dictionary<String, AnyObject>>
-			let images: Dictionary<String, AnyObject> = imagesContainer.first!
+			let imagesContainer: [[String : AnyObject]] = data["images"] as! [[String : AnyObject]]
+			let images: [String : AnyObject] = imagesContainer.first!
 			let filename: String = images["filename"] as! String
 
 			success(data: [
@@ -80,7 +80,7 @@ class GrandNetworkDispatch {
 		}
 	}
 
-	private class func performGET(requestURL: String, success: (data: Dictionary<String, AnyObject>) -> Void, failure: (errorData: AnyObject) -> Void) {
+	private class func performGET(requestURL: String, success: (data: [String : AnyObject]) -> Void, failure: (errorData: AnyObject) -> Void) {
 		guard NetworkReachabilityManager()!.isReachable else {
 			return failure(errorData: "")
 		}
@@ -99,7 +99,7 @@ class GrandNetworkDispatch {
 			switch response.result {
 			case .Success:
 				do {
-					success(data: try NSJSONSerialization.JSONObjectWithData(response.data!, options: .MutableContainers) as! Dictionary<String, AnyObject>)
+					success(data: try NSJSONSerialization.JSONObjectWithData(response.data!, options: .MutableContainers) as! [String : AnyObject])
 				} catch (let error as NSError) {
 					#if DEBUG
 						print(error)
