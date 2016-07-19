@@ -9,8 +9,10 @@
 import Alamofire
 
 class GrandNetworkDispatch {
-	class func getUbernodesWithURL(requestURL: String, success: (data: Array<Dictionary<String, String>>) -> Void, failure: (errorData: AnyObject) -> Void) {
-		performGET(requestURL, success: {
+	class func getUbernodes(success: (data: Array<Dictionary<String, String>>) -> Void, failure: (errorData: AnyObject) -> Void) {
+		let ubernodesAPI: String = "https://www.nasa.gov/api/1/query/ubernodes.json?unType%5B%5D=image&routes%5B%5D=1446&page=0&pageSize=24"
+
+		performGET(ubernodesAPI, success: {
 			(data) in
 
 			success(data: data["ubernodes"] as! Array<Dictionary<String, String>>)
@@ -21,7 +23,9 @@ class GrandNetworkDispatch {
 		})
 	}
 
-	class func getImageDetailsWithNodeURL(nodeURL: String, success: (data: Dictionary<String, String>) -> Void, failure: (errorData: AnyObject) -> Void) {
+	class func getImageDetailsWithNodeID(nodeID: String, success: (data: Dictionary<String, String>) -> Void, failure: (errorData: AnyObject) -> Void) {
+		let nodeURL: String = "https://www.nasa.gov/api/1/record/node/" + nodeID + ".json"
+
 		performGET(nodeURL, success: {
 			(data) in
 
@@ -50,7 +54,18 @@ class GrandNetworkDispatch {
 			return failure(errorData: "")
 		}
 
-		Alamofire.download(.GET, imageURL, destination: Alamofire.Request.suggestedDownloadDestination(directory: .PicturesDirectory, domain: .UserDomainMask)).progress {
+		var downloadPath: NSURL?
+
+		Alamofire.download(.GET, imageURL, destination: {
+			(temporaryURL, response) in
+
+			let directoryURL: NSURL = NSFileManager.defaultManager().URLsForDirectory(.PicturesDirectory, inDomains: .UserDomainMask).first!
+			let filename: String = response.suggestedFilename!
+
+			downloadPath = directoryURL.URLByAppendingPathComponent(filename)
+
+			return downloadPath!
+		}).progress {
 			(bytesRead, totalBytesRead, totalBytesExpectedToRead) in
 
 			// This closure is NOT called on the main queue for performance
@@ -61,7 +76,7 @@ class GrandNetworkDispatch {
 			}.response {
 				(request, response, data, error) in
 
-				success(downloadedPath: NSFileManager.defaultManager().URLsForDirectory(.PicturesDirectory, inDomains: .UserDomainMask).first!.URLByAppendingPathComponent(response!.suggestedFilename!))
+				success(downloadedPath: downloadPath!)
 		}
 	}
 
@@ -104,8 +119,8 @@ class GrandNetworkDispatch {
 			}
 		}
 	}
-
+	
 	class func cancelAllRequests() {
-
+		
 	}
 }

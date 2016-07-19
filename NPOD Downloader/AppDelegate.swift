@@ -22,6 +22,26 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		NSUserDefaults.standardUserDefaults().registerDefaults(["NSApplicationCrashOnExceptions": "YES"])
 
 		Fabric.with([Crashlytics.self])
+
+		let downloadDate: NSDate = NSDate()
+		let previusNIDs: NSMutableDictionary = ["downloadDate": downloadDate]
+		let nodeIDs: NSMutableArray = NSMutableArray()
+
+		GrandNetworkDispatch.getUbernodes({
+			(data) in
+
+			for ubernode in data {
+				nodeIDs.addObject(ubernode["nid"]!)
+			}
+
+			previusNIDs.setObject(nodeIDs, forKey: "nodeIDs")
+
+			NSUserDefaults.standardUserDefaults().setObject(nodeIDs, forKey: "previousNIDs")
+
+			}, failure: {
+				(errorData) in
+				
+		})
 	}
 
 	func applicationWillTerminate(aNotification: NSNotification) {
