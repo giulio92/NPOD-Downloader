@@ -10,7 +10,18 @@ import Cocoa
 
 class WallpaperHelper {
 	class func isRetina(imagePath: NSURL) -> Bool {
-		guard NSScreen.mainScreen()?.backingScaleFactor == 2 else {
+		var deviceHasRetinaFeature: Bool = Bool()
+
+		for screen in NSScreen.screens()! {
+			if screen.backingScaleFactor < 2 {
+				deviceHasRetinaFeature = false
+			} else {
+				deviceHasRetinaFeature = true
+				break
+			}
+		}
+
+		guard deviceHasRetinaFeature == true else {
 			return false
 		}
 
@@ -20,12 +31,14 @@ class WallpaperHelper {
 	}
 
 	class func setWallpaperWithImagePath(path: NSURL) {
-		do {
-			try NSWorkspace.sharedWorkspace().setDesktopImageURL(path, forScreen: NSScreen.mainScreen()!, options: ["": ""])
-		} catch let error as NSError {
-			#if DEBUG
-				print(error)
-			#endif
+		for screen in NSScreen.screens()! {
+			do {
+				try NSWorkspace.sharedWorkspace().setDesktopImageURL(path, forScreen: screen, options: ["": ""])
+			} catch let error as NSError {
+				#if DEBUG
+					print(error)
+				#endif
+			}
 		}
 	}
 }
