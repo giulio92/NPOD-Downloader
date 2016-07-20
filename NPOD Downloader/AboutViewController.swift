@@ -17,6 +17,6 @@ class AboutViewController: NSViewController {
     }
 
 	@IBAction func launchGitHubPage(sender: NSButton) {
-
+		NSWorkspace.sharedWorkspace().openURL(NSURL(string: "https://github.com/giulio92/NPOD-Downloader")!)
 	}
 }

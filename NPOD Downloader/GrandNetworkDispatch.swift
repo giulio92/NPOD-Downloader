@@ -9,13 +9,13 @@
 import Alamofire
 
 class GrandNetworkDispatch {
-	class func getUbernodes(success: (data: [[String : String]]) -> Void, failure: (errorData: AnyObject) -> Void) {
+	class func getUbernodes(success: (ubernodes: [[String : String]]) -> Void, failure: (errorData: AnyObject) -> Void) {
 		let ubernodesAPI: String = "https://www.nasa.gov/api/1/query/ubernodes.json?unType%5B%5D=image&routes%5B%5D=1446&page=0&pageSize=24"
 
 		performGET(ubernodesAPI, success: {
 			(data) in
 
-			success(data: data["ubernodes"] as! [[String : String]])
+			success(ubernodes: data["ubernodes"] as! [[String : String]])
 			}, failure: {
 				(errorData) in
 
@@ -23,8 +23,9 @@ class GrandNetworkDispatch {
 		})
 	}
 
-	class func getImageDetailsWithNodeID(nodeID: String, success: (data: [String: String]) -> Void, failure: (errorData: AnyObject) -> Void) {
-		let nodeURL: String = "https://www.nasa.gov/api/1/record/node/" + nodeID + ".json"
+	class func getImageDetailsWithNodeID(nodeID: String, success: (imageDetails: [String: String]) -> Void, failure: (errorData: AnyObject) -> Void) {
+		let baseURL: String = "https://www.nasa.gov"
+		let nodeURL: String = baseURL + "/api/1/record/node/" + nodeID + ".json"
 
 		performGET(nodeURL, success: {
 			(data) in
@@ -36,11 +37,13 @@ class GrandNetworkDispatch {
 			let imagesContainer: [[String : AnyObject]] = data["images"] as! [[String : AnyObject]]
 			let images: [String : AnyObject] = imagesContainer.first!
 			let filename: String = images["filename"] as! String
+			let thumbnailURL: String = images["crop4x3ratio"] as! String
 
-			success(data: [
+			success(imageDetails: [
 				"title": title,
 				"description": description,
-				"url": "https://www.nasa.gov/sites/default/files/thumbnails/image/" + filename
+				"imageURL": baseURL + "/sites/default/files/thumbnails/image/" + filename,
+				"thumbnailURL": baseURL + thumbnailURL
 				])
 			}, failure: {
 				(errorData) in

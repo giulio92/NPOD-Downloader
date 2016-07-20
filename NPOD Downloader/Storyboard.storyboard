@@ -20,7 +20,7 @@
                 </windowController>
                 <customObject id="tIA-IY-mb9" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="772" y="225"/>
+            <point key="canvasLocation" x="797" y="216"/>
         </scene>
         <!--About View Controller-->
         <scene sceneID="wDe-48-KBT">
@@ -33,14 +33,14 @@
                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="f75-h0-OzO">
                                 <rect key="frame" x="102" y="184" width="96" height="96"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="96" id="Hkk-3q-vUI"/>
-                                    <constraint firstAttribute="width" constant="96" id="lX2-YJ-nXl"/>
+                                    <constraint firstAttribute="width" constant="96" id="k4l-8I-mJC"/>
+                                    <constraint firstAttribute="height" constant="96" id="nFc-7W-Odw"/>
                                 </constraints>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSApplicationIcon" id="Cen-8P-gFQ"/>
                             </imageView>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Hhy-5B-tBP">
                                 <rect key="frame" x="31" y="159" width="239" height="17"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="NASA Picture of the day downloader" id="Tgb-OL-MSv">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="NASA Picture of the day downloader" id="Tgb-OL-MSv">
                                     <font key="font" metaFont="systemBold"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -51,11 +51,14 @@
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Version" id="aPX-1u-6VX">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ehl-mP-AZN">
                                 <rect key="frame" x="71" y="13" width="158" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="146" id="66C-Kt-1Dl"/>
+                                </constraints>
                                 <buttonCell key="cell" type="push" title="Fork me on GitHub!" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="dE2-Dh-AaW">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -67,7 +70,7 @@
                             <button translatesAutoresizingMaskIntoConstraints="NO" id="ftR-wL-PgY">
                                 <rect key="frame" x="134" y="51" width="32" height="32"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="32" id="WyF-ti-KCh"/>
+                                    <constraint firstAttribute="width" constant="32" id="ved-ca-xLF"/>
                                 </constraints>
                                 <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="GitHub Logo" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="06K-DO-7Tw">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -76,17 +79,18 @@
                             </button>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="f75-h0-OzO" firstAttribute="top" secondItem="Bg2-aE-ONj" secondAttribute="top" constant="20" symbolic="YES" id="6Qx-6D-RE8"/>
-                            <constraint firstItem="ftR-wL-PgY" firstAttribute="top" secondItem="vBO-76-ptg" secondAttribute="bottom" constant="51" id="8N9-pZ-RZ1"/>
-                            <constraint firstItem="Hhy-5B-tBP" firstAttribute="centerX" secondItem="vBO-76-ptg" secondAttribute="centerX" id="D91-qb-ee0"/>
-                            <constraint firstItem="ftR-wL-PgY" firstAttribute="centerX" secondItem="ehl-mP-AZN" secondAttribute="centerX" id="IM7-5J-NVa"/>
-                            <constraint firstItem="f75-h0-OzO" firstAttribute="centerX" secondItem="Bg2-aE-ONj" secondAttribute="centerX" id="IfK-eC-ujf"/>
-                            <constraint firstItem="Hhy-5B-tBP" firstAttribute="top" secondItem="f75-h0-OzO" secondAttribute="bottom" constant="8" symbolic="YES" id="Qhw-ZG-w5P"/>
-                            <constraint firstItem="ehl-mP-AZN" firstAttribute="top" secondItem="ftR-wL-PgY" secondAttribute="bottom" constant="10" id="Tfe-hm-PVI"/>
-                            <constraint firstAttribute="bottom" secondItem="ehl-mP-AZN" secondAttribute="bottom" constant="20" symbolic="YES" id="cez-tU-0JW"/>
-                            <constraint firstItem="vBO-76-ptg" firstAttribute="top" secondItem="Hhy-5B-tBP" secondAttribute="bottom" constant="8" symbolic="YES" id="lga-kk-41a"/>
-                            <constraint firstItem="f75-h0-OzO" firstAttribute="centerX" secondItem="Hhy-5B-tBP" secondAttribute="centerX" id="rcW-mA-4i9"/>
-                            <constraint firstItem="vBO-76-ptg" firstAttribute="centerX" secondItem="ftR-wL-PgY" secondAttribute="centerX" id="rwE-cU-LqJ"/>
+                            <constraint firstItem="ftR-wL-PgY" firstAttribute="centerX" secondItem="ehl-mP-AZN" secondAttribute="centerX" id="1X2-Ex-vh1"/>
+                            <constraint firstItem="vBO-76-ptg" firstAttribute="centerX" secondItem="ftR-wL-PgY" secondAttribute="centerX" id="3v5-gg-80c"/>
+                            <constraint firstItem="ftR-wL-PgY" firstAttribute="top" secondItem="vBO-76-ptg" secondAttribute="bottom" constant="51" id="A1D-bN-gMF"/>
+                            <constraint firstItem="f75-h0-OzO" firstAttribute="top" secondItem="Bg2-aE-ONj" secondAttribute="top" constant="20" symbolic="YES" id="H23-2a-cZq"/>
+                            <constraint firstAttribute="bottom" secondItem="ehl-mP-AZN" secondAttribute="bottom" constant="20" symbolic="YES" id="Lgf-M3-uri"/>
+                            <constraint firstItem="Hhy-5B-tBP" firstAttribute="top" secondItem="f75-h0-OzO" secondAttribute="bottom" constant="8" symbolic="YES" id="OzT-Cq-Ngs"/>
+                            <constraint firstItem="ehl-mP-AZN" firstAttribute="leading" secondItem="Bg2-aE-ONj" secondAttribute="leading" constant="77" id="ZTg-6n-csM"/>
+                            <constraint firstItem="vBO-76-ptg" firstAttribute="top" secondItem="Hhy-5B-tBP" secondAttribute="bottom" constant="8" symbolic="YES" id="cbg-gS-si4"/>
+                            <constraint firstItem="Hhy-5B-tBP" firstAttribute="centerX" secondItem="vBO-76-ptg" secondAttribute="centerX" id="een-ZC-d8e"/>
+                            <constraint firstItem="Hhy-5B-tBP" firstAttribute="leading" secondItem="Bg2-aE-ONj" secondAttribute="leading" constant="33" id="fe8-xq-qo7"/>
+                            <constraint firstItem="ehl-mP-AZN" firstAttribute="top" secondItem="ftR-wL-PgY" secondAttribute="bottom" constant="10" id="j3i-CL-1ke"/>
+                            <constraint firstItem="f75-h0-OzO" firstAttribute="centerX" secondItem="Hhy-5B-tBP" secondAttribute="centerX" id="lWP-fs-HN7"/>
                         </constraints>
                     </view>
                     <connections>

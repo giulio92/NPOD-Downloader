@@ -34,12 +34,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		}
 
 		GrandNetworkDispatch.getUbernodes({
-			(data) in
+			(ubernodes) in
 
 			var tempDict: [String : AnyObject] = ["downloadDate": NSDate()]
 			var nodeIDs: [String] = Array()
 
-			for ubernode in data {
+			for ubernode in ubernodes {
 				nodeIDs.append(ubernode["nid"]!)
 			}
 
@@ -48,9 +48,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 			NSUserDefaults.standardUserDefaults().setObject(tempDict, forKey: "previousNIDs")
 
 			GrandNetworkDispatch.getImageDetailsWithNodeID(nodeIDs.first!, success: {
-				(data) in
+				(imageDetails) in
 
-				GrandNetworkDispatch.downloadImage(data["url"]!, progressUpdate: nil, success: {
+				GrandNetworkDispatch.downloadImage(imageDetails["imageURL"]!, progressUpdate: nil, success: {
 					(downloadedPath) in
 
 					WallpaperHelper.setWallpaperWithImagePath(downloadedPath)
