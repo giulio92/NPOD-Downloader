@@ -49,7 +49,7 @@ class GrandNetworkDispatch {
 		})
 	}
 
-	class func downloadImage(imageURL: String, progressUpdate: (percentage: Float) -> Void, success: (downloadedPath: NSURL) -> Void, failure: (errorData: AnyObject) -> Void) {
+	class func downloadImage(imageURL: String, progressUpdate: ((percentage: Float) -> Void)?, success: (downloadedPath: NSURL) -> Void, failure: (errorData: AnyObject) -> Void) {
 		guard NetworkReachabilityManager()!.isReachable else {
 			return failure(errorData: "")
 		}
@@ -68,7 +68,7 @@ class GrandNetworkDispatch {
 			// This closure is NOT called on the main queue for performance
 			// reasons. To update your UI, dispatch to the main queue.
 			dispatch_async(dispatch_get_main_queue(), {
-				progressUpdate(percentage: Float(totalBytesRead/totalBytesExpectedToRead))
+				progressUpdate!(percentage: Float(totalBytesRead/totalBytesExpectedToRead))
 			})
 			}.response {
 				(request, response, data, error) in

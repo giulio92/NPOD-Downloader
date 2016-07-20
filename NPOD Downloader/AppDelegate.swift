@@ -47,9 +47,25 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
 			NSUserDefaults.standardUserDefaults().setObject(tempDict, forKey: "previousNIDs")
 
+			GrandNetworkDispatch.getImageDetailsWithNodeID(nodeIDs.first!, success: {
+				(data) in
+
+				GrandNetworkDispatch.downloadImage(data["url"]!, progressUpdate: nil, success: {
+					(downloadedPath) in
+
+					WallpaperHelper.setWallpaperWithImagePath(downloadedPath)
+					}, failure: {
+						(errorData) in
+
+				})
+				}, failure: {
+					(errorData) in
+
+			})
+
 			}, failure: {
 				(errorData) in
-
+				
 		})
 	}
 

@@ -19,7 +19,7 @@ class MainMenuController: NSObject {
 	}
 
 	@IBAction func aboutAction(sender: NSMenuItem) {
-
+		
 	}
 
 	@IBAction func quitAction(sender: NSMenuItem) {

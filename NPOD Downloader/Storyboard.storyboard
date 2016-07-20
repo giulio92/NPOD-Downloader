@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10117"/>
+    </dependencies>
+    <scenes>
+        <!--Window Controller-->
+        <scene sceneID="p9V-X3-rIQ">
+            <objects>
+                <windowController id="9ZX-L8-6N8" sceneMemberID="viewController">
+                    <window key="window" title="About NPOD Downloader" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="Ror-dP-4Ae">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
+                        <rect key="contentRect" x="-1626" y="43" width="300" height="300"/>
+                        <rect key="screenRect" x="-1920" y="-280" width="1920" height="1080"/>
+                    </window>
+                    <connections>
+                        <segue destination="PpB-hU-rAf" kind="relationship" relationship="window.shadowedContentViewController" id="R9U-ix-d22"/>
+                    </connections>
+                </windowController>
+                <customObject id="tIA-IY-mb9" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="772" y="225"/>
+        </scene>
+        <!--About View Controller-->
+        <scene sceneID="wDe-48-KBT">
+            <objects>
+                <viewController id="PpB-hU-rAf" customClass="AboutViewController" customModule="NPOD_Downloader" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="Bg2-aE-ONj">
+                        <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="f75-h0-OzO">
+                                <rect key="frame" x="102" y="184" width="96" height="96"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="96" id="Hkk-3q-vUI"/>
+                                    <constraint firstAttribute="width" constant="96" id="lX2-YJ-nXl"/>
+                                </constraints>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSApplicationIcon" id="Cen-8P-gFQ"/>
+                            </imageView>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Hhy-5B-tBP">
+                                <rect key="frame" x="31" y="159" width="239" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="NASA Picture of the day downloader" id="Tgb-OL-MSv">
+                                    <font key="font" metaFont="systemBold"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="vBO-76-ptg">
+                                <rect key="frame" x="125" y="134" width="50" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Version" id="aPX-1u-6VX">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ehl-mP-AZN">
+                                <rect key="frame" x="71" y="13" width="158" height="32"/>
+                                <buttonCell key="cell" type="push" title="Fork me on GitHub!" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="dE2-Dh-AaW">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
+                            <button translatesAutoresizingMaskIntoConstraints="NO" id="ftR-wL-PgY">
+                                <rect key="frame" x="134" y="51" width="32" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="32" id="WyF-ti-KCh"/>
+                                </constraints>
+                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="GitHub Logo" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="06K-DO-7Tw">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="f75-h0-OzO" firstAttribute="top" secondItem="Bg2-aE-ONj" secondAttribute="top" constant="20" symbolic="YES" id="6Qx-6D-RE8"/>
+                            <constraint firstItem="ftR-wL-PgY" firstAttribute="top" secondItem="vBO-76-ptg" secondAttribute="bottom" constant="51" id="8N9-pZ-RZ1"/>
+                            <constraint firstItem="Hhy-5B-tBP" firstAttribute="centerX" secondItem="vBO-76-ptg" secondAttribute="centerX" id="D91-qb-ee0"/>
+                            <constraint firstItem="ftR-wL-PgY" firstAttribute="centerX" secondItem="ehl-mP-AZN" secondAttribute="centerX" id="IM7-5J-NVa"/>
+                            <constraint firstItem="f75-h0-OzO" firstAttribute="centerX" secondItem="Bg2-aE-ONj" secondAttribute="centerX" id="IfK-eC-ujf"/>
+                            <constraint firstItem="Hhy-5B-tBP" firstAttribute="top" secondItem="f75-h0-OzO" secondAttribute="bottom" constant="8" symbolic="YES" id="Qhw-ZG-w5P"/>
+                            <constraint firstItem="ehl-mP-AZN" firstAttribute="top" secondItem="ftR-wL-PgY" secondAttribute="bottom" constant="10" id="Tfe-hm-PVI"/>
+                            <constraint firstAttribute="bottom" secondItem="ehl-mP-AZN" secondAttribute="bottom" constant="20" symbolic="YES" id="cez-tU-0JW"/>
+                            <constraint firstItem="vBO-76-ptg" firstAttribute="top" secondItem="Hhy-5B-tBP" secondAttribute="bottom" constant="8" symbolic="YES" id="lga-kk-41a"/>
+                            <constraint firstItem="f75-h0-OzO" firstAttribute="centerX" secondItem="Hhy-5B-tBP" secondAttribute="centerX" id="rcW-mA-4i9"/>
+                            <constraint firstItem="vBO-76-ptg" firstAttribute="centerX" secondItem="ftR-wL-PgY" secondAttribute="centerX" id="rwE-cU-LqJ"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <customObject id="k4E-SV-xcu" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1251" y="225"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="GitHub Logo" width="32" height="32"/>
+        <image name="NSApplicationIcon" width="128" height="128"/>
+    </resources>
+</document>
