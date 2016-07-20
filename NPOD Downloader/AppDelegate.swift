@@ -23,30 +23,34 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		
 		Fabric.with([Crashlytics.self])
 
-		let previousNodes: [String : AnyObject] = NSUserDefaults.standardUserDefaults().dictionaryForKey("previousNIDs")!
+		if NSUserDefaults.standardUserDefaults().dictionaryForKey("previousNIDs") != nil {
+			let previousNodes: [String : AnyObject] = NSUserDefaults.standardUserDefaults().dictionaryForKey("previousNIDs")!
 
-		let dateComparison: NSComparisonResult = NSCalendar.currentCalendar().compareDate(NSDate(), toDate: previousNodes["downloadDate"] as! NSDate, toUnitGranularity: .Day)
+			let dateComparison: NSComparisonResult = NSCalendar.currentCalendar().compareDate(NSDate(), toDate: previousNodes["downloadDate"] as! NSDate, toUnitGranularity: .Day)
 
-		if dateComparison != NSComparisonResult.OrderedSame {
-			GrandNetworkDispatch.getUbernodes({
-				(data) in
-
-				var tempDict: [String : AnyObject] = ["downloadDate": NSDate()]
-				var nodeIDs: [String] = Array()
-
-				for ubernode in data {
-					nodeIDs.append(ubernode["nid"]!)
-				}
-
-				tempDict["nodeIDs"] = nodeIDs
-
-				NSUserDefaults.standardUserDefaults().setObject(tempDict, forKey: "previousNIDs")
-
-				}, failure: {
-					(errorData) in
-					
-			})
+			guard dateComparison != .OrderedSame else {
+				return
+			}
 		}
+
+		GrandNetworkDispatch.getUbernodes({
+			(data) in
+
+			var tempDict: [String : AnyObject] = ["downloadDate": NSDate()]
+			var nodeIDs: [String] = Array()
+
+			for ubernode in data {
+				nodeIDs.append(ubernode["nid"]!)
+			}
+
+			tempDict["nodeIDs"] = nodeIDs
+
+			NSUserDefaults.standardUserDefaults().setObject(tempDict, forKey: "previousNIDs")
+
+			}, failure: {
+				(errorData) in
+
+		})
 	}
 
 	func applicationWillTerminate(aNotification: NSNotification) {
