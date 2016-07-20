@@ -7,6 +7,8 @@
 //
 
 import Alamofire
+import Fabric
+import Crashlytics
 
 class MainMenuController: NSObject {
 	@IBOutlet weak var applicationMenu: NSMenu!
@@ -15,8 +17,63 @@ class MainMenuController: NSObject {
 	let statusItem: NSStatusItem = NSStatusBar.systemStatusBar().statusItemWithLength(NSVariableStatusItemLength)
 
 	override func awakeFromNib() {
+		#if DEBUG
+			Fabric.sharedSDK().debug = true
+		#endif
+
+		NSUserDefaults.standardUserDefaults().registerDefaults(["NSApplicationCrashOnExceptions": "true"])
+
+		Fabric.with([Crashlytics.self])
+
+		if NSUserDefaults.standardUserDefaults().dictionaryForKey("previousNIDs") != nil {
+			let previousNodes: [String : AnyObject] = NSUserDefaults.standardUserDefaults().dictionaryForKey("previousNIDs")!
+
+			let dateComparison: NSComparisonResult = NSCalendar.currentCalendar().compareDate(NSDate(), toDate: previousNodes["downloadDate"] as! NSDate, toUnitGranularity: .Day)
+
+			guard dateComparison != .OrderedSame else {
+				return
+			}
+		}
+
 		statusItem.image = NSImage(named: "MenuIcon")
 		statusItem.menu = applicationMenu
+
+		GrandNetworkDispatch.getUbernodes({
+			(ubernodes) in
+
+			var tempDict: [String : AnyObject] = ["downloadDate": NSDate()]
+			var nodeIDs: [String] = Array()
+
+			for ubernode in ubernodes {
+				nodeIDs.append(ubernode["nid"]!)
+			}
+
+			tempDict["nodeIDs"] = nodeIDs
+
+			NSUserDefaults.standardUserDefaults().setObject(tempDict, forKey: "previousNIDs")
+
+			GrandNetworkDispatch.getImageDetailsWithNodeID(nodeIDs.first!, success: {
+				(imageDetails) in
+
+				GrandNetworkDispatch.downloadImage(imageDetails["imageURL"]!, progressUpdate: nil, success: {
+					(downloadedPath) in
+
+					self.currentImageName.title = imageDetails["title"]!
+
+					WallpaperHelper.setWallpaperWithImagePath(downloadedPath)
+					}, failure: {
+						(errorData) in
+
+				})
+				}, failure: {
+					(errorData) in
+
+			})
+			
+			}, failure: {
+				(errorData) in
+				
+		})
 	}
 
 	@IBAction func aboutAction(sender: NSMenuItem) {
