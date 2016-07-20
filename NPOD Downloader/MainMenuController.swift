@@ -10,6 +10,7 @@ import Alamofire
 
 class MainMenuController: NSObject {
 	@IBOutlet weak var applicationMenu: NSMenu!
+	@IBOutlet weak var currentImageName: NSMenuItem!
 
 	let statusItem: NSStatusItem = NSStatusBar.systemStatusBar().statusItemWithLength(NSVariableStatusItemLength)
 
@@ -19,7 +20,7 @@ class MainMenuController: NSObject {
 	}
 
 	@IBAction func aboutAction(sender: NSMenuItem) {
-		
+
 	}
 
 	@IBAction func quitAction(sender: NSMenuItem) {

@@ -71,7 +71,7 @@ class GrandNetworkDispatch {
 			// This closure is NOT called on the main queue for performance
 			// reasons. To update your UI, dispatch to the main queue.
 			dispatch_async(dispatch_get_main_queue(), {
-				progressUpdate!(percentage: Float(totalBytesRead/totalBytesExpectedToRead))
+				progressUpdate?(percentage: Float(totalBytesRead/totalBytesExpectedToRead))
 			})
 			}.response {
 				(request, response, data, error) in
