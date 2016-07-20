@@ -9,8 +9,14 @@
 import AppKit
 
 class AboutViewController: NSViewController {
+	@IBOutlet weak var versionLabel: NSTextField!
+
 	override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
     }
+
+	@IBAction func launchGitHubPage(sender: NSButton) {
+
+	}
 }

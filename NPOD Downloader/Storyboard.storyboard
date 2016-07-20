@@ -60,6 +60,9 @@
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="launchGitHubPage:" target="PpB-hU-rAf" id="bL3-YE-AMb"/>
+                                </connections>
                             </button>
                             <button translatesAutoresizingMaskIntoConstraints="NO" id="ftR-wL-PgY">
                                 <rect key="frame" x="134" y="51" width="32" height="32"/>
@@ -86,6 +89,9 @@
                             <constraint firstItem="vBO-76-ptg" firstAttribute="centerX" secondItem="ftR-wL-PgY" secondAttribute="centerX" id="rwE-cU-LqJ"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="versionLabel" destination="vBO-76-ptg" id="H9r-wi-2Ck"/>
+                    </connections>
                 </viewController>
                 <customObject id="k4E-SV-xcu" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
