@@ -16,7 +16,6 @@
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
         <customObject id="nxz-3U-74k" customClass="MainMenuController" customModule="NPOD_Downloader" customModuleProvider="target">
             <connections>
-                <outlet property="aboutWindow" destination="9oe-Sa-jqn" id="exN-xY-hxb"/>
                 <outlet property="applicationMenu" destination="FHL-sz-1ud" id="6zn-nL-Jko"/>
                 <outlet property="currentImageName" destination="wbc-M8-nEe" id="XCS-as-6qk"/>
             </connections>
@@ -55,7 +54,7 @@
         <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="9oe-Sa-jqn">
             <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
             <rect key="contentRect" x="-1724" y="400" width="300" height="300"/>
-            <rect key="screenRect" x="-1920" y="-280" width="1920" height="1057"/>
+            <rect key="screenRect" x="-1920" y="-280" width="1920" height="1080"/>
             <view key="contentView" id="sAO-fy-8ac" customClass="AboutView" customModule="NPOD_Downloader" customModuleProvider="target">
                 <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
                 <autoresizingMask key="autoresizingMask"/>
