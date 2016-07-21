@@ -13,6 +13,8 @@ import Crashlytics
 class MainMenuController: NSObject {
 	@IBOutlet weak var applicationMenu: NSMenu!
 	@IBOutlet weak var currentImageName: NSMenuItem!
+	@IBOutlet weak var aboutWindow: NSWindow!
+	@IBOutlet weak var appVersionLabel: NSTextField!
 
 	let statusItem: NSStatusItem = NSStatusBar.systemStatusBar().statusItemWithLength(NSVariableStatusItemLength)
 
@@ -69,15 +71,22 @@ class MainMenuController: NSObject {
 					(errorData) in
 
 			})
-			
+
 			}, failure: {
 				(errorData) in
-				
+
 		})
 	}
 
 	@IBAction func aboutAction(sender: NSMenuItem) {
+		aboutWindow.makeKeyAndOrderFront(sender)
 
+		let versionNumber: String = NSBundle.mainBundle().infoDictionary!["CFBundleShortVersionString"] as! String
+		appVersionLabel.cell?.title = "Version: " + versionNumber
+	}
+
+	@IBAction func launchGitHubPage(sender: NSButton) {
+		NSWorkspace.sharedWorkspace().openURL(NSURL(string: "https://github.com/giulio92/NPOD-Downloader")!)
 	}
 
 	@IBAction func quitAction(sender: NSMenuItem) {

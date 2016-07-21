@@ -16,6 +16,8 @@
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
         <customObject id="nxz-3U-74k" customClass="MainMenuController" customModule="NPOD_Downloader" customModuleProvider="target">
             <connections>
+                <outlet property="aboutWindow" destination="9oe-Sa-jqn" id="exN-xY-hxb"/>
+                <outlet property="appVersionLabel" destination="1Vw-IB-5Mz" id="Rgb-kp-wFo"/>
                 <outlet property="applicationMenu" destination="FHL-sz-1ud" id="6zn-nL-Jko"/>
                 <outlet property="currentImageName" destination="wbc-M8-nEe" id="XCS-as-6qk"/>
             </connections>
@@ -51,5 +53,86 @@
             </connections>
             <point key="canvasLocation" x="280.5" y="268.5"/>
         </menu>
+        <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="9oe-Sa-jqn">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
+            <rect key="contentRect" x="-1724" y="-67" width="300" height="300"/>
+            <rect key="screenRect" x="-1920" y="-280" width="1920" height="1080"/>
+            <view key="contentView" id="sAO-fy-8ac">
+                <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="onn-5x-ACv">
+                        <rect key="frame" x="102" y="184" width="96" height="96"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="96" id="Jew-4b-Z5Q"/>
+                            <constraint firstAttribute="width" constant="96" id="Qzf-fJ-r7S"/>
+                        </constraints>
+                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSApplicationIcon" id="VfC-kv-ooe"/>
+                    </imageView>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="yDb-gW-lpT">
+                        <rect key="frame" x="31" y="159" width="239" height="17"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="NASA Picture of the day downloader" id="bil-d9-Ptn">
+                            <font key="font" metaFont="systemBold"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="1Vw-IB-5Mz">
+                        <rect key="frame" x="31" y="134" width="239" height="17"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" id="d26-LP-RCS">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="hea-4M-2vb">
+                        <rect key="frame" x="71" y="13" width="158" height="32"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="146" id="BAt-En-pJw"/>
+                        </constraints>
+                        <buttonCell key="cell" type="push" title="Fork me on GitHub!" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="7Jy-u1-3FM">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="launchGitHubPage:" target="nxz-3U-74k" id="YEU-HX-Mqm"/>
+                        </connections>
+                    </button>
+                    <button translatesAutoresizingMaskIntoConstraints="NO" id="Mmf-YI-QCa">
+                        <rect key="frame" x="134" y="51" width="32" height="32"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="32" id="1vZ-gu-54E"/>
+                        </constraints>
+                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="GitHub Logo" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="fZE-AU-T76">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="onn-5x-ACv" firstAttribute="centerX" secondItem="yDb-gW-lpT" secondAttribute="centerX" id="3Vn-CC-Qj4"/>
+                    <constraint firstItem="onn-5x-ACv" firstAttribute="top" secondItem="sAO-fy-8ac" secondAttribute="top" constant="20" symbolic="YES" id="ALx-Id-fT8"/>
+                    <constraint firstItem="hea-4M-2vb" firstAttribute="leading" secondItem="sAO-fy-8ac" secondAttribute="leading" constant="77" id="GFp-OV-iMI"/>
+                    <constraint firstItem="yDb-gW-lpT" firstAttribute="leading" secondItem="1Vw-IB-5Mz" secondAttribute="leading" id="Mzo-9t-UIf"/>
+                    <constraint firstItem="Mmf-YI-QCa" firstAttribute="top" secondItem="1Vw-IB-5Mz" secondAttribute="bottom" constant="51" id="WY2-DI-Ubt"/>
+                    <constraint firstItem="hea-4M-2vb" firstAttribute="top" secondItem="Mmf-YI-QCa" secondAttribute="bottom" constant="10" id="Wuf-vU-HxP"/>
+                    <constraint firstItem="Mmf-YI-QCa" firstAttribute="centerX" secondItem="hea-4M-2vb" secondAttribute="centerX" id="f7m-P3-Wxg"/>
+                    <constraint firstItem="yDb-gW-lpT" firstAttribute="trailing" secondItem="1Vw-IB-5Mz" secondAttribute="trailing" id="fGg-mA-slI"/>
+                    <constraint firstAttribute="bottom" secondItem="hea-4M-2vb" secondAttribute="bottom" constant="20" symbolic="YES" id="fXB-lJ-0Dq"/>
+                    <constraint firstItem="yDb-gW-lpT" firstAttribute="top" secondItem="onn-5x-ACv" secondAttribute="bottom" constant="8" symbolic="YES" id="kOe-Em-mnw"/>
+                    <constraint firstItem="1Vw-IB-5Mz" firstAttribute="centerX" secondItem="Mmf-YI-QCa" secondAttribute="centerX" id="kag-9F-aQT"/>
+                    <constraint firstItem="yDb-gW-lpT" firstAttribute="leading" secondItem="sAO-fy-8ac" secondAttribute="leading" constant="33" id="pQh-Vp-B0N"/>
+                    <constraint firstItem="1Vw-IB-5Mz" firstAttribute="top" secondItem="yDb-gW-lpT" secondAttribute="bottom" constant="8" symbolic="YES" id="piJ-AG-Sqf"/>
+                </constraints>
+            </view>
+            <connections>
+                <outlet property="delegate" destination="-2" id="ztG-pm-jHE"/>
+            </connections>
+            <point key="canvasLocation" x="661" y="254"/>
+        </window>
     </objects>
+    <resources>
+        <image name="GitHub Logo" width="32" height="32"/>
+        <image name="NSApplicationIcon" width="128" height="128"/>
+    </resources>
 </document>

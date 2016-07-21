@@ -13,8 +13,6 @@
 		74B4678A1D37C53900FD830E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74B467851D37C53900FD830E /* Assets.xcassets */; };
 		74B4678C1D37C53900FD830E /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74B467871D37C53900FD830E /* MainMenu.xib */; };
 		74B4678D1D37C53900FD830E /* MainMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B467881D37C53900FD830E /* MainMenuController.swift */; };
-		74E66E191D3F8BFC003F89EC /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74E66E181D3F8BFC003F89EC /* Storyboard.storyboard */; };
-		74E66E1B1D3F8F67003F89EC /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E66E1A1D3F8F67003F89EC /* AboutViewController.swift */; };
 		CBC751E841905FA29515B1A7 /* Pods_NPOD_Downloader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDB09582C1E186265401AC9A /* Pods_NPOD_Downloader.framework */; };
 /* End PBXBuildFile section */
 
@@ -28,8 +26,6 @@
 		74B467871D37C53900FD830E /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
 		74B467881D37C53900FD830E /* MainMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuController.swift; sourceTree = "<group>"; usesTabs = 1; };
 		74D1C6061D364CE5004DF0FE /* NPOD Downloader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NPOD Downloader.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		74E66E181D3F8BFC003F89EC /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
-		74E66E1A1D3F8F67003F89EC /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		B40FC121AAB4C7EFDC20AC45 /* Pods-NPOD Downloader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NPOD Downloader.release.xcconfig"; path = "Pods/Target Support Files/Pods-NPOD Downloader/Pods-NPOD Downloader.release.xcconfig"; sourceTree = "<group>"; };
 		EDB09582C1E186265401AC9A /* Pods_NPOD_Downloader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NPOD_Downloader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -59,11 +55,9 @@
 			children = (
 				74B467841D37C53900FD830E /* AppDelegate.swift */,
 				74B467881D37C53900FD830E /* MainMenuController.swift */,
-				74E66E1A1D3F8F67003F89EC /* AboutViewController.swift */,
 				7479A6871D3815FA00580F63 /* GrandNetworkDispatch.swift */,
 				74811C401D3E78910079FE83 /* WallpaperHelper.swift */,
 				74B467871D37C53900FD830E /* MainMenu.xib */,
-				74E66E181D3F8BFC003F89EC /* Storyboard.storyboard */,
 				74B467851D37C53900FD830E /* Assets.xcassets */,
 				74B467861D37C53900FD830E /* Info.plist */,
 			);
@@ -161,7 +155,6 @@
 			files = (
 				74B4678C1D37C53900FD830E /* MainMenu.xib in Resources */,
 				74B4678A1D37C53900FD830E /* Assets.xcassets in Resources */,
-				74E66E191D3F8BFC003F89EC /* Storyboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,7 +229,6 @@
 				74811C411D3E78910079FE83 /* WallpaperHelper.swift in Sources */,
 				7479A6881D3815FA00580F63 /* GrandNetworkDispatch.swift in Sources */,
 				74B467891D37C53900FD830E /* AppDelegate.swift in Sources */,
-				74E66E1B1D3F8F67003F89EC /* AboutViewController.swift in Sources */,
 				74B4678D1D37C53900FD830E /* MainMenuController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
