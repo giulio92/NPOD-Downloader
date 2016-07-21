@@ -17,7 +17,6 @@
         <customObject id="nxz-3U-74k" customClass="MainMenuController" customModule="NPOD_Downloader" customModuleProvider="target">
             <connections>
                 <outlet property="aboutWindow" destination="9oe-Sa-jqn" id="exN-xY-hxb"/>
-                <outlet property="appVersionLabel" destination="1Vw-IB-5Mz" id="Rgb-kp-wFo"/>
                 <outlet property="applicationMenu" destination="FHL-sz-1ud" id="6zn-nL-Jko"/>
                 <outlet property="currentImageName" destination="wbc-M8-nEe" id="XCS-as-6qk"/>
             </connections>
@@ -38,7 +37,7 @@
                 <menuItem title="About" id="T3d-Fd-oBk">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
-                        <action selector="aboutAction:" target="nxz-3U-74k" id="Ltw-KF-iXh"/>
+                        <action selector="makeKeyAndOrderFront:" target="9oe-Sa-jqn" id="7X1-TI-9qJ"/>
                     </connections>
                 </menuItem>
                 <menuItem title="Quit" id="Dty-RX-Nk3">
@@ -51,13 +50,13 @@
             <connections>
                 <outlet property="delegate" destination="-2" id="8l8-kC-zZP"/>
             </connections>
-            <point key="canvasLocation" x="280.5" y="268.5"/>
+            <point key="canvasLocation" x="278.5" y="253.5"/>
         </menu>
         <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="9oe-Sa-jqn">
             <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
-            <rect key="contentRect" x="-1724" y="-67" width="300" height="300"/>
+            <rect key="contentRect" x="-1724" y="400" width="300" height="300"/>
             <rect key="screenRect" x="-1920" y="-280" width="1920" height="1080"/>
-            <view key="contentView" id="sAO-fy-8ac">
+            <view key="contentView" id="sAO-fy-8ac" customClass="AboutView" customModule="NPOD_Downloader" customModuleProvider="target">
                 <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
@@ -95,7 +94,7 @@
                             <font key="font" metaFont="system"/>
                         </buttonCell>
                         <connections>
-                            <action selector="launchGitHubPage:" target="nxz-3U-74k" id="YEU-HX-Mqm"/>
+                            <action selector="launchGitHubPage:" target="sAO-fy-8ac" id="waj-SL-JD6"/>
                         </connections>
                     </button>
                     <button translatesAutoresizingMaskIntoConstraints="NO" id="Mmf-YI-QCa">
@@ -124,6 +123,9 @@
                     <constraint firstItem="yDb-gW-lpT" firstAttribute="leading" secondItem="sAO-fy-8ac" secondAttribute="leading" constant="33" id="pQh-Vp-B0N"/>
                     <constraint firstItem="1Vw-IB-5Mz" firstAttribute="top" secondItem="yDb-gW-lpT" secondAttribute="bottom" constant="8" symbolic="YES" id="piJ-AG-Sqf"/>
                 </constraints>
+                <connections>
+                    <outlet property="appVersionLabel" destination="1Vw-IB-5Mz" id="Jha-6a-mXm"/>
+                </connections>
             </view>
             <connections>
                 <outlet property="delegate" destination="-2" id="ztG-pm-jHE"/>
