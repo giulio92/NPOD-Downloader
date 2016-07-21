@@ -13,7 +13,6 @@ import Crashlytics
 class MainMenuController: NSObject {
 	@IBOutlet weak var applicationMenu: NSMenu!
 	@IBOutlet weak var currentImageName: NSMenuItem!
-	@IBOutlet weak var aboutWindow: NSWindow!
 
 	let statusItem: NSStatusItem = NSStatusBar.systemStatusBar().statusItemWithLength(NSVariableStatusItemLength)
 
@@ -22,9 +21,14 @@ class MainMenuController: NSObject {
 			Fabric.sharedSDK().debug = true
 		#endif
 
+		NSUserDefaults.standardUserDefaults().removePersistentDomainForName(NSBundle.mainBundle().bundleIdentifier!)
+
 		NSUserDefaults.standardUserDefaults().registerDefaults(["NSApplicationCrashOnExceptions": "true"])
 
 		Fabric.with([Crashlytics.self])
+
+		statusItem.image = NSImage(named: "MenuIcon")
+		statusItem.menu = applicationMenu
 
 		if NSUserDefaults.standardUserDefaults().dictionaryForKey("previousNIDs") != nil {
 			let previousNodes: [String : AnyObject] = NSUserDefaults.standardUserDefaults().dictionaryForKey("previousNIDs")!
@@ -35,9 +39,6 @@ class MainMenuController: NSObject {
 				return
 			}
 		}
-
-		statusItem.image = NSImage(named: "MenuIcon")
-		statusItem.menu = applicationMenu
 
 		GrandNetworkDispatch.getUbernodes({
 			(ubernodes) in
