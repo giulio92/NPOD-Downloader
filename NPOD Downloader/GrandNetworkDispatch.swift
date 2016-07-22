@@ -57,12 +57,21 @@ class GrandNetworkDispatch {
 			return failure(errorData: "")
 		}
 
+		let fileManager: NSFileManager = NSFileManager.defaultManager()
+		let pictureDirectory: NSURL = fileManager.URLsForDirectory(.PicturesDirectory, inDomains: .UserDomainMask).first!
+
+		let imageName: String = NSURL(string: imageURL)!.pathComponents!.last!
+
+		if fileManager.fileExistsAtPath(pictureDirectory.path! + "/" + imageName) {
+			return
+		}
+
 		var downloadPath: NSURL?
 
 		Alamofire.download(.GET, imageURL, destination: {
 			(temporaryURL, response) in
 
-			downloadPath = NSFileManager.defaultManager().URLsForDirectory(.PicturesDirectory, inDomains: .UserDomainMask).first!.URLByAppendingPathComponent(response.suggestedFilename!)
+			downloadPath = pictureDirectory.URLByAppendingPathComponent(imageName)
 
 			return downloadPath!
 		}).progress {
