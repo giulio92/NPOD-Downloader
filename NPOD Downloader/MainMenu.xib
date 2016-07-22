@@ -57,7 +57,7 @@
         <window allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="9oe-Sa-jqn">
             <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
             <rect key="contentRect" x="-1724" y="400" width="300" height="300"/>
-            <rect key="screenRect" x="-1920" y="-280" width="1920" height="1057"/>
+            <rect key="screenRect" x="-1920" y="-280" width="1920" height="1080"/>
             <view key="contentView" id="sAO-fy-8ac" customClass="AboutView" customModule="NPOD_Downloader" customModuleProvider="target">
                 <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
                 <autoresizingMask key="autoresizingMask"/>
@@ -199,6 +199,10 @@
                             <font key="font" metaFont="system"/>
                         </buttonCell>
                     </button>
+                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TJj-KB-rlK">
+                        <rect key="frame" x="337" y="340" width="50" height="50"/>
+                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="RetinaBadge" id="3Sd-bG-PRP"/>
+                    </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="ymQ-pJ-CaM" firstAttribute="leading" secondItem="23X-Ea-9bq" secondAttribute="leading" constant="20" symbolic="YES" id="1YK-nw-Fo3"/>
@@ -235,5 +239,6 @@
     <resources>
         <image name="GitHub Logo" width="32" height="32"/>
         <image name="NSApplicationIcon" width="128" height="128"/>
+        <image name="RetinaBadge" width="50" height="50"/>
     </resources>
 </document>
