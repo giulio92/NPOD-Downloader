@@ -54,10 +54,10 @@
             </connections>
             <point key="canvasLocation" x="1844.5" y="937.5"/>
         </menu>
-        <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="9oe-Sa-jqn">
+        <window allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="9oe-Sa-jqn">
             <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
             <rect key="contentRect" x="-1724" y="400" width="300" height="300"/>
-            <rect key="screenRect" x="-1920" y="-280" width="1920" height="1057"/>
+            <rect key="screenRect" x="-1920" y="-280" width="1920" height="1080"/>
             <view key="contentView" id="sAO-fy-8ac" customClass="AboutView" customModule="NPOD_Downloader" customModuleProvider="target">
                 <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
                 <autoresizingMask key="autoresizingMask"/>
@@ -134,11 +134,11 @@
             </connections>
             <point key="canvasLocation" x="2178" y="938"/>
         </window>
-        <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="aIX-Rb-t4t">
+        <window title="Preferences" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="aIX-Rb-t4t">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
             <rect key="contentRect" x="-1724" y="-67" width="479" height="409"/>
             <rect key="screenRect" x="-1920" y="-280" width="1920" height="1080"/>
-            <view key="contentView" id="23X-Ea-9bq">
+            <view key="contentView" id="23X-Ea-9bq" customClass="PreferencesView" customModule="NPOD_Downloader" customModuleProvider="target">
                 <rect key="frame" x="0.0" y="0.0" width="479" height="409"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
@@ -220,6 +220,9 @@
                     <constraint firstItem="dY9-rL-9vp" firstAttribute="leading" secondItem="gR3-re-1Up" secondAttribute="leading" id="sOO-8X-eBh"/>
                     <constraint firstItem="QRe-Yo-d5a" firstAttribute="leading" secondItem="dY9-rL-9vp" secondAttribute="leading" id="wIM-5S-Gt9"/>
                 </constraints>
+                <connections>
+                    <outlet property="imageView" destination="QRe-Yo-d5a" id="Rbl-9Q-eEh"/>
+                </connections>
             </view>
             <point key="canvasLocation" x="2001.5" y="1426.5"/>
         </window>
