@@ -10,8 +10,13 @@ import AppKit
 
 class PreferencesView: NSView {
 	@IBOutlet weak var imageView: NSImageView!
+	@IBOutlet weak var retinaBadgeIcon: NSImageView!
+	@IBOutlet weak var previousImageButton: NSButton!
+	@IBOutlet weak var nextImageButton: NSButton!
 	@IBOutlet weak var imageTitle: NSTextField!
 	@IBOutlet weak var imageDescription: NSTextField!
+	
+	
 
 	override func drawRect(dirtyRect: NSRect) {
         super.drawRect(dirtyRect)

@@ -137,7 +137,7 @@
         <window title="Preferences" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="aIX-Rb-t4t">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
             <rect key="contentRect" x="-1724" y="-67" width="480" height="410"/>
-            <rect key="screenRect" x="-1920" y="-280" width="1920" height="1057"/>
+            <rect key="screenRect" x="-1920" y="-280" width="1920" height="1080"/>
             <view key="contentView" id="23X-Ea-9bq" customClass="PreferencesView" customModule="NPOD_Downloader" customModuleProvider="target">
                 <rect key="frame" x="0.0" y="0.0" width="480" height="410"/>
                 <autoresizingMask key="autoresizingMask"/>
@@ -231,6 +231,9 @@
                     <outlet property="imageDescription" destination="ip1-np-pih" id="tDN-DQ-7N4"/>
                     <outlet property="imageTitle" destination="gR3-re-1Up" id="hax-8u-Q0F"/>
                     <outlet property="imageView" destination="QRe-Yo-d5a" id="Rbl-9Q-eEh"/>
+                    <outlet property="nextImageButton" destination="ydv-lJ-IMo" id="zOU-AG-ENN"/>
+                    <outlet property="previousImageButton" destination="ymQ-pJ-CaM" id="E97-Vz-8vm"/>
+                    <outlet property="retinaBadgeIcon" destination="TJj-KB-rlK" id="XMG-UE-CrP"/>
                 </connections>
             </view>
             <point key="canvasLocation" x="2001" y="1426"/>
