@@ -30,15 +30,20 @@ class WallpaperHelper {
 		return imageData.size.width > (NSScreen.mainScreen()!.frame.width * 2) && imageData.size.height > (NSScreen.mainScreen()!.frame.height * 2)
 	}
 
-	class func setWallpaperWithImagePath(path: NSURL) {
+	class func setWallpaperWithImageNodeID(nodeID: String) {
+		let imageName: String = ""
+		let pictureDirectory: NSURL = NSFileManager.defaultManager().URLsForDirectory(.PicturesDirectory, inDomains: .UserDomainMask).first!
+
 		for screen in NSScreen.screens()! {
 			do {
-				try NSWorkspace.sharedWorkspace().setDesktopImageURL(path, forScreen: screen, options: ["": ""])
+				//try NSWorkspace.sharedWorkspace().setDesktopImageURL(pictureDirectory.URLByAppendingPathComponent(imageName), forScreen: screen, options: ["": ""])
 			} catch let error as NSError {
 				#if DEBUG
 					print(error)
 				#endif
 			}
 		}
+
+		NSUserDefaults.standardUserDefaults().setValue(nodeID, forKey: "currentNID")
 	}
 }

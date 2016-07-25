@@ -161,6 +161,9 @@
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
+                        <connections>
+                            <action selector="keepImage:" target="23X-Ea-9bq" id="whK-0g-kPG"/>
+                        </connections>
                     </button>
                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ydv-lJ-IMo">
                         <rect key="frame" x="413" y="273" width="53" height="32"/>
@@ -229,6 +232,7 @@
                     <outlet property="imageDescription" destination="ip1-np-pih" id="tDN-DQ-7N4"/>
                     <outlet property="imageTitle" destination="gR3-re-1Up" id="hax-8u-Q0F"/>
                     <outlet property="imageView" destination="QRe-Yo-d5a" id="Rbl-9Q-eEh"/>
+                    <outlet property="keepImageButton" destination="FIh-kk-j2g" id="Yiy-SR-EJK"/>
                     <outlet property="nextImageButton" destination="ydv-lJ-IMo" id="zOU-AG-ENN"/>
                     <outlet property="previousImageButton" destination="ymQ-pJ-CaM" id="E97-Vz-8vm"/>
                     <outlet property="retinaBadgeIcon" destination="TJj-KB-rlK" id="XMG-UE-CrP"/>

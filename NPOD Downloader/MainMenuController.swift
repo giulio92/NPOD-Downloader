@@ -40,6 +40,10 @@ class MainMenuController: NSObject {
 			}
 		}
 
+		if NSUserDefaults.standardUserDefaults().boolForKey("keepImage") {
+			return
+		}
+
 		GrandNetworkDispatch.getUbernodes({
 			(ubernodes) in
 
@@ -62,7 +66,7 @@ class MainMenuController: NSObject {
 
 					self.currentImageName.title = imageDetails["title"]!
 
-					WallpaperHelper.setWallpaperWithImagePath(downloadedPath)
+					WallpaperHelper.setWallpaperWithImageNodeID(imageDetails["nodeID"]!)
 					}, failure: {
 						(errorData) in
 
@@ -74,7 +78,7 @@ class MainMenuController: NSObject {
 
 			}, failure: {
 				(errorData) in
-
+				
 		})
 	}
 

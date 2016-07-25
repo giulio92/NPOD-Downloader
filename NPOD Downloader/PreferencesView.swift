@@ -13,6 +13,7 @@ class PreferencesView: NSView {
 	@IBOutlet weak var retinaBadgeIcon: NSImageView!
 	@IBOutlet weak var previousImageButton: NSButton!
 	@IBOutlet weak var nextImageButton: NSButton!
+	@IBOutlet weak var keepImageButton: NSButton!
 	@IBOutlet weak var imageTitle: NSTextField!
 	@IBOutlet weak var imageDescription: NSTextField!
 
@@ -20,9 +21,17 @@ class PreferencesView: NSView {
         super.drawRect(dirtyRect)
 
         // Drawing code here.
+
+		if NSUserDefaults.standardUserDefaults().boolForKey("keepImage") {
+			keepImageButton.state = NSUserDefaults.standardUserDefaults().boolForKey("keepImage").hashValue
+		}
     }
 
 	@IBAction func setImageAsWallpaper(sender: NSButton) {
-	
+		WallpaperHelper.setWallpaperWithImageNodeID("")
+	}
+
+	@IBAction func keepImage(sender: NSButton) {
+		NSUserDefaults.standardUserDefaults().setBool(Bool(sender.state), forKey: "keepImage")
 	}
 }

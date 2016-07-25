@@ -43,7 +43,8 @@ class GrandNetworkDispatch {
 				"title": title,
 				"description": description,
 				"imageURL": baseURL + "/sites/default/files/thumbnails/image/" + filename,
-				"thumbnailURL": baseURL + thumbnailURL
+				"thumbnailURL": baseURL + thumbnailURL,
+				"nodeID": nodeID
 				])
 			}, failure: {
 				(errorData) in
