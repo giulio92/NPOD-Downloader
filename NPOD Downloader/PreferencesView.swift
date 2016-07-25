@@ -15,8 +15,6 @@ class PreferencesView: NSView {
 	@IBOutlet weak var nextImageButton: NSButton!
 	@IBOutlet weak var imageTitle: NSTextField!
 	@IBOutlet weak var imageDescription: NSTextField!
-	
-	
 
 	override func drawRect(dirtyRect: NSRect) {
         super.drawRect(dirtyRect)
