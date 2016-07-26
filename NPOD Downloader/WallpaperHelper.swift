@@ -21,7 +21,7 @@ class WallpaperHelper {
 			}
 		}
 
-		guard deviceHasRetinaFeature == true else {
+		guard deviceHasRetinaFeature else {
 			return false
 		}
 
@@ -30,19 +30,22 @@ class WallpaperHelper {
 		return imageData.size.width > (NSScreen.mainScreen()!.frame.width * 2) && imageData.size.height > (NSScreen.mainScreen()!.frame.height * 2)
 	}
 
-	class func setWallpaperWithImageNodeID(nodeID: String) {
-		let imageName: String = ""
+	class func setWallpaperWithNodeID(nodeID: String) {
+		let selectedImageData: [String: String] = ["": ""]
+		let imageName: String = NSURL(string: selectedImageData["imageURL"]!)!.pathComponents!.last!
 		let pictureDirectory: NSURL = NSFileManager.defaultManager().URLsForDirectory(.PicturesDirectory, inDomains: .UserDomainMask).first!
 
 		for screen in NSScreen.screens()! {
 			do {
-				//try NSWorkspace.sharedWorkspace().setDesktopImageURL(pictureDirectory.URLByAppendingPathComponent(imageName), forScreen: screen, options: ["": ""])
+				try NSWorkspace.sharedWorkspace().setDesktopImageURL(pictureDirectory.URLByAppendingPathComponent(imageName), forScreen: screen, options: ["": ""])
 			} catch let error as NSError {
 				#if DEBUG
 					print(error)
 				#endif
 			}
 		}
+
+		//self.currentImageName.title = selectedImageData["title"]
 
 		NSUserDefaults.standardUserDefaults().setValue(nodeID, forKey: "currentNID")
 	}

@@ -171,6 +171,9 @@
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
+                        <connections>
+                            <action selector="nextImage:" target="23X-Ea-9bq" id="x97-1S-6FU"/>
+                        </connections>
                     </button>
                     <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TJj-KB-rlK">
                         <rect key="frame" x="337" y="340" width="50" height="50"/>
@@ -201,6 +204,9 @@
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
+                        <connections>
+                            <action selector="previousImage:" target="23X-Ea-9bq" id="fI3-P2-9sW"/>
+                        </connections>
                     </button>
                 </subviews>
                 <constraints>

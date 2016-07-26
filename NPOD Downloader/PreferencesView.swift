@@ -27,8 +27,16 @@ class PreferencesView: NSView {
 		}
     }
 
+	@IBAction func previousImage(sender: NSButton) {
+
+	}
+
+	@IBAction func nextImage(sender: NSButton) {
+		
+	}
+
 	@IBAction func setImageAsWallpaper(sender: NSButton) {
-		WallpaperHelper.setWallpaperWithImageNodeID("")
+		WallpaperHelper.setWallpaperWithNodeID("")
 	}
 
 	@IBAction func keepImage(sender: NSButton) {

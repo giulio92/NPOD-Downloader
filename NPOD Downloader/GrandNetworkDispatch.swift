@@ -53,7 +53,7 @@ class GrandNetworkDispatch {
 		})
 	}
 
-	class func downloadImage(imageURL: String, progressUpdate: ((percentage: Float) -> Void)?, success: (downloadedPath: NSURL) -> Void, failure: (errorData: AnyObject) -> Void) {
+	class func downloadImageWithURL(imageURL: String, progressUpdate: ((percentage: Float) -> Void)?, success: (downloadedPath: NSURL) -> Void, failure: (errorData: AnyObject) -> Void) {
 		guard NetworkReachabilityManager()!.isReachable else {
 			return failure(errorData: "")
 		}

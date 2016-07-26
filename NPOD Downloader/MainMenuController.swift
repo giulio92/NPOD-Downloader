@@ -41,6 +41,7 @@ class MainMenuController: NSObject {
 		}
 
 		if NSUserDefaults.standardUserDefaults().boolForKey("keepImage") {
+			self.currentImageName.title = ""
 			return
 		}
 
@@ -61,12 +62,10 @@ class MainMenuController: NSObject {
 			GrandNetworkDispatch.getImageDetailsWithNodeID(nodeIDs.first!, success: {
 				(imageDetails) in
 
-				GrandNetworkDispatch.downloadImage(imageDetails["imageURL"]!, progressUpdate: nil, success: {
+				GrandNetworkDispatch.downloadImageWithURL(imageDetails["imageURL"]!, progressUpdate: nil, success: {
 					(downloadedPath) in
 
-					self.currentImageName.title = imageDetails["title"]!
-
-					WallpaperHelper.setWallpaperWithImageNodeID(imageDetails["nodeID"]!)
+					WallpaperHelper.setWallpaperWithNodeID(imageDetails["nodeID"]!)
 					}, failure: {
 						(errorData) in
 
