@@ -37,7 +37,7 @@ class MainMenuController: NSObject {
 
 			let dateComparison: NSComparisonResult = NSCalendar.currentCalendar().compareDate(NSDate(), toDate: previousNodes["downloadDate"] as! NSDate, toUnitGranularity: .Day)
 
-			guard dateComparison != .OrderedSame else {
+			if dateComparison == .OrderedSame {
 				return
 			}
 		}

@@ -131,6 +131,22 @@ class GrandNetworkDispatch {
 	}
 	
 	class func cancelAllRequests() {
-		
+		Alamofire.Manager.sharedInstance.session.getTasksWithCompletionHandler {
+			(dataTasks, uploadTasks, downloadTasks) in
+			dataTasks.forEach({
+				(task) in
+				task.cancel()
+			})
+
+			uploadTasks.forEach({
+				(task) in
+				task.cancel()
+			})
+
+			downloadTasks.forEach({
+				(task) in
+				task.cancel()
+			})
+		}
 	}
 }
