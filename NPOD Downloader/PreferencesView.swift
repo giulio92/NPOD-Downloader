@@ -32,7 +32,7 @@ class PreferencesView: NSView {
 	}
 
 	@IBAction func nextImage(sender: NSButton) {
-		
+
 	}
 
 	@IBAction func setImageAsWallpaper(sender: NSButton) {
