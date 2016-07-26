@@ -21,7 +21,9 @@ class MainMenuController: NSObject {
 			Fabric.sharedSDK().debug = true
 		#endif
 
-		NSUserDefaults.standardUserDefaults().removePersistentDomainForName(NSBundle.mainBundle().bundleIdentifier!)
+		#if DEBUG
+			NSUserDefaults.standardUserDefaults().removePersistentDomainForName(NSBundle.mainBundle().bundleIdentifier!)
+		#endif
 
 		NSUserDefaults.standardUserDefaults().registerDefaults(["NSApplicationCrashOnExceptions": "true"])
 
@@ -38,11 +40,6 @@ class MainMenuController: NSObject {
 			guard dateComparison != .OrderedSame else {
 				return
 			}
-		}
-
-		if NSUserDefaults.standardUserDefaults().boolForKey("keepImage") {
-			self.currentImageName.title = ""
-			return
 		}
 
 		GrandNetworkDispatch.getUbernodes({
@@ -64,8 +61,11 @@ class MainMenuController: NSObject {
 
 				GrandNetworkDispatch.downloadImageWithURL(imageDetails["imageURL"]!, progressUpdate: nil, success: {
 					(downloadedPath) in
+					self.currentImageName.title = imageDetails["title"]!
 
-					WallpaperHelper.setWallpaperWithNodeID(imageDetails["nodeID"]!)
+					if NSUserDefaults.standardUserDefaults().boolForKey("keepImage") == false {
+						WallpaperHelper.setWallpaperWithNodeID(imageDetails["nodeID"]!)
+					}
 					}, failure: {
 						(errorData) in
 

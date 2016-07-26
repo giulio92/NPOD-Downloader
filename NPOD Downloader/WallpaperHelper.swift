@@ -45,8 +45,6 @@ class WallpaperHelper {
 			}
 		}
 
-		//self.currentImageName.title = selectedImageData["title"]
-
 		NSUserDefaults.standardUserDefaults().setValue(nodeID, forKey: "currentNID")
 	}
 }
