@@ -39,13 +39,26 @@ class GrandNetworkDispatch {
 			let filename: String = images["filename"] as! String
 			let thumbnailURL: String = images["crop4x3ratio"] as! String
 
-			success(imageDetails: [
-				"title": title,
-				"description": description,
-				"imageURL": baseURL + "/sites/default/files/thumbnails/image/" + filename,
-				"thumbnailURL": baseURL + thumbnailURL,
-				"nodeID": nodeID
-				])
+			let imageData : [String: [String: String]] = [
+				nodeID: [
+					"title": title,
+					"description": description,
+					"filename": filename,
+					"imageURL": baseURL + "/sites/default/files/thumbnails/image/" + filename,
+					"thumbnailURL": baseURL + thumbnailURL
+				]
+			]
+
+			if NSUserDefaults.standardUserDefaults().dictionaryForKey("imageDatabase") != nil {
+				var currentImageDatabase: [String : [String: String]] = NSUserDefaults.standardUserDefaults().dictionaryForKey("imageDatabase") as! [String : [String: String]]
+				currentImageDatabase[nodeID] = imageData[nodeID]
+
+				NSUserDefaults.standardUserDefaults().setObject(currentImageDatabase, forKey: "imageDatabase")
+			} else {
+				NSUserDefaults.standardUserDefaults().setObject(imageData, forKey: "imageDatabase")
+			}
+
+			success(imageDetails: imageData[nodeID]!)
 			}, failure: {
 				(errorData) in
 
@@ -53,7 +66,7 @@ class GrandNetworkDispatch {
 		})
 	}
 
-	class func downloadImageWithURL(imageURL: String, progressUpdate: ((percentage: Float) -> Void)?, success: (downloadedPath: NSURL) -> Void, failure: (errorData: AnyObject) -> Void) {
+	class func downloadImageWithData(imageData: [String: String], progressUpdate: ((percentage: Float) -> Void)?, success: (downloadedPath: NSURL) -> Void, failure: (errorData: AnyObject) -> Void) {
 		guard NetworkReachabilityManager()!.isReachable else {
 			return failure(errorData: "")
 		}
@@ -61,7 +74,7 @@ class GrandNetworkDispatch {
 		let fileManager: NSFileManager = NSFileManager.defaultManager()
 		let pictureDirectory: NSURL = fileManager.URLsForDirectory(.PicturesDirectory, inDomains: .UserDomainMask).first!
 
-		let imageName: String = NSURL(string: imageURL)!.pathComponents!.last!
+		let imageName: String = imageData["filename"]!
 
 		if fileManager.fileExistsAtPath(pictureDirectory.path! + "/" + imageName) {
 			return success(downloadedPath: pictureDirectory.URLByAppendingPathComponent(imageName))
@@ -69,7 +82,7 @@ class GrandNetworkDispatch {
 
 		var downloadPath: NSURL?
 
-		Alamofire.download(.GET, imageURL, destination: {
+		Alamofire.download(.GET, imageData["imageURL"]!, destination: {
 			(temporaryURL, response) in
 
 			downloadPath = pictureDirectory.URLByAppendingPathComponent(imageName)

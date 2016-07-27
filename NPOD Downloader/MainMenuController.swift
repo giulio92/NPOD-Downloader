@@ -59,12 +59,12 @@ class MainMenuController: NSObject {
 			GrandNetworkDispatch.getImageDetailsWithNodeID(nodeIDs.first!, success: {
 				(imageDetails) in
 
-				GrandNetworkDispatch.downloadImageWithURL(imageDetails["imageURL"]!, progressUpdate: nil, success: {
+				GrandNetworkDispatch.downloadImageWithData(imageDetails, progressUpdate: nil, success: {
 					(downloadedPath) in
 					self.currentImageName.title = imageDetails["title"]!
 
 					if NSUserDefaults.standardUserDefaults().boolForKey("keepImage") == false {
-						WallpaperHelper.setWallpaperWithNodeID(imageDetails["nodeID"]!)
+						WallpaperHelper.setWallpaperWithImageData(imageDetails)
 					}
 					}, failure: {
 						(errorData) in

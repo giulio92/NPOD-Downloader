@@ -10,5 +10,5 @@ target 'NPOD Downloader' do
   pod 'Sparkle'
   pod 'Fabric'
   pod 'Crashlytics'
-  
+
 end

@@ -9,7 +9,7 @@
 import AppKit
 
 class WallpaperHelper {
-	class func isRetina(imagePath: NSURL) -> Bool {
+	class func isRetina(imageData: [String: String]) -> Bool {
 		var deviceHasRetinaFeature: Bool = Bool()
 
 		for screen in NSScreen.screens()! {
@@ -25,19 +25,18 @@ class WallpaperHelper {
 			return false
 		}
 
-		let imageData: NSImage = NSImage(contentsOfURL: imagePath)!
+		let pictureDirectory: NSURL = NSFileManager.defaultManager().URLsForDirectory(.PicturesDirectory, inDomains: .UserDomainMask).first!
+		let imageData: NSImage = NSImage(contentsOfURL: pictureDirectory.URLByAppendingPathComponent(imageData["filename"]!))!
 
 		return imageData.size.width > (NSScreen.mainScreen()!.frame.width * 2) && imageData.size.height > (NSScreen.mainScreen()!.frame.height * 2)
 	}
 
-	class func setWallpaperWithNodeID(nodeID: String) {
-		let selectedImageData: [String: String] = ["": ""]
-		let imageName: String = NSURL(string: selectedImageData["imageURL"]!)!.pathComponents!.last!
+	class func setWallpaperWithImageData(imageData: [String: String]) {
 		let pictureDirectory: NSURL = NSFileManager.defaultManager().URLsForDirectory(.PicturesDirectory, inDomains: .UserDomainMask).first!
 
 		for screen in NSScreen.screens()! {
 			do {
-				try NSWorkspace.sharedWorkspace().setDesktopImageURL(pictureDirectory.URLByAppendingPathComponent(imageName), forScreen: screen, options: ["": ""])
+				try NSWorkspace.sharedWorkspace().setDesktopImageURL(pictureDirectory.URLByAppendingPathComponent(imageData["filename"]!), forScreen: screen, options: ["": ""])
 			} catch let error as NSError {
 				#if DEBUG
 					print(error)
@@ -45,6 +44,6 @@ class WallpaperHelper {
 			}
 		}
 
-		NSUserDefaults.standardUserDefaults().setValue(nodeID, forKey: "currentNID")
+		NSUserDefaults.standardUserDefaults().setValue(imageData["nodeID"], forKey: "currentNID")
 	}
 }
