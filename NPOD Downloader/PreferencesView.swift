@@ -63,7 +63,7 @@ class PreferencesView: NSView {
 	}
 
 	@IBAction func setImageAsWallpaper(sender: NSButton) {
-		WallpaperHelper.setWallpaperWithNodeID("")
+		
 	}
 
 	@IBAction func keepImage(sender: NSButton) {
