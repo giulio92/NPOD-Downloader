@@ -1,4 +1,5 @@
 # NPOD-Downloader
+![Logo](https://github.com/giulio92/NPOD-Downloader/blob/master/GitHub%20Page/Images/logo.png)
 [![Travis](https://travis-ci.org/giulio92/NPOD-Downloader.svg)](https://travis-ci.org/giulio92/NPOD-Downloader)
 ![Supported platforms](https://img.shields.io/badge/platform-macOS-lightgrey.svg)
 ![Language](https://img.shields.io/badge/language-Swift%202.0-orange.svg)
