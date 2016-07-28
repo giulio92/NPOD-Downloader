@@ -69,6 +69,7 @@ class MainMenuController: NSObject {
 
 				GrandNetworkDispatch.downloadImageWithData(imageDetails, progressUpdate: nil, success: {
 					(downloadedPath) in
+					
 					self.currentImageName.title = imageDetails["title"]!
 
 					// If the user doesn't want to keep a particular previous

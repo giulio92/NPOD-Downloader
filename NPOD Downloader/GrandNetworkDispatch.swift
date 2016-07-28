@@ -34,10 +34,10 @@ class GrandNetworkDispatch {
 			let title: String = imageInformations["title"] as! String
 			let description: String = imageInformations["imageFeatureCaption"] as! String
 
-			let imagesContainer: [[String : AnyObject]] = data["images"] as! [[String : AnyObject]]
-			let images: [String : AnyObject] = imagesContainer.first!
-			let filename: String = images["filename"] as! String
-			let thumbnailURL: String = images["crop4x3ratio"] as! String
+			let detailsContainer: [[String : AnyObject]] = data["images"] as! [[String : AnyObject]]
+			let details: [String : AnyObject] = detailsContainer.first!
+			let filename: String = details["filename"] as! String
+			let thumbnailURL: String = details["crop4x3ratio"] as! String
 
 			let imageData : [String: [String: String]] = [
 				nodeID: [

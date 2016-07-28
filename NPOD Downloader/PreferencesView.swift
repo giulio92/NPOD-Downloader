@@ -39,7 +39,9 @@ class PreferencesView: NSView {
 			if imageDatabase[ubernodes[currentImageIndex]] != nil {
 				retinaBadgeIcon.hidden = WallpaperHelper.isRetina(imageDatabase[ubernodes[currentImageIndex]]!)
 			} else {
-				GrandNetworkDispatch.getImageDetailsWithNodeID(ubernodes[currentImageIndex], success: { (imageDetails) in
+				GrandNetworkDispatch.getImageDetailsWithNodeID(ubernodes[currentImageIndex], success: {
+					(imageDetails) in
+
 					let imageDatabase: [String : [String: String]] = NSUserDefaults.standardUserDefaults().dictionaryForKey("imageDatabase") as! [String : [String: String]]
 					
 					self.retinaBadgeIcon.hidden = WallpaperHelper.isRetina(imageDatabase[ubernodes[self.currentImageIndex]]!)
