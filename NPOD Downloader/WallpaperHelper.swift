@@ -15,7 +15,7 @@ class WallpaperHelper {
 		// Now we need to check if the user has at least a Retina display
 		// by looping through the displays, if he does not we will exit using
 		// the guard statement below since the isRetina func it's useless
-		// without a Retina display
+		// if the Mac does not have a Retina display
 		for screen in NSScreen.screens()! {
 			if screen.backingScaleFactor < 2 {
 				deviceHasRetinaFeature = false
@@ -30,20 +30,28 @@ class WallpaperHelper {
 		}
 
 		let pictureDirectory: NSURL = NSFileManager.defaultManager().URLsForDirectory(.PicturesDirectory, inDomains: .UserDomainMask).first!
-		let imageData: NSImage = NSImage(contentsOfURL: pictureDirectory.URLByAppendingPathComponent(imageData["filename"]!))!
+		let image: NSImage = NSImage(contentsOfURL: pictureDirectory.URLByAppendingPathComponent(imageData["filename"]!))!
 
 		// If the image width and height values are greater than or equal to the
 		// double of the mainScreen's width and height values the image is
 		// Retina ready
-		return imageData.size.width >= (NSScreen.mainScreen()!.frame.width * 2) && imageData.size.height >= (NSScreen.mainScreen()!.frame.height * 2)
+		return image.size.width >= (NSScreen.mainScreen()!.frame.width * 2) && image.size.height >= (NSScreen.mainScreen()!.frame.height * 2)
 	}
 
 	class func setWallpaperWithImageData(imageData: [String: String]) {
 		let pictureDirectory: NSURL = NSFileManager.defaultManager().URLsForDirectory(.PicturesDirectory, inDomains: .UserDomainMask).first!
 
+		let image: NSImage = NSImage(contentsOfURL: pictureDirectory.URLByAppendingPathComponent(imageData["filename"]!))!
+
 		for screen in NSScreen.screens()! {
 			do {
-				try NSWorkspace.sharedWorkspace().setDesktopImageURL(pictureDirectory.URLByAppendingPathComponent(imageData["filename"]!), forScreen: screen, options: ["": ""])
+				var desktopImageOptions: [String: UInt] = ["": 0]
+
+				if (image.size.width < (screen.frame.width * screen.backingScaleFactor)) || (image.size.height < (screen.frame.height * screen.backingScaleFactor)) {
+					desktopImageOptions[NSWorkspaceDesktopImageScalingKey] = NSImageScaling.ScaleProportionallyUpOrDown.rawValue
+				}
+
+				try NSWorkspace.sharedWorkspace().setDesktopImageURL(pictureDirectory.URLByAppendingPathComponent(imageData["filename"]!), forScreen: screen, options: desktopImageOptions)
 			} catch let error as NSError {
 				#if DEBUG
 					print(error)
