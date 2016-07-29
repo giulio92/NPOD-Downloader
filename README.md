@@ -11,3 +11,8 @@
 </p>
 
 NASA Picture of the Day downloader for macOS, written in pure Swift 2.0
+
+##Requirements
+- macOS 10.9+
+- Xcode 7.3+
+- CocoaPods 1.0.0+
