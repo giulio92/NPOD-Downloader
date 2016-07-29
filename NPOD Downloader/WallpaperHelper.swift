@@ -47,6 +47,9 @@ class WallpaperHelper {
 			do {
 				var desktopImageOptions: [String: UInt] = ["": 0]
 
+				// If the image width and height values are smaller than the
+				// screen's widht and height, each one multiplied by the screen
+				// backingScaleFactor, we need to scale the image proportionally
 				if (image.size.width < (screen.frame.width * screen.backingScaleFactor)) || (image.size.height < (screen.frame.height * screen.backingScaleFactor)) {
 					desktopImageOptions[NSWorkspaceDesktopImageScalingKey] = NSImageScaling.ScaleProportionallyUpOrDown.rawValue
 				}
