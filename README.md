@@ -1,5 +1,9 @@
 # NPOD-Downloader
-![Logo](https://github.com/giulio92/NPOD-Downloader/blob/master/GitHub%20Page/Images/logo.png)
+
+<p align="center">
+    <img src="https://github.com/giulio92/NPOD-Downloader/blob/master/GitHub%20Page/Images/logo.png" width="800">
+</p>
+
 [![Travis](https://travis-ci.org/giulio92/NPOD-Downloader.svg)](https://travis-ci.org/giulio92/NPOD-Downloader)
 ![Supported platforms](https://img.shields.io/badge/platform-macOS-lightgrey.svg)
 ![Language](https://img.shields.io/badge/language-Swift%202.0-orange.svg)
@@ -15,4 +19,4 @@ NASA Picture of the Day downloader for macOS, written in pure Swift 2.0
 ##Requirements
 - macOS 10.9+
 - Xcode 7.3+
-- CocoaPods 1.0.0+
+- CocoaPods 1.0+
