@@ -11,4 +11,9 @@ target 'NPOD Downloader' do
   pod 'Fabric'
   pod 'Crashlytics'
 
+  target 'NPOD Downloader-Tests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
 end

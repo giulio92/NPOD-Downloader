@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		455B0A71E2D50C3A71C8AF09 /* Pods_NPOD_Downloader_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23A58748692A6AB9F782705A /* Pods_NPOD_Downloader_Tests.framework */; };
+		745219421D4F661E00D9541E /* NPOD_Downloader_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745219411D4F661E00D9541E /* NPOD_Downloader_Tests.swift */; };
 		74766B5F1D4122F700CB1E7D /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74766B5E1D4122F700CB1E7D /* AboutView.swift */; };
 		7479A6881D3815FA00580F63 /* GrandNetworkDispatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7479A6871D3815FA00580F63 /* GrandNetworkDispatch.swift */; };
 		74811C411D3E78910079FE83 /* WallpaperHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74811C401D3E78910079FE83 /* WallpaperHelper.swift */; };
@@ -15,11 +17,28 @@
 		74B4678C1D37C53900FD830E /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74B467871D37C53900FD830E /* MainMenu.xib */; };
 		74B4678D1D37C53900FD830E /* MainMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B467881D37C53900FD830E /* MainMenuController.swift */; };
 		74E79C091D42198000BFC06A /* PreferencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E79C081D42198000BFC06A /* PreferencesView.swift */; };
-		CBC751E841905FA29515B1A7 /* Pods_NPOD_Downloader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDB09582C1E186265401AC9A /* Pods_NPOD_Downloader.framework */; };
+		A4CB01EF16D105E2D0184C7A /* Pods_NPOD_Downloader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EB25DF0F0A6691209E10F1B /* Pods_NPOD_Downloader.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		745219441D4F661E00D9541E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 74D1C5FE1D364CE5004DF0FE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 74D1C6051D364CE5004DF0FE;
+			remoteInfo = "NPOD Downloader";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
-		503F2AF988C7A6D68E5344DB /* Pods-NPOD Downloader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NPOD Downloader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NPOD Downloader/Pods-NPOD Downloader.debug.xcconfig"; sourceTree = "<group>"; };
+		0C4FB344A23418A9E9DC432B /* Pods-NPOD Downloader-Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NPOD Downloader-Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NPOD Downloader-Tests/Pods-NPOD Downloader-Tests.release.xcconfig"; sourceTree = "<group>"; };
+		23A58748692A6AB9F782705A /* Pods_NPOD_Downloader_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NPOD_Downloader_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		462F867FC3AAE1B1A0AA2D21 /* Pods-NPOD Downloader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NPOD Downloader.release.xcconfig"; path = "Pods/Target Support Files/Pods-NPOD Downloader/Pods-NPOD Downloader.release.xcconfig"; sourceTree = "<group>"; };
+		53E2ADDB056E13A881C3BB28 /* Pods-NPOD Downloader-Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NPOD Downloader-Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NPOD Downloader-Tests/Pods-NPOD Downloader-Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		6EB25DF0F0A6691209E10F1B /* Pods_NPOD_Downloader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NPOD_Downloader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7452193F1D4F661E00D9541E /* NPOD Downloader-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "NPOD Downloader-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		745219411D4F661E00D9541E /* NPOD_Downloader_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NPOD_Downloader_Tests.swift; sourceTree = "<group>"; };
+		745219431D4F661E00D9541E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		74766B5E1D4122F700CB1E7D /* AboutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		7479A6871D3815FA00580F63 /* GrandNetworkDispatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GrandNetworkDispatch.swift; sourceTree = "<group>"; };
 		74811C401D3E78910079FE83 /* WallpaperHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallpaperHelper.swift; sourceTree = "<group>"; };
@@ -30,28 +49,56 @@
 		74B467881D37C53900FD830E /* MainMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuController.swift; sourceTree = "<group>"; usesTabs = 1; };
 		74D1C6061D364CE5004DF0FE /* NPOD Downloader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NPOD Downloader.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		74E79C081D42198000BFC06A /* PreferencesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesView.swift; sourceTree = "<group>"; };
-		B40FC121AAB4C7EFDC20AC45 /* Pods-NPOD Downloader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NPOD Downloader.release.xcconfig"; path = "Pods/Target Support Files/Pods-NPOD Downloader/Pods-NPOD Downloader.release.xcconfig"; sourceTree = "<group>"; };
-		EDB09582C1E186265401AC9A /* Pods_NPOD_Downloader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NPOD_Downloader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		996513932FDE012157197C50 /* Pods-NPOD Downloader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NPOD Downloader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NPOD Downloader/Pods-NPOD Downloader.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		7452193C1D4F661E00D9541E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				455B0A71E2D50C3A71C8AF09 /* Pods_NPOD_Downloader_Tests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		74D1C6031D364CE5004DF0FE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CBC751E841905FA29515B1A7 /* Pods_NPOD_Downloader.framework in Frameworks */,
+				A4CB01EF16D105E2D0184C7A /* Pods_NPOD_Downloader.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		14BCCBD515C0D8AC7301BD61 /* Frameworks */ = {
+		151AFC50B2A0A6E6CA67BBE5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				EDB09582C1E186265401AC9A /* Pods_NPOD_Downloader.framework */,
+				6EB25DF0F0A6691209E10F1B /* Pods_NPOD_Downloader.framework */,
+				23A58748692A6AB9F782705A /* Pods_NPOD_Downloader_Tests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		67FA54BB5956D02E62489E52 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				996513932FDE012157197C50 /* Pods-NPOD Downloader.debug.xcconfig */,
+				462F867FC3AAE1B1A0AA2D21 /* Pods-NPOD Downloader.release.xcconfig */,
+				53E2ADDB056E13A881C3BB28 /* Pods-NPOD Downloader-Tests.debug.xcconfig */,
+				0C4FB344A23418A9E9DC432B /* Pods-NPOD Downloader-Tests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		745219401D4F661E00D9541E /* NPOD Downloader-Tests */ = {
+			isa = PBXGroup;
+			children = (
+				745219411D4F661E00D9541E /* NPOD_Downloader_Tests.swift */,
+				745219431D4F661E00D9541E /* Info.plist */,
+			);
+			path = "NPOD Downloader-Tests";
 			sourceTree = "<group>";
 		};
 		74B467831D37C53900FD830E /* NPOD Downloader */ = {
@@ -74,9 +121,10 @@
 			isa = PBXGroup;
 			children = (
 				74B467831D37C53900FD830E /* NPOD Downloader */,
+				745219401D4F661E00D9541E /* NPOD Downloader-Tests */,
 				74D1C6071D364CE5004DF0FE /* Products */,
-				BB53E422AA15C2031B99F59F /* Pods */,
-				14BCCBD515C0D8AC7301BD61 /* Frameworks */,
+				67FA54BB5956D02E62489E52 /* Pods */,
+				151AFC50B2A0A6E6CA67BBE5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -84,22 +132,35 @@
 			isa = PBXGroup;
 			children = (
 				74D1C6061D364CE5004DF0FE /* NPOD Downloader.app */,
+				7452193F1D4F661E00D9541E /* NPOD Downloader-Tests.xctest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		BB53E422AA15C2031B99F59F /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				503F2AF988C7A6D68E5344DB /* Pods-NPOD Downloader.debug.xcconfig */,
-				B40FC121AAB4C7EFDC20AC45 /* Pods-NPOD Downloader.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		7452193E1D4F661E00D9541E /* NPOD Downloader-Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 745219461D4F661E00D9541E /* Build configuration list for PBXNativeTarget "NPOD Downloader-Tests" */;
+			buildPhases = (
+				D068D7F408AD1B8429224BFA /* [CP] Check Pods Manifest.lock */,
+				7452193B1D4F661E00D9541E /* Sources */,
+				7452193C1D4F661E00D9541E /* Frameworks */,
+				7452193D1D4F661E00D9541E /* Resources */,
+				B3044AAD332DA6EC048C2D14 /* [CP] Embed Pods Frameworks */,
+				1544EBD587C3A6DEDAA81EF6 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				745219451D4F661E00D9541E /* PBXTargetDependency */,
+			);
+			name = "NPOD Downloader-Tests";
+			productName = "NPOD Downloader-Tests";
+			productReference = 7452193F1D4F661E00D9541E /* NPOD Downloader-Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		74D1C6051D364CE5004DF0FE /* NPOD Downloader */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 74D1C6151D364CE5004DF0FE /* Build configuration list for PBXNativeTarget "NPOD Downloader" */;
@@ -131,6 +192,10 @@
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "Giulio Lombardo";
 				TargetAttributes = {
+					7452193E1D4F661E00D9541E = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 74D1C6051D364CE5004DF0FE;
+					};
 					74D1C6051D364CE5004DF0FE = {
 						CreatedOnToolsVersion = 7.3.1;
 					};
@@ -150,11 +215,19 @@
 			projectRoot = "";
 			targets = (
 				74D1C6051D364CE5004DF0FE /* NPOD Downloader */,
+				7452193E1D4F661E00D9541E /* NPOD Downloader-Tests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		7452193D1D4F661E00D9541E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		74D1C6041D364CE5004DF0FE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -167,6 +240,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1544EBD587C3A6DEDAA81EF6 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NPOD Downloader-Tests/Pods-NPOD Downloader-Tests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		24FAB11D7A4C1B4F5AF1D81E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -210,6 +298,36 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NPOD Downloader/Pods-NPOD Downloader-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		B3044AAD332DA6EC048C2D14 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NPOD Downloader-Tests/Pods-NPOD Downloader-Tests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D068D7F408AD1B8429224BFA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		D0D5EE85EFB4A3DAE5911DA1 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -228,6 +346,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		7452193B1D4F661E00D9541E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				745219421D4F661E00D9541E /* NPOD_Downloader_Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		74D1C6021D364CE5004DF0FE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -243,7 +369,43 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		745219451D4F661E00D9541E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 74D1C6051D364CE5004DF0FE /* NPOD Downloader */;
+			targetProxy = 745219441D4F661E00D9541E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		745219471D4F661E00D9541E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 53E2ADDB056E13A881C3BB28 /* Pods-NPOD Downloader-Tests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "NPOD Downloader-Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "domainname.NPOD-Downloader-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NPOD Downloader.app/Contents/MacOS/NPOD Downloader";
+			};
+			name = Debug;
+		};
+		745219481D4F661E00D9541E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0C4FB344A23418A9E9DC432B /* Pods-NPOD Downloader-Tests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "NPOD Downloader-Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "domainname.NPOD-Downloader-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NPOD Downloader.app/Contents/MacOS/NPOD Downloader";
+			};
+			name = Release;
+		};
 		74D1C6131D364CE5004DF0FE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -328,7 +490,7 @@
 		};
 		74D1C6161D364CE5004DF0FE /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 503F2AF988C7A6D68E5344DB /* Pods-NPOD Downloader.debug.xcconfig */;
+			baseConfigurationReference = 996513932FDE012157197C50 /* Pods-NPOD Downloader.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_SECURITY_FLOATLOOPCOUNTER = YES;
@@ -359,7 +521,7 @@
 		};
 		74D1C6171D364CE5004DF0FE /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B40FC121AAB4C7EFDC20AC45 /* Pods-NPOD Downloader.release.xcconfig */;
+			baseConfigurationReference = 462F867FC3AAE1B1A0AA2D21 /* Pods-NPOD Downloader.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_SECURITY_FLOATLOOPCOUNTER = YES;
@@ -392,6 +554,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		745219461D4F661E00D9541E /* Build configuration list for PBXNativeTarget "NPOD Downloader-Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				745219471D4F661E00D9541E /* Debug */,
+				745219481D4F661E00D9541E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		74D1C6011D364CE5004DF0FE /* Build configuration list for PBXProject "NPOD Downloader" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
