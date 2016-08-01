@@ -68,7 +68,7 @@ class GrandNetworkDispatch {
 
 	class func downloadImageWithData(imageData: [String: String], progressUpdate: ((percentage: Float) -> Void)?, success: (downloadedPath: NSURL) -> Void, failure: (errorData: AnyObject) -> Void) {
 		guard NetworkReachabilityManager()!.isReachable else {
-			return failure(errorData: "")
+			return failure(errorData: "No internet connection")
 		}
 
 		let fileManager: NSFileManager = NSFileManager.defaultManager()
@@ -105,7 +105,7 @@ class GrandNetworkDispatch {
 
 	private class func performGET(requestURL: String, success: (data: [String : AnyObject]) -> Void, failure: (errorData: AnyObject) -> Void) {
 		guard NetworkReachabilityManager()!.isReachable else {
-			return failure(errorData: "")
+			return failure(errorData: "No internet connection")
 		}
 
 		Alamofire.request(.GET, requestURL, parameters: nil, encoding: .JSON, headers: nil).validate().responseData() {

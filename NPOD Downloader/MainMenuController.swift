@@ -67,9 +67,11 @@ class MainMenuController: NSObject {
 			GrandNetworkDispatch.getImageDetailsWithNodeID(nodeIDs.first!, success: {
 				(imageDetails) in
 
+				self.currentImageName.title = "Downloading updates from NASA..."
+
 				GrandNetworkDispatch.downloadImageWithData(imageDetails, progressUpdate: nil, success: {
 					(downloadedPath) in
-					
+
 					self.currentImageName.title = imageDetails["title"]!
 
 					// If the user doesn't want to keep a particular previous
@@ -79,16 +81,15 @@ class MainMenuController: NSObject {
 					}
 					}, failure: {
 						(errorData) in
-
+						self.currentImageName.title = errorData as! String
 				})
 				}, failure: {
 					(errorData) in
-
+					self.currentImageName.title = errorData as! String
 			})
-
 			}, failure: {
 				(errorData) in
-				
+				self.currentImageName.title = errorData as! String
 		})
 	}
 
