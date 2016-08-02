@@ -25,7 +25,8 @@ class NPOD_Downloader_Tests: XCTestCase {
 		GrandNetworkDispatch.getUbernodes({
 			(ubernodes) in
 
-			XCTAssertGreaterThan(ubernodes.count, 0, "The ubernodes number must be greater than 0")
+			XCTAssertNotNil(ubernodes, "The ubernode object must not be nil")
+			XCTAssertGreaterThan(ubernodes.count, 0, "There must be at least one nodeID inside the ubernodes")
 
 			expectation.fulfill()
 			}, failure: {
@@ -34,7 +35,7 @@ class NPOD_Downloader_Tests: XCTestCase {
 				XCTFail(errorData as! String)
 		})
 		
-		waitForExpectationsWithTimeout(60) {
+		waitForExpectationsWithTimeout(NSURLSessionConfiguration.defaultSessionConfiguration().timeoutIntervalForRequest) {
 			(error) in
 
 			guard error == nil else {
