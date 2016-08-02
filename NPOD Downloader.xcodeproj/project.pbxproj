@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		455B0A71E2D50C3A71C8AF09 /* Pods_NPOD_Downloader_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23A58748692A6AB9F782705A /* Pods_NPOD_Downloader_Tests.framework */; };
 		745219421D4F661E00D9541E /* NPOD_Downloader_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745219411D4F661E00D9541E /* NPOD_Downloader_Tests.swift */; };
+		7468FA691D50A031008FF1BC /* GrandNetworkDispatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7479A6871D3815FA00580F63 /* GrandNetworkDispatch.swift */; };
 		74766B5F1D4122F700CB1E7D /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74766B5E1D4122F700CB1E7D /* AboutView.swift */; };
 		7479A6881D3815FA00580F63 /* GrandNetworkDispatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7479A6871D3815FA00580F63 /* GrandNetworkDispatch.swift */; };
 		74811C411D3E78910079FE83 /* WallpaperHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74811C401D3E78910079FE83 /* WallpaperHelper.swift */; };
@@ -351,6 +352,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				745219421D4F661E00D9541E /* NPOD_Downloader_Tests.swift in Sources */,
+				7468FA691D50A031008FF1BC /* GrandNetworkDispatch.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
