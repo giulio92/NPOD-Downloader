@@ -39,7 +39,7 @@ class GrandNetworkDispatch {
 			let filename: String = details["filename"] as! String
 			let thumbnailURL: String = details["crop4x3ratio"] as! String
 
-			let imageData : [String: [String: String]] = [
+			let imageData: [String: [String: String]] = [
 				nodeID: [
 					"title": title,
 					"description": description,

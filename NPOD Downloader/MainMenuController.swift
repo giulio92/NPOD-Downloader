@@ -47,6 +47,8 @@ class MainMenuController: NSObject {
 			}
 		}
 
+		self.currentImageName.title = "Connecting to NASA..."
+
 		GrandNetworkDispatch.getUbernodes({
 			(ubernodes) in
 
@@ -64,18 +66,21 @@ class MainMenuController: NSObject {
 			// Here we save the dictionary to NSUserDefaults for the future
 			NSUserDefaults.standardUserDefaults().setObject(tempDict, forKey: "previousNIDs")
 
+			self.currentImageName.title = "Retrieving image details..."
+
+			// Now we download the image details of the most recent nodeID
+			// taking it from the nodeIDs array with the first method
 			GrandNetworkDispatch.getImageDetailsWithNodeID(nodeIDs.first!, success: {
 				(imageDetails) in
 
-				self.currentImageName.title = "Downloading updates from NASA..."
+				self.currentImageName.title = imageDetails["title"]!
 
 				GrandNetworkDispatch.downloadImageWithData(imageDetails, progressUpdate: nil, success: {
 					(downloadedPath) in
 
-					self.currentImageName.title = imageDetails["title"]!
-
-					// If the user doesn't want to keep a particular previous
-					// image as wallpaper we set the current NPOD as wallpaper
+					// If the user does not want to keep a particular previous
+					// image as wallpaper we set the current NASA Picture of the
+					// Day as wallpaper
 					if NSUserDefaults.standardUserDefaults().boolForKey("keepImage") == false {
 						WallpaperHelper.setWallpaperWithImageData(imageDetails)
 					}
@@ -91,6 +96,14 @@ class MainMenuController: NSObject {
 				(errorData) in
 				self.currentImageName.title = errorData as! String
 		})
+	}
+
+	@IBAction func preferencesAction(sender: NSMenuItem) {
+		
+	}
+
+	@IBAction func aboutAction(sender: NSMenuItem) {
+
 	}
 
 	@IBAction func quitAction(sender: NSMenuItem) {

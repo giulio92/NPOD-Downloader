@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10117"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner"/>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <window allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="yUn-Wy-7df">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
+            <rect key="contentRect" x="-1724" y="400" width="300" height="300"/>
+            <rect key="screenRect" x="-1920" y="-280" width="1920" height="1080"/>
+            <view key="contentView" id="iEo-OU-vKg" customClass="AboutView" customModule="NPOD_Downloader" customModuleProvider="target">
+                <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jqh-Dy-jb7">
+                        <rect key="frame" x="102" y="184" width="96" height="96"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="96" id="aQA-tA-jgb"/>
+                            <constraint firstAttribute="width" constant="96" id="bps-RH-UBu"/>
+                        </constraints>
+                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSApplicationIcon" id="rft-Ww-KMB"/>
+                    </imageView>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" preferredMaxLayoutWidth="235" translatesAutoresizingMaskIntoConstraints="NO" id="hem-uJ-f92">
+                        <rect key="frame" x="31" y="159" width="239" height="17"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="NASA Picture of the day downloader" id="Uop-VC-3VL">
+                            <font key="font" metaFont="systemBold"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" preferredMaxLayoutWidth="235" translatesAutoresizingMaskIntoConstraints="NO" id="06J-75-wva">
+                        <rect key="frame" x="31" y="134" width="239" height="17"/>
+                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" id="qas-Ur-5sO">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="yKu-Sc-6J4">
+                        <rect key="frame" x="71" y="13" width="158" height="32"/>
+                        <buttonCell key="cell" type="push" title="Fork me on GitHub!" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="SjF-Bv-cvD">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="launchGitHubPage:" target="iEo-OU-vKg" id="YmF-E4-HGf"/>
+                        </connections>
+                    </button>
+                    <button translatesAutoresizingMaskIntoConstraints="NO" id="Bbq-HB-Cgy">
+                        <rect key="frame" x="134" y="51" width="32" height="32"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="32" id="i3g-yZ-7tX"/>
+                        </constraints>
+                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="GitHub Logo" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="Nch-rn-Q80">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="jqh-Dy-jb7" firstAttribute="centerX" secondItem="hem-uJ-f92" secondAttribute="centerX" id="5Yb-FJ-K8O"/>
+                    <constraint firstItem="jqh-Dy-jb7" firstAttribute="centerX" secondItem="iEo-OU-vKg" secondAttribute="centerX" id="Dt2-Fd-3pq"/>
+                    <constraint firstItem="yKu-Sc-6J4" firstAttribute="top" secondItem="Bbq-HB-Cgy" secondAttribute="bottom" constant="10" id="F6v-EZ-OhB"/>
+                    <constraint firstItem="06J-75-wva" firstAttribute="top" secondItem="hem-uJ-f92" secondAttribute="bottom" constant="8" symbolic="YES" id="GQh-HD-Yrf"/>
+                    <constraint firstItem="jqh-Dy-jb7" firstAttribute="top" secondItem="iEo-OU-vKg" secondAttribute="top" constant="20" symbolic="YES" id="PKv-rf-4Ye"/>
+                    <constraint firstAttribute="bottom" secondItem="yKu-Sc-6J4" secondAttribute="bottom" constant="20" symbolic="YES" id="bN0-JW-eWM"/>
+                    <constraint firstItem="hem-uJ-f92" firstAttribute="top" secondItem="jqh-Dy-jb7" secondAttribute="bottom" constant="8" symbolic="YES" id="gAf-2S-4Ul"/>
+                    <constraint firstItem="Bbq-HB-Cgy" firstAttribute="top" secondItem="06J-75-wva" secondAttribute="bottom" constant="51" id="hPA-Ct-ZDR"/>
+                    <constraint firstItem="06J-75-wva" firstAttribute="centerX" secondItem="Bbq-HB-Cgy" secondAttribute="centerX" id="jex-U6-efo"/>
+                    <constraint firstItem="hem-uJ-f92" firstAttribute="trailing" secondItem="06J-75-wva" secondAttribute="trailing" id="p9I-at-WZq"/>
+                    <constraint firstItem="hem-uJ-f92" firstAttribute="leading" secondItem="06J-75-wva" secondAttribute="leading" id="pXQ-Rw-2te"/>
+                    <constraint firstItem="Bbq-HB-Cgy" firstAttribute="centerX" secondItem="yKu-Sc-6J4" secondAttribute="centerX" id="x73-hR-TcN"/>
+                </constraints>
+                <connections>
+                    <outlet property="appVersionLabel" destination="06J-75-wva" id="R6w-kP-bgs"/>
+                </connections>
+            </view>
+            <point key="canvasLocation" x="1734" y="473"/>
+        </window>
+    </objects>
+    <resources>
+        <image name="GitHub Logo" width="32" height="32"/>
+        <image name="NSApplicationIcon" width="128" height="128"/>
+    </resources>
+</document>

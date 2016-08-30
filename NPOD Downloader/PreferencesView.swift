@@ -19,14 +19,14 @@ class PreferencesView: NSView {
 	var currentImageIndex: Int = 0
 
 	override func drawRect(dirtyRect: NSRect) {
-        super.drawRect(dirtyRect)
+		super.drawRect(dirtyRect)
 
-        // Drawing code here.
+		// Drawing code here.
 
 		if NSUserDefaults.standardUserDefaults().boolForKey("keepImage") {
 			keepImageButton.state = NSUserDefaults.standardUserDefaults().boolForKey("keepImage").hashValue
 		}
-    }
+	}
 
 	@IBAction func previousImage(sender: NSButton) {
 		currentImageIndex += 1
@@ -43,7 +43,7 @@ class PreferencesView: NSView {
 					(imageDetails) in
 
 					let imageDatabase: [String : [String: String]] = NSUserDefaults.standardUserDefaults().dictionaryForKey("imageDatabase") as! [String : [String: String]]
-					
+
 					self.retinaBadgeIcon.hidden = WallpaperHelper.isRetina(imageDatabase[ubernodes[self.currentImageIndex]]!)
 					}, failure: {
 						(errorData) in
@@ -65,7 +65,7 @@ class PreferencesView: NSView {
 	}
 
 	@IBAction func setImageAsWallpaper(sender: NSButton) {
-		
+
 	}
 
 	@IBAction func keepImage(sender: NSButton) {
