@@ -6,7 +6,7 @@ target 'NPOD Downloader' do
   use_frameworks!
 
   # Pods for NPOD Downloader
-  pod 'Alamofire', '~> 3.4'
+  pod 'Alamofire'
   pod 'Sparkle'
   pod 'Fabric'
   pod 'Crashlytics'
