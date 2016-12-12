@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		455B0A71E2D50C3A71C8AF09 /* Pods_NPOD_Downloader_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23A58748692A6AB9F782705A /* Pods_NPOD_Downloader_Tests.framework */; };
 		742D12F81D50E02000CE9594 /* WallpaperHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74811C401D3E78910079FE83 /* WallpaperHelper.swift */; };
 		745219421D4F661E00D9541E /* NPOD_Downloader_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745219411D4F661E00D9541E /* NPOD_Downloader_Tests.swift */; };
 		7468FA691D50A031008FF1BC /* GrandNetworkDispatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7479A6871D3815FA00580F63 /* GrandNetworkDispatch.swift */; };
@@ -21,7 +20,8 @@
 		74B843721D50F9E700A241F7 /* PreferencesWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74B843711D50F9E700A241F7 /* PreferencesWindow.xib */; };
 		74B843741D50FA8E00A241F7 /* AboutWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74B843731D50FA8E00A241F7 /* AboutWindow.xib */; };
 		74E79C091D42198000BFC06A /* PreferencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E79C081D42198000BFC06A /* PreferencesView.swift */; };
-		A4CB01EF16D105E2D0184C7A /* Pods_NPOD_Downloader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EB25DF0F0A6691209E10F1B /* Pods_NPOD_Downloader.framework */; };
+		833FBD91F7E5E95C5015EE2D /* Pods_NPOD_Downloader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14257B731F4700CB4BED4643 /* Pods_NPOD_Downloader.framework */; };
+		C9EA75339F215FC68926D319 /* Pods_NPOD_Downloader_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A13E674599A0E0DC6F9150E /* Pods_NPOD_Downloader_Tests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,11 +35,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0C4FB344A23418A9E9DC432B /* Pods-NPOD Downloader-Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NPOD Downloader-Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NPOD Downloader-Tests/Pods-NPOD Downloader-Tests.release.xcconfig"; sourceTree = "<group>"; };
-		23A58748692A6AB9F782705A /* Pods_NPOD_Downloader_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NPOD_Downloader_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		462F867FC3AAE1B1A0AA2D21 /* Pods-NPOD Downloader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NPOD Downloader.release.xcconfig"; path = "Pods/Target Support Files/Pods-NPOD Downloader/Pods-NPOD Downloader.release.xcconfig"; sourceTree = "<group>"; };
-		53E2ADDB056E13A881C3BB28 /* Pods-NPOD Downloader-Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NPOD Downloader-Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NPOD Downloader-Tests/Pods-NPOD Downloader-Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		6EB25DF0F0A6691209E10F1B /* Pods_NPOD_Downloader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NPOD_Downloader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		14257B731F4700CB4BED4643 /* Pods_NPOD_Downloader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NPOD_Downloader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A13E674599A0E0DC6F9150E /* Pods_NPOD_Downloader_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NPOD_Downloader_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		66ECF4E33A505E7177A1AE64 /* Pods-NPOD Downloader-Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NPOD Downloader-Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NPOD Downloader-Tests/Pods-NPOD Downloader-Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		7452193F1D4F661E00D9541E /* NPOD Downloader-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "NPOD Downloader-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		745219411D4F661E00D9541E /* NPOD_Downloader_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NPOD_Downloader_Tests.swift; sourceTree = "<group>"; };
 		745219431D4F661E00D9541E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -55,7 +53,9 @@
 		74B843731D50FA8E00A241F7 /* AboutWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutWindow.xib; sourceTree = "<group>"; };
 		74D1C6061D364CE5004DF0FE /* NPOD Downloader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NPOD Downloader.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		74E79C081D42198000BFC06A /* PreferencesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesView.swift; sourceTree = "<group>"; };
-		996513932FDE012157197C50 /* Pods-NPOD Downloader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NPOD Downloader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NPOD Downloader/Pods-NPOD Downloader.debug.xcconfig"; sourceTree = "<group>"; };
+		A2C406D71279B35864C15D43 /* Pods-NPOD Downloader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NPOD Downloader.release.xcconfig"; path = "Pods/Target Support Files/Pods-NPOD Downloader/Pods-NPOD Downloader.release.xcconfig"; sourceTree = "<group>"; };
+		B07DC6E0C6FA896163982244 /* Pods-NPOD Downloader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NPOD Downloader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NPOD Downloader/Pods-NPOD Downloader.debug.xcconfig"; sourceTree = "<group>"; };
+		B84FA629E9E7868F91A9010A /* Pods-NPOD Downloader-Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NPOD Downloader-Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NPOD Downloader-Tests/Pods-NPOD Downloader-Tests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,7 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				455B0A71E2D50C3A71C8AF09 /* Pods_NPOD_Downloader_Tests.framework in Frameworks */,
+				C9EA75339F215FC68926D319 /* Pods_NPOD_Downloader_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,31 +71,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A4CB01EF16D105E2D0184C7A /* Pods_NPOD_Downloader.framework in Frameworks */,
+				833FBD91F7E5E95C5015EE2D /* Pods_NPOD_Downloader.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		151AFC50B2A0A6E6CA67BBE5 /* Frameworks */ = {
+		04FD3EFBAA2BA83BC1F77FBF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				6EB25DF0F0A6691209E10F1B /* Pods_NPOD_Downloader.framework */,
-				23A58748692A6AB9F782705A /* Pods_NPOD_Downloader_Tests.framework */,
+				14257B731F4700CB4BED4643 /* Pods_NPOD_Downloader.framework */,
+				5A13E674599A0E0DC6F9150E /* Pods_NPOD_Downloader_Tests.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		67FA54BB5956D02E62489E52 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				996513932FDE012157197C50 /* Pods-NPOD Downloader.debug.xcconfig */,
-				462F867FC3AAE1B1A0AA2D21 /* Pods-NPOD Downloader.release.xcconfig */,
-				53E2ADDB056E13A881C3BB28 /* Pods-NPOD Downloader-Tests.debug.xcconfig */,
-				0C4FB344A23418A9E9DC432B /* Pods-NPOD Downloader-Tests.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 		745219401D4F661E00D9541E /* NPOD Downloader-Tests */ = {
@@ -131,8 +120,8 @@
 				74B467831D37C53900FD830E /* NPOD Downloader */,
 				745219401D4F661E00D9541E /* NPOD Downloader-Tests */,
 				74D1C6071D364CE5004DF0FE /* Products */,
-				67FA54BB5956D02E62489E52 /* Pods */,
-				151AFC50B2A0A6E6CA67BBE5 /* Frameworks */,
+				B702EA8BE74268035D3BA27D /* Pods */,
+				04FD3EFBAA2BA83BC1F77FBF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -145,6 +134,17 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		B702EA8BE74268035D3BA27D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B07DC6E0C6FA896163982244 /* Pods-NPOD Downloader.debug.xcconfig */,
+				A2C406D71279B35864C15D43 /* Pods-NPOD Downloader.release.xcconfig */,
+				66ECF4E33A505E7177A1AE64 /* Pods-NPOD Downloader-Tests.debug.xcconfig */,
+				B84FA629E9E7868F91A9010A /* Pods-NPOD Downloader-Tests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -152,12 +152,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 745219461D4F661E00D9541E /* Build configuration list for PBXNativeTarget "NPOD Downloader-Tests" */;
 			buildPhases = (
-				D068D7F408AD1B8429224BFA /* [CP] Check Pods Manifest.lock */,
+				9A19657B17741F04285AB4DF /* [CP] Check Pods Manifest.lock */,
 				7452193B1D4F661E00D9541E /* Sources */,
 				7452193C1D4F661E00D9541E /* Frameworks */,
 				7452193D1D4F661E00D9541E /* Resources */,
-				B3044AAD332DA6EC048C2D14 /* [CP] Embed Pods Frameworks */,
-				1544EBD587C3A6DEDAA81EF6 /* [CP] Copy Pods Resources */,
+				AEC358B0EFD1F1E19EC85CE6 /* [CP] Embed Pods Frameworks */,
+				8E7FEFD6FAE994621B478C8B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -173,13 +173,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 74D1C6151D364CE5004DF0FE /* Build configuration list for PBXNativeTarget "NPOD Downloader" */;
 			buildPhases = (
-				24FAB11D7A4C1B4F5AF1D81E /* [CP] Check Pods Manifest.lock */,
+				DA5B81C0EECE89466ECB8DBA /* [CP] Check Pods Manifest.lock */,
 				74D1C6021D364CE5004DF0FE /* Sources */,
 				74D1C6031D364CE5004DF0FE /* Frameworks */,
 				74D1C6041D364CE5004DF0FE /* Resources */,
-				D0D5EE85EFB4A3DAE5911DA1 /* [CP] Embed Pods Frameworks */,
-				7958DDEE1E041EE9E4F41C99 /* [CP] Copy Pods Resources */,
 				7420939E1D3CC64900126A52 /* ShellScript */,
+				27B2E17730A29A215D2956A6 /* [CP] Embed Pods Frameworks */,
+				D7EF37325E65A18B60F3CEC0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -197,7 +197,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = "Giulio Lombardo";
 				TargetAttributes = {
 					7452193E1D4F661E00D9541E = {
@@ -250,34 +250,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1544EBD587C3A6DEDAA81EF6 /* [CP] Copy Pods Resources */ = {
+		27B2E17730A29A215D2956A6 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "[CP] Copy Pods Resources";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NPOD Downloader-Tests/Pods-NPOD Downloader-Tests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		24FAB11D7A4C1B4F5AF1D81E /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NPOD Downloader/Pods-NPOD Downloader-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		7420939E1D3CC64900126A52 /* ShellScript */ = {
@@ -293,7 +278,7 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Fabric/run\" 38b278f897f4b208e8e5af7de2f5e16c8f0484d0 cc8734d8495cb3b6145d6414a34480fb6fda713b890787184a86906aad09365c";
 		};
-		7958DDEE1E041EE9E4F41C99 /* [CP] Copy Pods Resources */ = {
+		8E7FEFD6FAE994621B478C8B /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -305,10 +290,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NPOD Downloader/Pods-NPOD Downloader-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NPOD Downloader-Tests/Pods-NPOD Downloader-Tests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B3044AAD332DA6EC048C2D14 /* [CP] Embed Pods Frameworks */ = {
+		9A19657B17741F04285AB4DF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		AEC358B0EFD1F1E19EC85CE6 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -323,7 +323,22 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NPOD Downloader-Tests/Pods-NPOD Downloader-Tests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D068D7F408AD1B8429224BFA /* [CP] Check Pods Manifest.lock */ = {
+		D7EF37325E65A18B60F3CEC0 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NPOD Downloader/Pods-NPOD Downloader-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DA5B81C0EECE89466ECB8DBA /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -335,22 +350,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		D0D5EE85EFB4A3DAE5911DA1 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NPOD Downloader/Pods-NPOD Downloader-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -392,7 +392,7 @@
 /* Begin XCBuildConfiguration section */
 		745219471D4F661E00D9541E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 53E2ADDB056E13A881C3BB28 /* Pods-NPOD Downloader-Tests.debug.xcconfig */;
+			baseConfigurationReference = 66ECF4E33A505E7177A1AE64 /* Pods-NPOD Downloader-Tests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COMBINE_HIDPI_IMAGES = YES;
@@ -400,13 +400,14 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "domainname.NPOD-Downloader-Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NPOD Downloader.app/Contents/MacOS/NPOD Downloader";
 			};
 			name = Debug;
 		};
 		745219481D4F661E00D9541E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0C4FB344A23418A9E9DC432B /* Pods-NPOD Downloader-Tests.release.xcconfig */;
+			baseConfigurationReference = B84FA629E9E7868F91A9010A /* Pods-NPOD Downloader-Tests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COMBINE_HIDPI_IMAGES = YES;
@@ -414,6 +415,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "domainname.NPOD-Downloader-Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NPOD Downloader.app/Contents/MacOS/NPOD Downloader";
 			};
 			name = Release;
@@ -432,8 +434,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
@@ -460,6 +464,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Debug;
 		};
@@ -477,8 +482,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
@@ -497,12 +504,14 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Release;
 		};
 		74D1C6161D364CE5004DF0FE /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 996513932FDE012157197C50 /* Pods-NPOD Downloader.debug.xcconfig */;
+			baseConfigurationReference = B07DC6E0C6FA896163982244 /* Pods-NPOD Downloader.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_SECURITY_FLOATLOOPCOUNTER = YES;
@@ -528,12 +537,13 @@
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -DDEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = "domainname.NPOD-Downloader";
 				PRODUCT_NAME = "NPOD Downloader";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Debug;
 		};
 		74D1C6171D364CE5004DF0FE /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 462F867FC3AAE1B1A0AA2D21 /* Pods-NPOD Downloader.release.xcconfig */;
+			baseConfigurationReference = A2C406D71279B35864C15D43 /* Pods-NPOD Downloader.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_SECURITY_FLOATLOOPCOUNTER = YES;
@@ -560,6 +570,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "domainname.NPOD-Downloader";
 				PRODUCT_NAME = "NPOD Downloader";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Release;
 		};

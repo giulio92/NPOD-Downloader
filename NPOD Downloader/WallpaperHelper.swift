@@ -30,7 +30,7 @@ class WallpaperHelper {
 		}
 
 		let pictureDirectory: NSURL = NSFileManager.defaultManager().URLsForDirectory(.PicturesDirectory, inDomains: .UserDomainMask).first!
-		let image: NSImage = NSImage(contentsOfURL: pictureDirectory.URLByAppendingPathComponent(imageData["filename"]!))!
+		let image: NSImage = NSImage(contentsOfURL: pictureDirectory.URLByAppendingPathComponent(imageData["filename"]!)!)!
 
 		// If the image width and height values are greater than or equal to the
 		// double of the mainScreen's width and height values the image is
@@ -41,7 +41,7 @@ class WallpaperHelper {
 	class func setWallpaperWithImageData(imageData: [String: String]) {
 		let pictureDirectory: NSURL = NSFileManager.defaultManager().URLsForDirectory(.PicturesDirectory, inDomains: .UserDomainMask).first!
 
-		let image: NSImage = NSImage(contentsOfURL: pictureDirectory.URLByAppendingPathComponent(imageData["filename"]!))!
+		let image: NSImage = NSImage(contentsOfURL: pictureDirectory.URLByAppendingPathComponent(imageData["filename"]!)!)!
 
 		for screen in NSScreen.screens()! {
 			do {
@@ -54,7 +54,7 @@ class WallpaperHelper {
 					desktopImageOptions[NSWorkspaceDesktopImageScalingKey] = NSImageScaling.ScaleProportionallyUpOrDown.rawValue
 				}
 
-				try NSWorkspace.sharedWorkspace().setDesktopImageURL(pictureDirectory.URLByAppendingPathComponent(imageData["filename"]!), forScreen: screen, options: desktopImageOptions)
+				try NSWorkspace.sharedWorkspace().setDesktopImageURL(pictureDirectory.URLByAppendingPathComponent(imageData["filename"]!)!, forScreen: screen, options: desktopImageOptions)
 			} catch let error as NSError {
 				#if DEBUG
 					print(error)

@@ -77,7 +77,7 @@ class GrandNetworkDispatch {
 		let imageName: String = imageData["filename"]!
 
 		if fileManager.fileExistsAtPath(pictureDirectory.path! + "/" + imageName) {
-			return success(downloadedPath: pictureDirectory.URLByAppendingPathComponent(imageName))
+			return success(downloadedPath: pictureDirectory.URLByAppendingPathComponent(imageName)!)
 		}
 
 		var downloadPath: NSURL?
