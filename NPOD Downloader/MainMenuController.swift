@@ -25,7 +25,7 @@ class MainMenuController: NSObject {
 			NSUserDefaults.standardUserDefaults().removePersistentDomainForName(NSBundle.mainBundle().bundleIdentifier!)
 		#endif
 
-		NSUserDefaults.standardUserDefaults().registerDefaults(["NSApplicationCrashOnExceptions": "true"])
+		UserDefaults.standard.register(defaults: ["NSApplicationCrashOnExceptions": "true"])
 
 		Fabric.with([Crashlytics.self])
 
@@ -35,14 +35,14 @@ class MainMenuController: NSObject {
 		// In order to check the last day we dowloaded the nodeIDs we still need
 		// to check if we downloaded the at least once by checking the presence
 		// of the previousNIDs dictionary, otherwise the application will crash
-		if NSUserDefaults.standardUserDefaults().dictionaryForKey("previousNIDs") != nil {
-			let previousNodes: [String : AnyObject] = NSUserDefaults.standardUserDefaults().dictionaryForKey("previousNIDs")!
+		if UserDefaults.standard.dictionary(forKey: "previousNIDs") != nil {
+			let previousNodes: [String : AnyObject] = UserDefaults.standard.dictionary(forKey: "previousNIDs")! as [String : AnyObject]
 
-			let dateComparison: NSComparisonResult = NSCalendar.currentCalendar().compareDate(NSDate(), toDate: previousNodes["downloadDate"] as! NSDate, toUnitGranularity: .Day)
+			let dateComparison: ComparisonResult = (Calendar.current as NSCalendar).compare(Date(), to: previousNodes["downloadDate"] as! Date, toUnitGranularity: .day)
 
 			// If we already checked for today's nodeIDs from NASA servers we
 			// avoid re-downloading them again
-			if dateComparison == .OrderedSame {
+			if dateComparison == .orderedSame {
 				return
 			}
 		}
@@ -98,15 +98,15 @@ class MainMenuController: NSObject {
 		})
 	}
 
-	@IBAction func preferencesAction(sender: NSMenuItem) {
+	@IBAction func preferencesAction(_ sender: NSMenuItem) {
 		
 	}
 
-	@IBAction func aboutAction(sender: NSMenuItem) {
+	@IBAction func aboutAction(_ sender: NSMenuItem) {
 
 	}
 
-	@IBAction func quitAction(sender: NSMenuItem) {
+	@IBAction func quitAction(_ sender: NSMenuItem) {
 		NSApplication.sharedApplication().terminate(self)
 	}
 }

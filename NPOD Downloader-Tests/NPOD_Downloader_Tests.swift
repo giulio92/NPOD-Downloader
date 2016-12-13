@@ -20,7 +20,7 @@ class NPOD_Downloader_Tests: XCTestCase {
 	}
 
 	func testUbernodes() {
-		let expectation: XCTestExpectation = expectationWithDescription("getUbernodes")
+		let expectation: XCTestExpectation = self.expectation(description: "getUbernodes")
 
 		GrandNetworkDispatch.getUbernodes({
 			(ubernodes) in
@@ -35,7 +35,7 @@ class NPOD_Downloader_Tests: XCTestCase {
 				XCTFail(errorData as! String)
 		})
 		
-		waitForExpectationsWithTimeout(NSURLSessionConfiguration.defaultSessionConfiguration().timeoutIntervalForRequest) {
+		waitForExpectations(timeout: URLSessionConfiguration.default.timeoutIntervalForRequest) {
 			(error) in
 
 			guard error == nil else {
@@ -47,7 +47,7 @@ class NPOD_Downloader_Tests: XCTestCase {
 
 	func testPerformanceExample() {
 		// This is an example of a performance test case.
-		self.measureBlock {
+		self.measure {
 			// Put the code you want to measure the time of here.
 		}
 	}

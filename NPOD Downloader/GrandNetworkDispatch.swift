@@ -9,21 +9,21 @@
 import Alamofire
 
 class GrandNetworkDispatch {
-	class func getUbernodes(success: (ubernodes: [[String : String]]) -> Void, failure: (errorData: AnyObject) -> Void) {
+	class func getUbernodes(_ success: @escaping (_ ubernodes: [[String : String]]) -> Void, failure: @escaping (_ errorData: AnyObject) -> Void) {
 		let ubernodesAPI: String = "https://www.nasa.gov/api/1/query/ubernodes.json?unType%5B%5D=image&routes%5B%5D=1446&page=0&pageSize=24"
 
 		performGET(ubernodesAPI, success: {
 			(data) in
 
-			success(ubernodes: data["ubernodes"] as! [[String : String]])
+			success(data["ubernodes"] as! [[String : String]])
 			}, failure: {
 				(errorData) in
 
-				failure(errorData: "")
+				failure("" as AnyObject)
 		})
 	}
 
-	class func getImageDetailsWithNodeID(nodeID: String, success: (imageDetails: [String: String]) -> Void, failure: (errorData: AnyObject) -> Void) {
+	class func getImageDetailsWithNodeID(_ nodeID: String, success: @escaping (_ imageDetails: [String: String]) -> Void, failure: @escaping (_ errorData: AnyObject) -> Void) {
 		let baseURL: String = "https://www.nasa.gov"
 		let nodeURL: String = baseURL + "/api/1/record/node/" + nodeID + ".json"
 
@@ -58,15 +58,15 @@ class GrandNetworkDispatch {
 				NSUserDefaults.standardUserDefaults().setObject(imageData, forKey: "imageDatabase")
 			}
 
-			success(imageDetails: imageData[nodeID]!)
+			success(imageData[nodeID]!)
 			}, failure: {
 				(errorData) in
 
-				failure(errorData: "")
+				failure("" as AnyObject)
 		})
 	}
 
-	class func downloadImageWithData(imageData: [String: String], progressUpdate: ((percentage: Float) -> Void)?, success: (downloadedPath: NSURL) -> Void, failure: (errorData: AnyObject) -> Void) {
+	class func downloadImageWithData(_ imageData: [String: String], progressUpdate: ((_ percentage: Float) -> Void)?, success: (_ downloadedPath: NSURL) -> Void, failure: (_ errorData: AnyObject) -> Void) {
 		guard NetworkReachabilityManager()!.isReachable else {
 			return failure(errorData: "No internet connection")
 		}
@@ -103,9 +103,9 @@ class GrandNetworkDispatch {
 		}
 	}
 
-	private class func performGET(requestURL: String, success: (data: [String : AnyObject]) -> Void, failure: (errorData: AnyObject) -> Void) {
+	fileprivate class func performGET(_ requestURL: String, success: @escaping (_ data: [String : AnyObject]) -> Void, failure: @escaping (_ errorData: AnyObject) -> Void) {
 		guard NetworkReachabilityManager()!.isReachable else {
-			return failure(errorData: "No internet connection")
+			return failure("No internet connection" as AnyObject)
 		}
 
 		Alamofire.request(.GET, requestURL, parameters: nil, encoding: .JSON, headers: nil).validate().responseData() {

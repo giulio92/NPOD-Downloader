@@ -11,15 +11,15 @@ import AppKit
 @NSApplicationMain
 
 class AppDelegate: NSObject, NSApplicationDelegate {
-	func applicationWillFinishLaunching(notification: NSNotification) {
+	func applicationWillFinishLaunching(_ notification: Notification) {
 		
 	}
 
-	func applicationDidFinishLaunching(aNotification: NSNotification) {
+	func applicationDidFinishLaunching(_ aNotification: Notification) {
 		// Insert code here to initialize your application
 	}
 
-	func applicationWillTerminate(aNotification: NSNotification) {
+	func applicationWillTerminate(_ aNotification: Notification) {
 		// Insert code here to tear down your application
 	}
 }
