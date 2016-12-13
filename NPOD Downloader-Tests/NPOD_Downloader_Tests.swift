@@ -39,7 +39,7 @@ class NPOD_Downloader_Tests: XCTestCase {
 			(error) in
 
 			guard error == nil else {
-				XCTFail(error!.description)
+				XCTFail(error.debugDescription)
 				return
 			}
 		}
