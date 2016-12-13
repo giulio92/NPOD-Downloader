@@ -11,16 +11,16 @@ import AppKit
 class AboutView: NSView {
 	@IBOutlet weak var appVersionLabel: NSTextField!
 
-    override func drawRect(dirtyRect: NSRect) {
-        super.drawRect(dirtyRect)
+    override func draw(_ dirtyRect: NSRect) {
+        super.draw(dirtyRect)
 
         // Drawing code here.
 
-		let versionNumber: String = NSBundle.mainBundle().infoDictionary!["CFBundleShortVersionString"] as! String
+		let versionNumber: String = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String
 		appVersionLabel.cell?.title = "Version: " + versionNumber
     }
 
-	@IBAction func launchGitHubPage(sender: NSButton) {
-		NSWorkspace.sharedWorkspace().openURL(NSURL(string: "https://github.com/giulio92/NPOD-Downloader")!)
+	@IBAction func launchGitHubPage(_ sender: NSButton) {
+		NSWorkspace.shared().open(URL(string: "https://github.com/giulio92/NPOD-Downloader")!)
 	}
 }

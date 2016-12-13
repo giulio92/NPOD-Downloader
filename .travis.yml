@@ -1,3 +1,15 @@
 language: objective-c
 osx_image: xcode8.1
-xcode_workspace: NPOD Downloader.xcworkspace
+
+env:
+    global:
+        - WORKSPACE="NPOD Downloader.xcworkspace"
+        - SCHEME="NOPD Downloader"
+        - SDK=macosx10.12
+        - DESTINATION="arch=x86_64"
+
+before_install:
+    - xcodebuild -version
+    - xcodebuild -showsdks
+
+script: xcodebuild -workspace "$WORKSPACE" -scheme "$SCHEME" -sdk "$SDK" -destination "$DESTINATION" -configuration Debug test
