@@ -69,6 +69,6 @@ class PreferencesView: NSView {
 	}
 
 	@IBAction func keepImage(_ sender: NSButton) {
-		UserDefaults.standard.set(Bool(sender.state), forKey: "keepImage")
+		UserDefaults.standard.set(sender.state, forKey: "keepImage")
 	}
 }
