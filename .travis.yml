@@ -3,8 +3,8 @@ osx_image: xcode8.1
 
 env:
     global:
-        - WORKSPACE=NPOD\ Downloader.xcworkspace
-        - SCHEME=NOPD\ Downloader
+        - WORKSPACE="NPOD Downloader.xcworkspace"
+        - SCHEME="NOPD Downloader"
         - SDK=macosx10.12
         - DESTINATION="arch=x86_64"
 
