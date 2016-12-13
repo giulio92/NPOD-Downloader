@@ -14,7 +14,7 @@ class MainMenuController: NSObject {
 	@IBOutlet weak var applicationMenu: NSMenu!
 	@IBOutlet weak var currentImageName: NSMenuItem!
 
-	let statusItem: NSStatusItem = NSStatusBar.systemStatusBar().statusItemWithLength(NSVariableStatusItemLength)
+	let statusItem: NSStatusItem = NSStatusBar.system().statusItem(withLength: NSVariableStatusItemLength)
 
 	override func awakeFromNib() {
 		#if DEBUG
@@ -22,7 +22,7 @@ class MainMenuController: NSObject {
 		#endif
 
 		#if DEBUG
-			NSUserDefaults.standardUserDefaults().removePersistentDomainForName(NSBundle.mainBundle().bundleIdentifier!)
+			UserDefaults.standard.removePersistentDomain(forName: Bundle.main.bundleIdentifier!)
 		#endif
 
 		UserDefaults.standard.register(defaults: ["NSApplicationCrashOnExceptions": "true"])
@@ -61,10 +61,10 @@ class MainMenuController: NSObject {
 				nodeIDs.append(ubernode["nid"]!)
 			}
 
-			tempDict["nodeIDs"] = nodeIDs
+			tempDict["nodeIDs"] = nodeIDs as AnyObject?
 
 			// Here we save the dictionary to NSUserDefaults for the future
-			NSUserDefaults.standardUserDefaults().setObject(tempDict, forKey: "previousNIDs")
+			UserDefaults.standard.set(tempDict, forKey: "previousNIDs")
 
 			self.currentImageName.title = "Retrieving image details..."
 
@@ -75,13 +75,16 @@ class MainMenuController: NSObject {
 
 				self.currentImageName.title = imageDetails["title"]!
 
-				GrandNetworkDispatch.downloadImageWithData(imageDetails, progressUpdate: nil, success: {
+				GrandNetworkDispatch.downloadImageWithData(imageDetails, progressUpdate: {
+					(progress) in
+
+				}, success: {
 					(downloadedPath) in
 
 					// If the user does not want to keep a particular previous
 					// image as wallpaper we set the current NASA Picture of the
 					// Day as wallpaper
-					if NSUserDefaults.standardUserDefaults().boolForKey("keepImage") == false {
+					if UserDefaults.standard.bool(forKey: "keepImage") == false {
 						WallpaperHelper.setWallpaperWithImageData(imageDetails)
 					}
 					}, failure: {
@@ -107,6 +110,6 @@ class MainMenuController: NSObject {
 	}
 
 	@IBAction func quitAction(_ sender: NSMenuItem) {
-		NSApplication.sharedApplication().terminate(self)
+		NSApplication.shared().terminate(self)
 	}
 }
