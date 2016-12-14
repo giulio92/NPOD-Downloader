@@ -9,21 +9,21 @@
 import Alamofire
 
 class GrandNetworkDispatch {
-	class func getUbernodes(success: (ubernodes: [[String : String]]) -> Void, failure: (errorData: AnyObject) -> Void) {
+	static func getUbernodes(_ success: @escaping (_ ubernodes: [[String : String]]) -> (), failure: @escaping (_ errorData: AnyObject) -> ()) {
 		let ubernodesAPI: String = "https://www.nasa.gov/api/1/query/ubernodes.json?unType%5B%5D=image&routes%5B%5D=1446&page=0&pageSize=24"
 
 		performGET(ubernodesAPI, success: {
 			(data) in
 
-			success(ubernodes: data["ubernodes"] as! [[String : String]])
+			success(data["ubernodes"] as! [[String : String]])
 			}, failure: {
 				(errorData) in
 
-				failure(errorData: "")
+				failure("" as AnyObject)
 		})
 	}
 
-	class func getImageDetailsWithNodeID(nodeID: String, success: (imageDetails: [String: String]) -> Void, failure: (errorData: AnyObject) -> Void) {
+	static func getImageDetailsWithNodeID(_ nodeID: String, success: @escaping (_ imageDetails: [String: String]) -> (), failure: @escaping (_ errorData: AnyObject) -> ()) {
 		let baseURL: String = "https://www.nasa.gov"
 		let nodeURL: String = baseURL + "/api/1/record/node/" + nodeID + ".json"
 
@@ -49,66 +49,64 @@ class GrandNetworkDispatch {
 				]
 			]
 
-			if NSUserDefaults.standardUserDefaults().dictionaryForKey("imageDatabase") != nil {
-				var currentImageDatabase: [String : [String: String]] = NSUserDefaults.standardUserDefaults().dictionaryForKey("imageDatabase") as! [String : [String: String]]
+			if UserDefaults.standard.dictionary(forKey: "imageDatabase") != nil {
+				var currentImageDatabase: [String : [String: String]] = UserDefaults.standard.dictionary(forKey: "imageDatabase") as! [String : [String: String]]
 				currentImageDatabase[nodeID] = imageData[nodeID]
 
-				NSUserDefaults.standardUserDefaults().setObject(currentImageDatabase, forKey: "imageDatabase")
+				UserDefaults.standard.set(currentImageDatabase, forKey: "imageDatabase")
 			} else {
-				NSUserDefaults.standardUserDefaults().setObject(imageData, forKey: "imageDatabase")
+				UserDefaults.standard.set(imageData, forKey: "imageDatabase")
 			}
 
-			success(imageDetails: imageData[nodeID]!)
+			success(imageData[nodeID]!)
 			}, failure: {
 				(errorData) in
 
-				failure(errorData: "")
+				failure("" as AnyObject)
 		})
 	}
 
-	class func downloadImageWithData(imageData: [String: String], progressUpdate: ((percentage: Float) -> Void)?, success: (downloadedPath: NSURL) -> Void, failure: (errorData: AnyObject) -> Void) {
+	static func downloadImageWithData(_ imageData: [String: String], progressUpdate: @escaping (_ percentage: Double) -> (), success: @escaping (_ downloadedPath: URL) -> (), failure: (_ errorData: AnyObject) -> ()) {
 		guard NetworkReachabilityManager()!.isReachable else {
-			return failure(errorData: "No internet connection")
+			return failure("No internet connection" as AnyObject)
 		}
 
-		let fileManager: NSFileManager = NSFileManager.defaultManager()
-		let pictureDirectory: NSURL = fileManager.URLsForDirectory(.PicturesDirectory, inDomains: .UserDomainMask).first!
+		let fileManager: FileManager = FileManager.default
+		let pictureDirectory: URL = fileManager.urls(for: .picturesDirectory, in: .userDomainMask).first!
 
 		let imageName: String = imageData["filename"]!
 
-		if fileManager.fileExistsAtPath(pictureDirectory.path! + "/" + imageName) {
-			return success(downloadedPath: pictureDirectory.URLByAppendingPathComponent(imageName)!)
+		if fileManager.fileExists(atPath: pictureDirectory.path + "/" + imageName) {
+			return success(pictureDirectory.appendingPathComponent(imageName))
 		}
 
-		var downloadPath: NSURL?
+		var downloadPath: URL?
 
-		Alamofire.download(.GET, imageData["imageURL"]!, destination: {
+		let destination: DownloadRequest.DownloadFileDestination = {
 			(temporaryURL, response) in
 
-			downloadPath = pictureDirectory.URLByAppendingPathComponent(imageName)
+			downloadPath = pictureDirectory.appendingPathComponent(imageName)
 
-			return downloadPath!
-		}).progress {
-			(bytesRead, totalBytesRead, totalBytesExpectedToRead) in
+			return (downloadPath!, [.removePreviousFile])
+		}
 
-			// This closure is NOT called on the main queue for performance
-			// reasons. To update your UI, dispatch to the main queue.
-			dispatch_async(dispatch_get_main_queue(), {
-				progressUpdate?(percentage: Float(totalBytesRead/totalBytesExpectedToRead))
-			})
-			}.response {
-				(request, response, data, error) in
+		Alamofire.download(imageData["imageURL"]!, to: destination).downloadProgress {
+			(progress) in
 
-				success(downloadedPath: downloadPath!)
+			progressUpdate(progress.fractionCompleted)
+		}.responseData {
+			(response) in
+
+			success(downloadPath!)
 		}
 	}
 
-	private class func performGET(requestURL: String, success: (data: [String : AnyObject]) -> Void, failure: (errorData: AnyObject) -> Void) {
+	private static func performGET(_ requestURL: String, success: @escaping (_ data: [String : AnyObject]) -> (), failure: @escaping (_ errorData: AnyObject) -> ()) {
 		guard NetworkReachabilityManager()!.isReachable else {
-			return failure(errorData: "No internet connection")
+			return failure("No internet connection" as AnyObject)
 		}
 
-		Alamofire.request(.GET, requestURL, parameters: nil, encoding: .JSON, headers: nil).validate().responseData() {
+		Alamofire.request(requestURL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).validate().responseData() {
 			(response) in
 
 			#if DEBUG
@@ -116,51 +114,48 @@ class GrandNetworkDispatch {
 			#endif
 
 			guard response.response != nil else {
-				return failure(errorData: "")
+				return failure("" as AnyObject)
 			}
 
 			switch response.result {
-			case .Success:
+			case .success:
 				do {
-					success(data: try NSJSONSerialization.JSONObjectWithData(response.data!, options: .MutableContainers) as! [String : AnyObject])
+					success(try JSONSerialization.jsonObject(with: response.data!, options: .mutableContainers) as! [String : AnyObject])
 				} catch (let error as NSError) {
 					#if DEBUG
 						print(error)
 					#endif
 
-					failure(errorData: "")
+					failure("" as AnyObject)
 				}
 				break
 
-			case .Failure(let error):
+			case .failure(let error):
 				#if DEBUG
 					print(error)
 				#endif
 
-				failure(errorData: "")
+				failure("" as AnyObject)
 				break
 			}
 		}
 	}
 	
-	class func cancelAllRequests() {
-		Alamofire.Manager.sharedInstance.session.getTasksWithCompletionHandler {
-			(dataTasks, uploadTasks, downloadTasks) in
+	static func cancelAllRequests() {
+		Alamofire.SessionManager.default.session.getTasksWithCompletionHandler {
+			(sessionDataTask, uploadData, downloadData) in
 
-			dataTasks.forEach({
-				(task) in
-				task.cancel()
-			})
+			sessionDataTask.forEach {
+				$0.cancel()
+			}
 
-			uploadTasks.forEach({
-				(task) in
-				task.cancel()
-			})
+			uploadData.forEach {
+				$0.cancel()
+			}
 
-			downloadTasks.forEach({
-				(task) in
-				task.cancel()
-			})
+			downloadData.forEach {
+				$0.cancel()
+			}
 		}
 	}
 }
