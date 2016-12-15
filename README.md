@@ -4,7 +4,11 @@
     <img src="https://github.com/giulio92/NPOD-Downloader/blob/master/GitHub%20Page/Images/logo.png" width="800">
 </p>
 
-[![Travis](https://travis-ci.org/giulio92/NPOD-Downloader.svg)](https://travis-ci.org/giulio92/NPOD-Downloader)
+|**Branch**|**Status**|
+|:--------:|:--------:|
+|master|![masterCIStatus](https://travis-ci.org/giulio92/NPOD-Downloader.svg?branch=master)|
+|develop|![developCIStatus](https://travis-ci.org/giulio92/NPOD-Downloader.svg?branch=develop)|
+
 ![Supported platforms](https://img.shields.io/badge/platform-macOS-lightgrey.svg)
 ![Language](https://img.shields.io/badge/language-Swift%203.0-orange.svg)
 [![codebeat badge](https://codebeat.co/badges/4b80645c-8cde-4778-be71-e880d1e05d3f)](https://codebeat.co/projects/github-com-giulio92-npod-downloader)
@@ -14,9 +18,9 @@
     <img src="https://github.com/giulio92/NPOD-Downloader/blob/master/GitHub%20Page/Images/screenshot.png" width="500">
 </p>
 
-NASA Picture of the Day downloader for macOS, written in pure Swift 2.0
+NASA Picture of the Day downloader for macOS, written in pure Swift 3.0
 
 ##Requirements
-- macOS 10.9+
-- Xcode 7.3+
+- macOS 10.10+
+- Xcode 8.0+
 - CocoaPods 1.0+
