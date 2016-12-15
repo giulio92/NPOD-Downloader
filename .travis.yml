@@ -19,4 +19,4 @@ before_install:
     - xcodebuild -version
     - xcodebuild -showsdks
 
-script: xcodebuild -workspace "$WORKSPACE" -scheme "$SCHEME" -sdk "$SDK" -destination "$DESTINATION" -configuration Debug test
+script: xcodebuild -workspace "$WORKSPACE" -scheme "$SCHEME" -sdk "$SDK" -destination "$DESTINATION" -configuration Debug test | xcpretty
