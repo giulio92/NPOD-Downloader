@@ -9,7 +9,14 @@ env:
         - DESTINATION="arch=x86_64"
 
 before_install:
+    - brew update
+    - brew upgrade
+    - gem update
+    - gem install xcpretty
+    - gem install xcpretty-travis-formatter
+    - gem clean
+    - pod update
     - xcodebuild -version
     - xcodebuild -showsdks
 
-script: xcodebuild -workspace "$WORKSPACE" -scheme "$SCHEME" -sdk "$SDK" -destination "$DESTINATION" -configuration Debug test
+script: xcodebuild -workspace "$WORKSPACE" -scheme "$SCHEME" -sdk "$SDK" -destination "$DESTINATION" -configuration Debug test | xcpretty -f `xcpretty-travis-formatter` && exit ${PIPESTATUS[0]}
