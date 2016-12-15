@@ -9,6 +9,11 @@ env:
         - DESTINATION="arch=x86_64"
 
 before_install:
+    - brew update
+    - brew upgrade
+    - gem update
+    - gem install xcpretty
+    - gem install xcpretty-travis-formatter
     - xcodebuild -version
     - xcodebuild -showsdks
 
