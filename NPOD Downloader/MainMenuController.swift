@@ -101,15 +101,15 @@ class MainMenuController: NSObject {
 		})
 	}
 
-	@IBAction private func preferencesAction(_ sender: NSMenuItem) {
+	@IBAction private final func preferencesAction(_ sender: NSMenuItem) {
 		
 	}
 
-	@IBAction private func aboutAction(_ sender: NSMenuItem) {
+	@IBAction private final func aboutAction(_ sender: NSMenuItem) {
 
 	}
 
-	@IBAction private func quitAction(_ sender: NSMenuItem) {
+	@IBAction private final func quitAction(_ sender: NSMenuItem) {
 		NSApplication.shared().terminate(self)
 	}
 }

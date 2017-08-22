@@ -1,5 +1,5 @@
 language: objective-c
-osx_image: xcode8.2
+osx_image: xcode8.3
 
 env:
     global:
@@ -9,9 +9,6 @@ env:
         - DESTINATION="arch=x86_64"
 
 before_install:
-    - brew update
-    - brew upgrade
-    - gem update
     - gem install xcpretty
     - gem install xcpretty-travis-formatter
     - gem clean
