@@ -8,15 +8,16 @@
 
 import AppKit
 
-class PreferencesView: NSView {
-	@IBOutlet weak var imageView: NSImageView!
-	@IBOutlet weak var retinaBadgeIcon: NSImageView!
-	@IBOutlet weak var previousImageButton: NSButton!
-	@IBOutlet weak var nextImageButton: NSButton!
-	@IBOutlet weak var keepImageButton: NSButton!
-	@IBOutlet weak var imageTitle: NSTextField!
-	@IBOutlet weak var imageDescription: NSTextField!
-	var currentImageIndex: Int = 0
+final class PreferencesView: NSView {
+	@IBOutlet private weak var imageView: NSImageView!
+	@IBOutlet private weak var retinaBadgeIcon: NSImageView!
+	@IBOutlet private weak var previousImageButton: NSButton!
+	@IBOutlet private weak var nextImageButton: NSButton!
+	@IBOutlet private weak var keepImageButton: NSButton!
+	@IBOutlet private weak var imageTitle: NSTextField!
+	@IBOutlet private weak var imageDescription: NSTextField!
+
+	private var currentImageIndex: Int = 0
 
 	override func draw(_ dirtyRect: NSRect) {
 		super.draw(dirtyRect)
@@ -28,31 +29,39 @@ class PreferencesView: NSView {
 		}
 	}
 
-	@IBAction func previousImage(_ sender: NSButton) {
+	@IBAction private final func previousImage(_ sender: NSButton) {
 		currentImageIndex += 1
 
-		if UserDefaults.standard.dictionary(forKey: "previousNIDs") != nil {
-			let previousNodes: [String : AnyObject] = UserDefaults.standard.dictionary(forKey: "previousNIDs")! as [String : AnyObject]
-			let ubernodes: [String] = previousNodes["nodeIDs"] as! [String]
-			let imageDatabase: [String : [String: String]] = UserDefaults.standard.dictionary(forKey: "imageDatabase") as! [String : [String: String]]
+		if let previousNodes: [String : Any] = UserDefaults.standard.dictionary(forKey: "previousNIDs") {
+			guard let ubernodes: [String] = previousNodes["nodeIDs"] as? [String] else {
+				return
+			}
 
-			if imageDatabase[ubernodes[currentImageIndex]] != nil {
-				retinaBadgeIcon.isHidden = WallpaperHelper.isRetina(imageDatabase[ubernodes[currentImageIndex]]!)
+			guard let imageDatabase: [String : Any] = UserDefaults.standard.dictionary(forKey: "imageDatabase") else {
+				return
+			}
+
+			if let imageDict: [String : String] = imageDatabase[ubernodes[currentImageIndex]] as? [String : String] {
+				retinaBadgeIcon.isHidden = WallpaperHelper.isRetina(imageDict)
 			} else {
-				GrandNetworkDispatch.getImageDetailsWithNodeID(ubernodes[currentImageIndex], success: {
-					(imageDetails) in
+				GrandNetworkDispatch.getImageDetailsWithNodeID(ubernodes[currentImageIndex], success: { [weak self] imageDetails in
+					guard let weakSelf = self else {
+						return
+					}
 
-					let imageDatabase: [String : [String: String]] = UserDefaults.standard.dictionary(forKey: "imageDatabase") as! [String : [String: String]]
+					guard let imageDict: [String : String] = imageDatabase[ubernodes[weakSelf.currentImageIndex]] as? [String : String] else {
+						return
+					}
 
-					self.retinaBadgeIcon.isHidden = WallpaperHelper.isRetina(imageDatabase[ubernodes[self.currentImageIndex]]!)
-					}, failure: {
-						(errorData) in
+					self?.retinaBadgeIcon.isHidden = WallpaperHelper.isRetina(imageDict)
+				}, failure: { errorData in
+
 				})
 			}
 		}
 	}
 
-	@IBAction func nextImage(_ sender: NSButton) {
+	@IBAction private final func nextImage(_ sender: NSButton) {
 		currentImageIndex -= 1
 
 		if UserDefaults.standard.dictionary(forKey: "previousNIDs") != nil {
@@ -64,11 +73,11 @@ class PreferencesView: NSView {
 		}
 	}
 
-	@IBAction func setImageAsWallpaper(_ sender: NSButton) {
+	@IBAction private final func setImageAsWallpaper(_ sender: NSButton) {
 
 	}
 
-	@IBAction func keepImage(_ sender: NSButton) {
+	@IBAction private final func keepImage(_ sender: NSButton) {
 		UserDefaults.standard.set(sender.state, forKey: "keepImage")
 	}
 }

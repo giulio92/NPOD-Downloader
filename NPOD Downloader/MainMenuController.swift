@@ -11,10 +11,10 @@ import Fabric
 import Crashlytics
 
 class MainMenuController: NSObject {
-	@IBOutlet weak var applicationMenu: NSMenu!
-	@IBOutlet weak var currentImageName: NSMenuItem!
+	@IBOutlet private weak var applicationMenu: NSMenu!
+	@IBOutlet private weak var currentImageName: NSMenuItem!
 
-	let statusItem: NSStatusItem = NSStatusBar.system().statusItem(withLength: NSVariableStatusItemLength)
+	private let statusItem: NSStatusItem = NSStatusBar.system().statusItem(withLength: NSVariableStatusItemLength)
 
 	override func awakeFromNib() {
 		#if DEBUG
@@ -101,15 +101,15 @@ class MainMenuController: NSObject {
 		})
 	}
 
-	@IBAction func preferencesAction(_ sender: NSMenuItem) {
+	@IBAction private func preferencesAction(_ sender: NSMenuItem) {
 		
 	}
 
-	@IBAction func aboutAction(_ sender: NSMenuItem) {
+	@IBAction private func aboutAction(_ sender: NSMenuItem) {
 
 	}
 
-	@IBAction func quitAction(_ sender: NSMenuItem) {
+	@IBAction private func quitAction(_ sender: NSMenuItem) {
 		NSApplication.shared().terminate(self)
 	}
 }

@@ -8,19 +8,26 @@
 
 import AppKit
 
-class AboutView: NSView {
-	@IBOutlet weak var appVersionLabel: NSTextField!
+final class AboutView: NSView {
+	@IBOutlet private weak var appVersionLabel: NSTextField!
 
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
 
         // Drawing code here.
 
-		let versionNumber: String = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String
-		appVersionLabel.cell?.title = "Version: " + versionNumber
+		if let infoDictionary: [String : Any] = Bundle.main.infoDictionary {
+			if let versionNumber: String = infoDictionary["CFBundleShortVersionString"] as? String {
+				appVersionLabel.cell?.title = "Version: " + versionNumber
+			}
+		}
     }
 
-	@IBAction func launchGitHubPage(_ sender: NSButton) {
-		NSWorkspace.shared().open(URL(string: "https://github.com/giulio92/NPOD-Downloader")!)
+	@IBAction private final func launchGitHubPage(_ sender: NSButton) {
+		guard let urlAddress: URL = URL(string: "https://github.com/giulio92/NPOD-Downloader") else {
+			return
+		}
+
+		NSWorkspace.shared().open(urlAddress)
 	}
 }
