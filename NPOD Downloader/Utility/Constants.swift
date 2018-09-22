@@ -49,7 +49,7 @@ enum Constants {
         static let API: String = domain + "/api/" + version
 
         static func ubernodes() -> String {
-            return API + "/query/ubernodes.json"
+            return API + "/query/ubernodes.json?unType%5B%5D=image&routes%5B%5D=1446&page=0&pageSize=24"
         }
 
         static func nodeURL(id: String) -> String {
