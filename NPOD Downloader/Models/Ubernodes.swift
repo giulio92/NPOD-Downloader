@@ -17,7 +17,7 @@ struct Ubernodes: Decodable {
         }
 
         let type: String
-        private let promoDateTime: String // cambiare in Date
+        private let promoDateTime: String
         let id: String
 
         var date: Date? {
