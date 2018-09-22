@@ -17,6 +17,12 @@ final class SettingsView: NSView {
     @IBOutlet private var imageTitle: NSTextField!
     @IBOutlet private var imageDescription: NSTextField!
 
+    @IBAction private func nextImageAction(_: NSButton) {}
+
+    @IBAction private func previousImageAction(_: NSButton) {}
+
+    @IBAction private func keepImageAction(_: NSButton) {}
+
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
 

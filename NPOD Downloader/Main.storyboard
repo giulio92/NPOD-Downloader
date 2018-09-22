@@ -80,6 +80,9 @@
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="keepImageAction:" target="XJF-vV-ekx" id="g6v-ut-eLc"/>
+                                </connections>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="hco-a4-TSy">
                                 <rect key="frame" x="417" y="273" width="49" height="32"/>
@@ -87,6 +90,9 @@
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="nextImageAction:" target="XJF-vV-ekx" id="Yl7-AU-xk2"/>
+                                </connections>
                             </button>
                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="B1r-ft-tiT">
                                 <rect key="frame" x="337" y="340" width="50" height="50"/>
@@ -101,6 +107,9 @@
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="previousImageAction:" target="XJF-vV-ekx" id="TLR-Q9-XvH"/>
+                                </connections>
                             </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" preferredMaxLayoutWidth="294" translatesAutoresizingMaskIntoConstraints="NO" id="Io4-f6-xgx">
                                 <rect key="frame" x="92" y="124" width="297" height="17"/>
