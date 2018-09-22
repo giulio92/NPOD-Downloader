@@ -6,7 +6,7 @@
 //  Copyright © 2018 Giulio Lombardo. All rights reserved.
 //
 
-import Cocoa
+import AppKit
 
 final class AboutView: NSView {
     @IBOutlet private weak var appVersionLabel: NSTextField!
