@@ -32,6 +32,7 @@
                             <modifierMask key="keyEquivalentModifierMask"/>
                             <connections>
                                 <action selector="preferencesAction:" target="VjU-Bd-lBJ" id="70s-C3-0dR"/>
+                                <segue destination="cRj-ce-IUp" kind="show" id="y9f-gG-UgG"/>
                             </connections>
                         </menuItem>
                         <menuItem isSeparatorItem="YES" id="22p-Hm-NFH"/>
@@ -39,6 +40,7 @@
                             <modifierMask key="keyEquivalentModifierMask"/>
                             <connections>
                                 <action selector="aboutAction:" target="VjU-Bd-lBJ" id="ObL-KJ-cgj"/>
+                                <segue destination="cku-zU-EgG" kind="show" id="aqG-um-JQc"/>
                             </connections>
                         </menuItem>
                         <menuItem title="Quit" id="JYS-6i-zsh">

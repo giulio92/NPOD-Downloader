@@ -29,14 +29,6 @@ final class MainMenu: NSObject {
         }
     }
 
-    @IBAction private func preferencesAction(_: NSMenuItem) {
-        showSettingsController()
-    }
-
-    @IBAction private func aboutAction(_: NSMenuItem) {
-        showAboutController()
-    }
-
     @IBAction private func quitAction(_: NSMenuItem) {
         NSApplication.shared.terminate(self)
     }
@@ -104,25 +96,5 @@ final class MainMenu: NSObject {
                 break
             }
         })
-    }
-
-    private func showSettingsController() {
-        let viewController: SettingsController = SettingsController.initialize(from: storyboard)
-
-        presentViewController(viewController: viewController)
-    }
-
-    private func showAboutController() {
-        let viewController: AboutController = AboutController.initialize(from: storyboard)
-
-        presentViewController(viewController: viewController)
-    }
-
-    private func presentViewController(viewController: NSViewController) {
-        let window: NSWindow = NSWindow(contentViewController: viewController)
-        window.makeKeyAndOrderFront(self)
-
-        let windowController: NSWindowController = NSWindowController(window: window)
-        windowController.showWindow(self)
     }
 }
