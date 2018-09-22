@@ -12,7 +12,7 @@
 		EF4F9C8F21563DFA0016B5E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4F9C8E21563DFA0016B5E4 /* AppDelegate.swift */; };
 		EF4F9C9121563DFB0016B5E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF4F9C9021563DFB0016B5E4 /* Assets.xcassets */; };
 		EF4F9C9421563DFB0016B5E4 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF4F9C9221563DFB0016B5E4 /* MainMenu.xib */; };
-		EF4F9CA021563DFC0016B5E4 /* NPOD_DownloaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4F9C9F21563DFC0016B5E4 /* NPOD_DownloaderTests.swift */; };
+		EF4F9CA021563DFC0016B5E4 /* NPODDownloaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4F9C9F21563DFC0016B5E4 /* NPODDownloaderTests.swift */; };
 		EF4F9CAC2156417A0016B5E4 /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4F9CAB2156417A0016B5E4 /* MainMenu.swift */; };
 		EF4F9CAF215643400016B5E4 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4F9CAE215643400016B5E4 /* NetworkService.swift */; };
 		EF4F9CB2215644B30016B5E4 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4F9CB1215644B30016B5E4 /* Result.swift */; };
@@ -48,7 +48,7 @@
 		EF4F9C9521563DFB0016B5E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EF4F9C9621563DFB0016B5E4 /* NPOD_Downloader.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NPOD_Downloader.entitlements; sourceTree = "<group>"; };
 		EF4F9C9B21563DFC0016B5E4 /* NPOD DownloaderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "NPOD DownloaderTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		EF4F9C9F21563DFC0016B5E4 /* NPOD_DownloaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NPOD_DownloaderTests.swift; sourceTree = "<group>"; };
+		EF4F9C9F21563DFC0016B5E4 /* NPODDownloaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NPODDownloaderTests.swift; sourceTree = "<group>"; };
 		EF4F9CA121563DFC0016B5E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EF4F9CAB2156417A0016B5E4 /* MainMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenu.swift; sourceTree = "<group>"; };
 		EF4F9CAE215643400016B5E4 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
@@ -142,7 +142,7 @@
 		EF4F9C9E21563DFC0016B5E4 /* NPOD DownloaderTests */ = {
 			isa = PBXGroup;
 			children = (
-				EF4F9C9F21563DFC0016B5E4 /* NPOD_DownloaderTests.swift */,
+				EF4F9C9F21563DFC0016B5E4 /* NPODDownloaderTests.swift */,
 				EF4F9CA121563DFC0016B5E4 /* Info.plist */,
 			);
 			path = "NPOD DownloaderTests";
@@ -183,6 +183,7 @@
 			buildConfigurationList = EF4F9CA421563DFC0016B5E4 /* Build configuration list for PBXNativeTarget "NPOD Downloader" */;
 			buildPhases = (
 				1919A24DD30C40696C7B752C /* [CP] Check Pods Manifest.lock */,
+				EF4F9CC02156595D0016B5E4 /* SwiftLint */,
 				EF4F9C8721563DFA0016B5E4 /* Sources */,
 				EF4F9C8821563DFA0016B5E4 /* Frameworks */,
 				EF4F9C8921563DFA0016B5E4 /* Resources */,
@@ -331,6 +332,20 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NPOD Downloader/Pods-NPOD Downloader-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		EF4F9CC02156595D0016B5E4 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -354,7 +369,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EF4F9CA021563DFC0016B5E4 /* NPOD_DownloaderTests.swift in Sources */,
+				EF4F9CA021563DFC0016B5E4 /* NPODDownloaderTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

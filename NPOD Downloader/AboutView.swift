@@ -10,7 +10,7 @@ import Cocoa
 
 final class AboutView: NSView {
     @IBOutlet private weak var appVersionLabel: NSTextField!
-    
+
     @IBAction private func forkAction(_ sender: NSButton) {
         openProjectPage()
     }
