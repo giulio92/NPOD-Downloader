@@ -21,6 +21,7 @@
 		EF4F9CB8215647C60016B5E4 /* Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4F9CB7215647C60016B5E4 /* Dependencies.swift */; };
 		EF4F9CBB21564BEE0016B5E4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4F9CBA21564BEE0016B5E4 /* Constants.swift */; };
 		EF4F9CBD215655EF0016B5E4 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4F9CBC215655EF0016B5E4 /* AboutView.swift */; };
+		EFB2862B21567DD000EB4B43 /* NSStoryboard+NSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB2862A21567DD000EB4B43 /* NSStoryboard+NSViewController.swift */; };
 		EFC8C25221566760005C71FC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFC8C25121566760005C71FC /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +59,7 @@
 		EF4F9CB7215647C60016B5E4 /* Dependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dependencies.swift; sourceTree = "<group>"; };
 		EF4F9CBA21564BEE0016B5E4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		EF4F9CBC215655EF0016B5E4 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		EFB2862A21567DD000EB4B43 /* NSStoryboard+NSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSStoryboard+NSViewController.swift"; sourceTree = "<group>"; };
 		EFC8C25121566760005C71FC /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -171,9 +173,18 @@
 		EF4F9CB921564BDA0016B5E4 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				EFB2862921567DB300EB4B43 /* Extensions */,
 				EF4F9CBA21564BEE0016B5E4 /* Constants.swift */,
 			);
 			path = Utility;
+			sourceTree = "<group>";
+		};
+		EFB2862921567DB300EB4B43 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				EFB2862A21567DD000EB4B43 /* NSStoryboard+NSViewController.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		EFE9B580215679DF005CAE0F /* Settings */ = {
@@ -377,6 +388,7 @@
 				EF4F9CB62156462E0016B5E4 /* NetworkError.swift in Sources */,
 				EF4F9CAC2156417A0016B5E4 /* MainMenu.swift in Sources */,
 				EF4F9CB4215644D50016B5E4 /* Ubernodes.swift in Sources */,
+				EFB2862B21567DD000EB4B43 /* NSStoryboard+NSViewController.swift in Sources */,
 				EF4F9CBB21564BEE0016B5E4 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

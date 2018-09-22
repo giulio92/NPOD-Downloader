@@ -54,6 +54,6 @@ enum Constants {
     }
 
     enum FatalErrors {
-
+		static let storyboardError: String = "Cannot find NSViewController with identifier: "
     }
 }

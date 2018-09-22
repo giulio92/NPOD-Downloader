@@ -14,7 +14,9 @@ final class MainMenu: NSObject {
 
     private let dependencies: Dependencies = Dependencies()
 
-    private let statusItem: NSStatusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
+	private let storyboard: NSStoryboard = NSStoryboard(name: NSStoryboard.Name(rawValue: "Main"), bundle: nil)
+
+    private let statusItem: NSStatusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
 
     @IBAction private func preferencesAction(_ sender: NSMenuItem) {
 
