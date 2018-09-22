@@ -1,12 +1,12 @@
 //
-//  NPOD_DownloaderTests.swift
+//  NPODDownloaderTests.swift
 //  NPOD DownloaderTests
 //
 //  Created by Giulio Lombardo on 22/09/18.
 //  Copyright © 2018 Giulio Lombardo. All rights reserved.
 //
 
-@testable import NPODDownloader
+@testable import NPOD_Downloader
 
 import XCTest
 
