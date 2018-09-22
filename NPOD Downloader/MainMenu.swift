@@ -18,6 +18,16 @@ final class MainMenu: NSObject {
     private let statusItem: NSStatusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
 
     private var currentNodes: [Ubernodes.Ubernode] = []
+    private var nodeOfTheDay: Node? {
+        didSet {
+            guard let newValue: Node = nodeOfTheDay else {
+                currentImageName.title = "Unknown"
+                return
+            }
+
+            currentImageName.title = newValue.ubernode.title
+        }
+    }
 
     @IBAction private func preferencesAction(_: NSMenuItem) {
         showSettingsController()
@@ -64,9 +74,30 @@ final class MainMenu: NSObject {
             return
         }
 
+        currentImageName.title = "Retrieving image details..."
+
         dependencies.networkService.getNode(id: latestNode.id, completion: { result in
             switch result {
             case let .success(node):
+                self.nodeOfTheDay = node
+                self.downloadLatestImage()
+
+            case let .failure(networkError):
+                break
+            }
+        })
+    }
+
+    private func downloadLatestImage() {
+        guard let image: Node.Image = nodeOfTheDay?.images.first else {
+            return
+        }
+
+        dependencies.networkService.downloadImage(nodeImage: image, progressUpdate: { _ in
+
+        }, completion: { result in
+            switch result {
+            case .success:
                 break
 
             case let .failure(networkError):

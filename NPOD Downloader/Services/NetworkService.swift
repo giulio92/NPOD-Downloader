@@ -15,7 +15,7 @@ protocol HasNetworkService: AnyObject {
 protocol NetworkServiceProvider: AnyObject {
     func getUbernodes(completion: @escaping (Result<Ubernodes, NetworkError>) -> Void)
     func getNode(id: String, completion: @escaping (Result<Node, NetworkError>) -> Void)
-    func downloadImage(node: Node.Image, progressUpdate: @escaping (Double) -> Void, completion: @escaping (Result<Void, NetworkError>) -> Void)
+    func downloadImage(nodeImage: Node.Image, progressUpdate: @escaping (Double) -> Void, completion: @escaping (Result<Void, NetworkError>) -> Void)
 }
 
 final class NetworkService: NetworkServiceProvider {
@@ -83,7 +83,7 @@ final class NetworkService: NetworkServiceProvider {
         })
     }
 
-    func downloadImage(node: Node.Image, progressUpdate: @escaping (Double) -> Void, completion: @escaping (Result<Void, NetworkError>) -> Void) {
+    func downloadImage(nodeImage: Node.Image, progressUpdate: @escaping (Double) -> Void, completion: @escaping (Result<Void, NetworkError>) -> Void) {
         guard reachable else {
             completion(.failure(.unreachable))
             return
@@ -91,7 +91,7 @@ final class NetworkService: NetworkServiceProvider {
 
         let pictureDirectory: URL = dependencies.fileManagerService.directoriesURL(searchPath: .picturesDirectory)[0]
 
-        let imageName: String = node.filename
+        let imageName: String = nodeImage.filename
 
         if dependencies.fileManagerService.fileExists(fileName: imageName, path: pictureDirectory) {
             completion(.success(()))
@@ -102,7 +102,7 @@ final class NetworkService: NetworkServiceProvider {
             return (downloadPath, [.removePreviousFile])
         }
 
-        alamofire.download(Constants.Nasa.imageURL(name: node.filename), to: destination).downloadProgress(closure: { progress in
+        alamofire.download(Constants.Nasa.imageURL(name: nodeImage.filename), to: destination).downloadProgress(closure: { progress in
             progressUpdate(progress.fractionCompleted)
         }).responseData(completionHandler: { response in
             completion(.success(()))
