@@ -58,8 +58,8 @@ xcuserdata/
 *.moved-aside
 *.xccheckout
 *.xcscmblueprint
+*.generated.swift
 
 # Cocoapods #
 #############
 Pods
-*.xcworkspace
