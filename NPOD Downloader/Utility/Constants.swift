@@ -55,6 +55,10 @@ enum Constants {
         static func nodeURL(id: String) -> String {
             return API + "/record/node/" + id + ".json"
         }
+
+		static func imageURL(name: String) -> String {
+			return API + "/sites/default/files/thumbnails/image/" + name
+		}
     }
 
     enum UserDefaultKeys {

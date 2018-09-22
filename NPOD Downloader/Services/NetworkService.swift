@@ -15,9 +15,18 @@ protocol HasNetworkService: AnyObject {
 protocol NetworkServiceProvider: AnyObject {
     func getUbernodes(completion: @escaping (Result<Ubernodes, NetworkError>) -> Void)
     func getNode(id: String, completion: @escaping (Result<Node, NetworkError>) -> Void)
+	func downloadImage(node: Node.Image, progressUpdate: @escaping (Double) -> Void, completion: @escaping (Result<Void, NetworkError>) -> Void)
 }
 
 final class NetworkService: NetworkServiceProvider {
+	typealias Dependencies = HasFileManagerService
+
+	private var dependencies: Dependencies
+
+	init(dependencies: Dependencies) {
+		self.dependencies = dependencies
+	}
+
     private var alamofire: SessionManager {
         let sessionManager: SessionManager = .default
 
@@ -73,6 +82,32 @@ final class NetworkService: NetworkServiceProvider {
             }
         })
     }
+
+	func downloadImage(node: Node.Image, progressUpdate: @escaping (Double) -> Void, completion: @escaping (Result<Void, NetworkError>) -> Void) {
+		guard reachable else {
+			completion(.failure(.unreachable))
+			return
+		}
+
+		let pictureDirectory: URL = dependencies.fileManagerService.directoriesURL(searchPath: .picturesDirectory)[0]
+
+		let imageName: String = node.filename
+
+		if dependencies.fileManagerService.fileExists(fileName: imageName, path: pictureDirectory) {
+			completion(.success(()))
+		}
+
+		let destination: DownloadRequest.DownloadFileDestination = { (temporaryURL, response) in
+			let downloadPath: URL = pictureDirectory.appendingPathComponent(imageName)
+			return (downloadPath, [.removePreviousFile])
+		}
+
+		alamofire.download(Constants.Nasa.imageURL(name: node.filename), to: destination).downloadProgress(closure: { progress in
+			progressUpdate(progress.fractionCompleted)
+		}).responseData(completionHandler: { response in
+			completion(.success(()))
+		})
+	}
 
     private func performGET(url: URLConvertible, completion: @escaping (Result<Data, NetworkError>) -> Void) {
         guard reachable else {

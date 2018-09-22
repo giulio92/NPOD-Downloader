@@ -7,7 +7,7 @@
 //
 
 struct Node: Decodable {
-	struct Images: Decodable {
+	struct Image: Decodable {
 		let filename: String
 		let timestamp: String
 		let uuid: String
@@ -20,6 +20,6 @@ struct Node: Decodable {
 		let imageFeatureCaption: String
 	}
 
-	let images: [Images]
+	let images: [Image]
 	let ubernode: Node.Ubernode
 }

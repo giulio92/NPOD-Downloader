@@ -6,9 +6,10 @@
 //  Copyright © 2018 Giulio Lombardo. All rights reserved.
 //
 
-protocol DependenciesProtocol: HasNetworkService, HasUserDefaultsService {}
+protocol DependenciesProtocol: HasNetworkService, HasFileManagerService, HasUserDefaultsService {}
 
 final class Dependencies: DependenciesProtocol {
-    lazy var networkService: NetworkServiceProvider = NetworkService()
+	lazy var fileManagerService: FileManagerServiceProvider = FileManagerService()
+	lazy var networkService: NetworkServiceProvider = NetworkService(dependencies: self)
 	lazy var userDefaultsService: UserDefaultsServiceProvider = UserDefaultsService()
 }

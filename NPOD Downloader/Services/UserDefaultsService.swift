@@ -6,7 +6,7 @@
 //  Copyright © 2018 Giulio Lombardo. All rights reserved.
 //
 
-import Cocoa
+import Foundation
 
 protocol HasUserDefaultsService: AnyObject {
 	var userDefaultsService: UserDefaultsServiceProvider { get }

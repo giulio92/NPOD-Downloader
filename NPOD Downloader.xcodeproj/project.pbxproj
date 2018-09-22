@@ -27,6 +27,7 @@
 		EFB28632215680A500EB4B43 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB28631215680A500EB4B43 /* SettingsController.swift */; };
 		EFB28634215681F200EB4B43 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB28633215681F200EB4B43 /* SettingsView.swift */; };
 		EFB286362156879200EB4B43 /* UserDefaultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB286352156879200EB4B43 /* UserDefaultsService.swift */; };
+		EFB2863821568DE500EB4B43 /* FileManagerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB2863721568DE500EB4B43 /* FileManagerService.swift */; };
 		EFC8C25221566760005C71FC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFC8C25121566760005C71FC /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +71,7 @@
 		EFB28631215680A500EB4B43 /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		EFB28633215681F200EB4B43 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		EFB286352156879200EB4B43 /* UserDefaultsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsService.swift; sourceTree = "<group>"; };
+		EFB2863721568DE500EB4B43 /* FileManagerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerService.swift; sourceTree = "<group>"; };
 		EFC8C25121566760005C71FC /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -164,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				EF4F9CB7215647C60016B5E4 /* Dependencies.swift */,
+				EFB2863721568DE500EB4B43 /* FileManagerService.swift */,
 				EF4F9CAE215643400016B5E4 /* NetworkService.swift */,
 				EFB286352156879200EB4B43 /* UserDefaultsService.swift */,
 			);
@@ -408,6 +411,7 @@
 				EF4F9C8F21563DFA0016B5E4 /* AppDelegate.swift in Sources */,
 				EF4F9CAF215643400016B5E4 /* NetworkService.swift in Sources */,
 				EF4F9CB2215644B30016B5E4 /* Result.swift in Sources */,
+				EFB2863821568DE500EB4B43 /* FileManagerService.swift in Sources */,
 				EF4F9CBD215655EF0016B5E4 /* AboutView.swift in Sources */,
 				EF4F9CB62156462E0016B5E4 /* NetworkError.swift in Sources */,
 				EF4F9CAC2156417A0016B5E4 /* MainMenu.swift in Sources */,
