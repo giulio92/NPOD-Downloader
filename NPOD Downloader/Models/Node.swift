@@ -2,7 +2,7 @@
 //  Node.swift
 //  NPOD Downloader
 //
-//  Created by Lombardo Giulio on 22/09/18.
+//  Created by Giulio Lombardo on 22/09/18.
 //  Copyright © 2018 Giulio Lombardo. All rights reserved.
 //
 
