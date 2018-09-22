@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		385DB782333E5C8B9B12AEDB /* Pods_NPOD_DownloaderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C30538EACA1484179F9A79F5 /* Pods_NPOD_DownloaderTests.framework */; };
 		C82FBEFBE47FB42E014C8114 /* Pods_NPOD_Downloader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A836D95D6DD77091E9D8CC0D /* Pods_NPOD_Downloader.framework */; };
+		EF451A5521565BFA00EDB795 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF451A5421565BFA00EDB795 /* Node.swift */; };
 		EF4F9C8F21563DFA0016B5E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4F9C8E21563DFA0016B5E4 /* AppDelegate.swift */; };
 		EF4F9C9121563DFB0016B5E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF4F9C9021563DFB0016B5E4 /* Assets.xcassets */; };
 		EF4F9C9421563DFB0016B5E4 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF4F9C9221563DFB0016B5E4 /* MainMenu.xib */; };
@@ -41,6 +42,7 @@
 		A3A6A51561F17A39B97E3E6C /* Pods-NPOD DownloaderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NPOD DownloaderTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NPOD DownloaderTests/Pods-NPOD DownloaderTests.release.xcconfig"; sourceTree = "<group>"; };
 		A836D95D6DD77091E9D8CC0D /* Pods_NPOD_Downloader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NPOD_Downloader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C30538EACA1484179F9A79F5 /* Pods_NPOD_DownloaderTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NPOD_DownloaderTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF451A5421565BFA00EDB795 /* Node.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
 		EF4F9C8B21563DFA0016B5E4 /* NPOD Downloader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NPOD Downloader.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF4F9C8E21563DFA0016B5E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EF4F9C9021563DFB0016B5E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -151,8 +153,8 @@
 		EF4F9CAD2156432E0016B5E4 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				EF4F9CAE215643400016B5E4 /* NetworkService.swift */,
 				EF4F9CB7215647C60016B5E4 /* Dependencies.swift */,
+				EF4F9CAE215643400016B5E4 /* NetworkService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -163,6 +165,7 @@
 				EF4F9CB1215644B30016B5E4 /* Result.swift */,
 				EF4F9CB52156462E0016B5E4 /* NetworkError.swift */,
 				EF4F9CB3215644D50016B5E4 /* Ubernodes.swift */,
+				EF451A5421565BFA00EDB795 /* Node.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -354,6 +357,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF4F9CB8215647C60016B5E4 /* Dependencies.swift in Sources */,
+				EF451A5521565BFA00EDB795 /* Node.swift in Sources */,
 				EF4F9C8F21563DFA0016B5E4 /* AppDelegate.swift in Sources */,
 				EF4F9CAF215643400016B5E4 /* NetworkService.swift in Sources */,
 				EF4F9CB2215644B30016B5E4 /* Result.swift in Sources */,
