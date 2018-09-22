@@ -236,6 +236,7 @@
 			buildConfigurationList = EF4F9CA421563DFC0016B5E4 /* Build configuration list for PBXNativeTarget "NPOD Downloader" */;
 			buildPhases = (
 				1919A24DD30C40696C7B752C /* [CP] Check Pods Manifest.lock */,
+				EF1CAF7E2156B42100FEC781 /* SwiftFormat */,
 				EF4F9CC02156595D0016B5E4 /* SwiftLint */,
 				EF4F9C8721563DFA0016B5E4 /* Sources */,
 				EF4F9C8821563DFA0016B5E4 /* Frameworks */,
@@ -383,6 +384,20 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NPOD Downloader/Pods-NPOD Downloader-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		EF1CAF7E2156B42100FEC781 /* SwiftFormat */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = SwiftFormat;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftformat >/dev/null; then\n    swiftformat . --disable trailingCommas\nelse\n    echo \"warning: SwiftFormat not installed, download from https://github.com/nicklockwood/SwiftFormat\"\nfi";
 		};
 		EF4F9CC02156595D0016B5E4 /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
