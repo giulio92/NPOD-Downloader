@@ -23,6 +23,7 @@
 		EF4F9CBB21564BEE0016B5E4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4F9CBA21564BEE0016B5E4 /* Constants.swift */; };
 		EF4F9CBD215655EF0016B5E4 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4F9CBC215655EF0016B5E4 /* AboutView.swift */; };
 		EF4F9CBF215656370016B5E4 /* AboutWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF4F9CBE215656370016B5E4 /* AboutWindow.xib */; };
+		EFC8C2302156667D005C71FC /* PreferencesWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFC8C22F2156667D005C71FC /* PreferencesWindow.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		EF4F9CBA21564BEE0016B5E4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		EF4F9CBC215655EF0016B5E4 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		EF4F9CBE215656370016B5E4 /* AboutWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutWindow.xib; sourceTree = "<group>"; };
+		EFC8C22F2156667D005C71FC /* PreferencesWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PreferencesWindow.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +132,7 @@
 				EF4F9CAB2156417A0016B5E4 /* MainMenu.swift */,
 				EF4F9CBC215655EF0016B5E4 /* AboutView.swift */,
 				EF4F9CBE215656370016B5E4 /* AboutWindow.xib */,
+				EFC8C22F2156667D005C71FC /* PreferencesWindow.xib */,
 				EF4F9CB02156447E0016B5E4 /* Models */,
 				EF4F9CAD2156432E0016B5E4 /* Services */,
 				EF4F9C9021563DFB0016B5E4 /* Assets.xcassets */,
@@ -263,6 +266,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFC8C2302156667D005C71FC /* PreferencesWindow.xib in Resources */,
 				EF4F9C9121563DFB0016B5E4 /* Assets.xcassets in Resources */,
 				EF4F9C9421563DFB0016B5E4 /* MainMenu.xib in Resources */,
 				EF4F9CBF215656370016B5E4 /* AboutWindow.xib in Resources */,
