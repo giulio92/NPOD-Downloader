@@ -58,7 +58,7 @@ enum Constants {
     }
 
     enum UserDefaultKeys {
-
+		static let keepImage: String = "keepImage"
     }
 
     enum FatalErrors {

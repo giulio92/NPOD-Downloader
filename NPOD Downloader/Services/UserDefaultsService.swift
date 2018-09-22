@@ -17,5 +17,22 @@ protocol UserDefaultsServiceProvider: AnyObject {
 }
 
 final class UserDefaultsService: UserDefaultsServiceProvider {
+	private let userDefaults: UserDefaults
 
+	init() {
+		userDefaults = .standard
+	}
+
+	var keepImage: Bool {
+		get {
+			return userDefaults.bool(forKey: Constants.UserDefaultKeys.keepImage)
+		} set {
+			userDefaults.set(newValue, forKey: Constants.UserDefaultKeys.keepImage)
+			synchronize()
+		}
+	}
+
+	private func synchronize() {
+		userDefaults.synchronize()
+	}
 }
