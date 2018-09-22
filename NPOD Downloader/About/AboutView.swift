@@ -19,7 +19,13 @@ final class AboutView: NSView {
         super.draw(dirtyRect)
 
         // Drawing code here.
+
+		configureVersionLabel()
     }
+
+	private func configureVersionLabel() {
+		appVersionLabel.cell?.title = "Version: " + Constants.applicationVersion + " (" + Constants.applicationBuild + ")"
+	}
 
     private func openProjectPage() {
         guard let urlAddress: URL = URL(string: Constants.gitHubPageURL) else {

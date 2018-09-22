@@ -184,7 +184,7 @@
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" preferredMaxLayoutWidth="235" translatesAutoresizingMaskIntoConstraints="NO" id="s4P-k9-lw2">
                                 <rect key="frame" x="106" y="134" width="239" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" id="c9D-xr-nMC">
+                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="Lorem ipsum sit amet" id="c9D-xr-nMC">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>

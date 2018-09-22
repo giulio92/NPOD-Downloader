@@ -33,6 +33,14 @@ enum Constants {
         return name
     }
 
+	static var applicationBuild: String {
+		guard let name: String = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String else {
+			fatalError("Cannot find CFBundleVersion")
+		}
+
+		return name
+	}
+
     static let gitHubPageURL: String = "https://github.com/giulio92/NPOD-Downloader"
 
     enum Nasa {
