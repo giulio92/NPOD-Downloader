@@ -14,7 +14,7 @@ protocol HasNetworkService: AnyObject {
 
 protocol NetworkServiceProvider: AnyObject {
     func getUbernodes(completion: @escaping (Result<Ubernodes, NetworkError>) -> Void)
-    func getImageDetails(nodeID: String, completion: @escaping (Result<Void, NetworkError>) -> Void)
+    func getNode(id: String, completion: @escaping (Result<Node, NetworkError>) -> Void)
 }
 
 final class NetworkService: NetworkServiceProvider {
@@ -53,11 +53,20 @@ final class NetworkService: NetworkServiceProvider {
         })
     }
 
-    func getImageDetails(nodeID: String, completion: @escaping (Result<Void, NetworkError>) -> Void) {
-        performGET(url: Constants.Nasa.nodeURL(id: nodeID), completion: { result in
+    func getNode(id: String, completion: @escaping (Result<Node, NetworkError>) -> Void) {
+        performGET(url: Constants.Nasa.nodeURL(id: id), completion: { result in
             switch result {
             case let .success(data):
-                completion(.success(()))
+				let ubernodes: Node
+
+				do {
+					let jsonDecoder: JSONDecoder = JSONDecoder()
+					ubernodes = try jsonDecoder.decode(Node.self, from: data)
+				} catch _ {
+					return completion(.failure(.unknown))
+				}
+
+				completion(.success(ubernodes))
 
             case let .failure(networkError):
                 completion(.failure(networkError))
