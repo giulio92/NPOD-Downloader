@@ -3,289 +3,279 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		742D12F81D50E02000CE9594 /* WallpaperHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74811C401D3E78910079FE83 /* WallpaperHelper.swift */; };
-		745219421D4F661E00D9541E /* NPOD_Downloader_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745219411D4F661E00D9541E /* NPOD_Downloader_Tests.swift */; };
-		7468FA691D50A031008FF1BC /* GrandNetworkDispatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7479A6871D3815FA00580F63 /* GrandNetworkDispatch.swift */; };
-		74766B5F1D4122F700CB1E7D /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74766B5E1D4122F700CB1E7D /* AboutView.swift */; };
-		7479A6881D3815FA00580F63 /* GrandNetworkDispatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7479A6871D3815FA00580F63 /* GrandNetworkDispatch.swift */; };
-		74811C411D3E78910079FE83 /* WallpaperHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74811C401D3E78910079FE83 /* WallpaperHelper.swift */; };
-		74B467891D37C53900FD830E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B467841D37C53900FD830E /* AppDelegate.swift */; };
-		74B4678A1D37C53900FD830E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74B467851D37C53900FD830E /* Assets.xcassets */; };
-		74B4678C1D37C53900FD830E /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74B467871D37C53900FD830E /* MainMenu.xib */; };
-		74B4678D1D37C53900FD830E /* MainMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B467881D37C53900FD830E /* MainMenuController.swift */; };
-		74B843721D50F9E700A241F7 /* PreferencesWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74B843711D50F9E700A241F7 /* PreferencesWindow.xib */; };
-		74B843741D50FA8E00A241F7 /* AboutWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74B843731D50FA8E00A241F7 /* AboutWindow.xib */; };
-		74E79C091D42198000BFC06A /* PreferencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E79C081D42198000BFC06A /* PreferencesView.swift */; };
-		C6AF2B6F399B3F54197B6016 /* Pods_NPOD_Downloader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 297262A72D8EB8956D4C93A3 /* Pods_NPOD_Downloader.framework */; };
-		CFC04C78F1470345C728FB1E /* Pods_NPOD_Downloader_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEA77B5005D2F1EB51E21777 /* Pods_NPOD_Downloader_Tests.framework */; };
+		385DB782333E5C8B9B12AEDB /* Pods_NPOD_DownloaderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C30538EACA1484179F9A79F5 /* Pods_NPOD_DownloaderTests.framework */; };
+		C82FBEFBE47FB42E014C8114 /* Pods_NPOD_Downloader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A836D95D6DD77091E9D8CC0D /* Pods_NPOD_Downloader.framework */; };
+		EF4F9C8F21563DFA0016B5E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4F9C8E21563DFA0016B5E4 /* AppDelegate.swift */; };
+		EF4F9C9121563DFB0016B5E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF4F9C9021563DFB0016B5E4 /* Assets.xcassets */; };
+		EF4F9C9421563DFB0016B5E4 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF4F9C9221563DFB0016B5E4 /* MainMenu.xib */; };
+		EF4F9CA021563DFC0016B5E4 /* NPOD_DownloaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4F9C9F21563DFC0016B5E4 /* NPOD_DownloaderTests.swift */; };
+		EF4F9CAC2156417A0016B5E4 /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4F9CAB2156417A0016B5E4 /* MainMenu.swift */; };
+		EF4F9CAF215643400016B5E4 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4F9CAE215643400016B5E4 /* NetworkService.swift */; };
+		EF4F9CB2215644B30016B5E4 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4F9CB1215644B30016B5E4 /* Result.swift */; };
+		EF4F9CB4215644D50016B5E4 /* Ubernodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4F9CB3215644D50016B5E4 /* Ubernodes.swift */; };
+		EF4F9CB62156462E0016B5E4 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4F9CB52156462E0016B5E4 /* NetworkError.swift */; };
+		EF4F9CB8215647C60016B5E4 /* Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4F9CB7215647C60016B5E4 /* Dependencies.swift */; };
+		EF4F9CBB21564BEE0016B5E4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4F9CBA21564BEE0016B5E4 /* Constants.swift */; };
+		EF4F9CBD215655EF0016B5E4 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4F9CBC215655EF0016B5E4 /* AboutView.swift */; };
+		EF4F9CBF215656370016B5E4 /* AboutWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF4F9CBE215656370016B5E4 /* AboutWindow.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		745219441D4F661E00D9541E /* PBXContainerItemProxy */ = {
+		EF4F9C9C21563DFC0016B5E4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 74D1C5FE1D364CE5004DF0FE /* Project object */;
+			containerPortal = EF4F9C8321563DFA0016B5E4 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 74D1C6051D364CE5004DF0FE;
+			remoteGlobalIDString = EF4F9C8A21563DFA0016B5E4;
 			remoteInfo = "NPOD Downloader";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		24BEB835CDC86B2513F15136 /* Pods-NPOD Downloader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NPOD Downloader.release.xcconfig"; path = "Pods/Target Support Files/Pods-NPOD Downloader/Pods-NPOD Downloader.release.xcconfig"; sourceTree = "<group>"; };
-		297262A72D8EB8956D4C93A3 /* Pods_NPOD_Downloader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NPOD_Downloader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4895F9EE762414DC991AAE9D /* Pods-NPOD Downloader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NPOD Downloader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NPOD Downloader/Pods-NPOD Downloader.debug.xcconfig"; sourceTree = "<group>"; };
-		7452193F1D4F661E00D9541E /* NPOD Downloader-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "NPOD Downloader-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		745219411D4F661E00D9541E /* NPOD_Downloader_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NPOD_Downloader_Tests.swift; sourceTree = "<group>"; };
-		745219431D4F661E00D9541E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		74766B5E1D4122F700CB1E7D /* AboutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
-		7479A6871D3815FA00580F63 /* GrandNetworkDispatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GrandNetworkDispatch.swift; sourceTree = "<group>"; };
-		74811C401D3E78910079FE83 /* WallpaperHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallpaperHelper.swift; sourceTree = "<group>"; };
-		74B467841D37C53900FD830E /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		74B467851D37C53900FD830E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		74B467861D37C53900FD830E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		74B467871D37C53900FD830E /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
-		74B467881D37C53900FD830E /* MainMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuController.swift; sourceTree = "<group>"; usesTabs = 1; };
-		74B843711D50F9E700A241F7 /* PreferencesWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PreferencesWindow.xib; sourceTree = "<group>"; };
-		74B843731D50FA8E00A241F7 /* AboutWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutWindow.xib; sourceTree = "<group>"; };
-		74D1C6061D364CE5004DF0FE /* NPOD Downloader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NPOD Downloader.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		74E79C081D42198000BFC06A /* PreferencesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesView.swift; sourceTree = "<group>"; };
-		8FC30651C58EB19344CCF1C1 /* Pods-NPOD Downloader-Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NPOD Downloader-Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NPOD Downloader-Tests/Pods-NPOD Downloader-Tests.release.xcconfig"; sourceTree = "<group>"; };
-		A81B8A22D1BEAA1F6FCA8452 /* Pods-NPOD Downloader-Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NPOD Downloader-Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NPOD Downloader-Tests/Pods-NPOD Downloader-Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		DEA77B5005D2F1EB51E21777 /* Pods_NPOD_Downloader_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NPOD_Downloader_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		088B61538584AA25ACD44746 /* Pods-NPOD Downloader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NPOD Downloader.release.xcconfig"; path = "Pods/Target Support Files/Pods-NPOD Downloader/Pods-NPOD Downloader.release.xcconfig"; sourceTree = "<group>"; };
+		5A9848C6E4F5CDB5694217C7 /* Pods-NPOD Downloader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NPOD Downloader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NPOD Downloader/Pods-NPOD Downloader.debug.xcconfig"; sourceTree = "<group>"; };
+		631B7AA021AECE0C3A2D7BC7 /* Pods-NPOD DownloaderTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NPOD DownloaderTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NPOD DownloaderTests/Pods-NPOD DownloaderTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A3A6A51561F17A39B97E3E6C /* Pods-NPOD DownloaderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NPOD DownloaderTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NPOD DownloaderTests/Pods-NPOD DownloaderTests.release.xcconfig"; sourceTree = "<group>"; };
+		A836D95D6DD77091E9D8CC0D /* Pods_NPOD_Downloader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NPOD_Downloader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C30538EACA1484179F9A79F5 /* Pods_NPOD_DownloaderTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NPOD_DownloaderTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF4F9C8B21563DFA0016B5E4 /* NPOD Downloader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NPOD Downloader.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF4F9C8E21563DFA0016B5E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EF4F9C9021563DFB0016B5E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EF4F9C9321563DFB0016B5E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		EF4F9C9521563DFB0016B5E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EF4F9C9621563DFB0016B5E4 /* NPOD_Downloader.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NPOD_Downloader.entitlements; sourceTree = "<group>"; };
+		EF4F9C9B21563DFC0016B5E4 /* NPOD DownloaderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "NPOD DownloaderTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF4F9C9F21563DFC0016B5E4 /* NPOD_DownloaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NPOD_DownloaderTests.swift; sourceTree = "<group>"; };
+		EF4F9CA121563DFC0016B5E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EF4F9CAB2156417A0016B5E4 /* MainMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenu.swift; sourceTree = "<group>"; };
+		EF4F9CAE215643400016B5E4 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		EF4F9CB1215644B30016B5E4 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		EF4F9CB3215644D50016B5E4 /* Ubernodes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ubernodes.swift; sourceTree = "<group>"; };
+		EF4F9CB52156462E0016B5E4 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		EF4F9CB7215647C60016B5E4 /* Dependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dependencies.swift; sourceTree = "<group>"; };
+		EF4F9CBA21564BEE0016B5E4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		EF4F9CBC215655EF0016B5E4 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		EF4F9CBE215656370016B5E4 /* AboutWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutWindow.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		7452193C1D4F661E00D9541E /* Frameworks */ = {
+		EF4F9C8821563DFA0016B5E4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CFC04C78F1470345C728FB1E /* Pods_NPOD_Downloader_Tests.framework in Frameworks */,
+				C82FBEFBE47FB42E014C8114 /* Pods_NPOD_Downloader.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		74D1C6031D364CE5004DF0FE /* Frameworks */ = {
+		EF4F9C9821563DFC0016B5E4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C6AF2B6F399B3F54197B6016 /* Pods_NPOD_Downloader.framework in Frameworks */,
+				385DB782333E5C8B9B12AEDB /* Pods_NPOD_DownloaderTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		6AA8524AD74470CC17DCF0FA /* Pods */ = {
+		9B5880FCACB344B8963DC197 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				4895F9EE762414DC991AAE9D /* Pods-NPOD Downloader.debug.xcconfig */,
-				24BEB835CDC86B2513F15136 /* Pods-NPOD Downloader.release.xcconfig */,
-				A81B8A22D1BEAA1F6FCA8452 /* Pods-NPOD Downloader-Tests.debug.xcconfig */,
-				8FC30651C58EB19344CCF1C1 /* Pods-NPOD Downloader-Tests.release.xcconfig */,
+				5A9848C6E4F5CDB5694217C7 /* Pods-NPOD Downloader.debug.xcconfig */,
+				088B61538584AA25ACD44746 /* Pods-NPOD Downloader.release.xcconfig */,
+				631B7AA021AECE0C3A2D7BC7 /* Pods-NPOD DownloaderTests.debug.xcconfig */,
+				A3A6A51561F17A39B97E3E6C /* Pods-NPOD DownloaderTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		745219401D4F661E00D9541E /* NPOD Downloader-Tests */ = {
+		CC6A02D211B8A070F00847A5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				745219411D4F661E00D9541E /* NPOD_Downloader_Tests.swift */,
-				745219431D4F661E00D9541E /* Info.plist */,
+				A836D95D6DD77091E9D8CC0D /* Pods_NPOD_Downloader.framework */,
+				C30538EACA1484179F9A79F5 /* Pods_NPOD_DownloaderTests.framework */,
 			);
-			path = "NPOD Downloader-Tests";
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		74B467831D37C53900FD830E /* NPOD Downloader */ = {
+		EF4F9C8221563DFA0016B5E4 = {
 			isa = PBXGroup;
 			children = (
-				74B467841D37C53900FD830E /* AppDelegate.swift */,
-				74B467881D37C53900FD830E /* MainMenuController.swift */,
-				74E79C081D42198000BFC06A /* PreferencesView.swift */,
-				74766B5E1D4122F700CB1E7D /* AboutView.swift */,
-				7479A6871D3815FA00580F63 /* GrandNetworkDispatch.swift */,
-				74811C401D3E78910079FE83 /* WallpaperHelper.swift */,
-				74B467871D37C53900FD830E /* MainMenu.xib */,
-				74B843711D50F9E700A241F7 /* PreferencesWindow.xib */,
-				74B843731D50FA8E00A241F7 /* AboutWindow.xib */,
-				74B467851D37C53900FD830E /* Assets.xcassets */,
-				74B467861D37C53900FD830E /* Info.plist */,
-			);
-			path = "NPOD Downloader";
-			sourceTree = "<group>";
-		};
-		74D1C5FD1D364CE5004DF0FE = {
-			isa = PBXGroup;
-			children = (
-				74B467831D37C53900FD830E /* NPOD Downloader */,
-				745219401D4F661E00D9541E /* NPOD Downloader-Tests */,
-				74D1C6071D364CE5004DF0FE /* Products */,
-				6AA8524AD74470CC17DCF0FA /* Pods */,
-				BC83232974698B2EB1CD784A /* Frameworks */,
+				EF4F9C8D21563DFA0016B5E4 /* NPOD Downloader */,
+				EF4F9C9E21563DFC0016B5E4 /* NPOD DownloaderTests */,
+				EF4F9C8C21563DFA0016B5E4 /* Products */,
+				9B5880FCACB344B8963DC197 /* Pods */,
+				CC6A02D211B8A070F00847A5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		74D1C6071D364CE5004DF0FE /* Products */ = {
+		EF4F9C8C21563DFA0016B5E4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				74D1C6061D364CE5004DF0FE /* NPOD Downloader.app */,
-				7452193F1D4F661E00D9541E /* NPOD Downloader-Tests.xctest */,
+				EF4F9C8B21563DFA0016B5E4 /* NPOD Downloader.app */,
+				EF4F9C9B21563DFC0016B5E4 /* NPOD DownloaderTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		BC83232974698B2EB1CD784A /* Frameworks */ = {
+		EF4F9C8D21563DFA0016B5E4 /* NPOD Downloader */ = {
 			isa = PBXGroup;
 			children = (
-				297262A72D8EB8956D4C93A3 /* Pods_NPOD_Downloader.framework */,
-				DEA77B5005D2F1EB51E21777 /* Pods_NPOD_Downloader_Tests.framework */,
+				EF4F9C8E21563DFA0016B5E4 /* AppDelegate.swift */,
+				EF4F9CAB2156417A0016B5E4 /* MainMenu.swift */,
+				EF4F9CBC215655EF0016B5E4 /* AboutView.swift */,
+				EF4F9CBE215656370016B5E4 /* AboutWindow.xib */,
+				EF4F9CB02156447E0016B5E4 /* Models */,
+				EF4F9CAD2156432E0016B5E4 /* Services */,
+				EF4F9C9021563DFB0016B5E4 /* Assets.xcassets */,
+				EF4F9CB921564BDA0016B5E4 /* Utility */,
+				EF4F9C9221563DFB0016B5E4 /* MainMenu.xib */,
+				EF4F9C9521563DFB0016B5E4 /* Info.plist */,
+				EF4F9C9621563DFB0016B5E4 /* NPOD_Downloader.entitlements */,
 			);
-			name = Frameworks;
+			path = "NPOD Downloader";
+			sourceTree = "<group>";
+		};
+		EF4F9C9E21563DFC0016B5E4 /* NPOD DownloaderTests */ = {
+			isa = PBXGroup;
+			children = (
+				EF4F9C9F21563DFC0016B5E4 /* NPOD_DownloaderTests.swift */,
+				EF4F9CA121563DFC0016B5E4 /* Info.plist */,
+			);
+			path = "NPOD DownloaderTests";
+			sourceTree = "<group>";
+		};
+		EF4F9CAD2156432E0016B5E4 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				EF4F9CAE215643400016B5E4 /* NetworkService.swift */,
+				EF4F9CB7215647C60016B5E4 /* Dependencies.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		EF4F9CB02156447E0016B5E4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EF4F9CB1215644B30016B5E4 /* Result.swift */,
+				EF4F9CB52156462E0016B5E4 /* NetworkError.swift */,
+				EF4F9CB3215644D50016B5E4 /* Ubernodes.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		EF4F9CB921564BDA0016B5E4 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				EF4F9CBA21564BEE0016B5E4 /* Constants.swift */,
+			);
+			path = Utility;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		7452193E1D4F661E00D9541E /* NPOD Downloader-Tests */ = {
+		EF4F9C8A21563DFA0016B5E4 /* NPOD Downloader */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 745219461D4F661E00D9541E /* Build configuration list for PBXNativeTarget "NPOD Downloader-Tests" */;
+			buildConfigurationList = EF4F9CA421563DFC0016B5E4 /* Build configuration list for PBXNativeTarget "NPOD Downloader" */;
 			buildPhases = (
-				4A078BB2514CF18792337697 /* [CP] Check Pods Manifest.lock */,
-				7452193B1D4F661E00D9541E /* Sources */,
-				7452193C1D4F661E00D9541E /* Frameworks */,
-				7452193D1D4F661E00D9541E /* Resources */,
-				ABFF0ECB0B95B4C7CDEEDD27 /* [CP] Embed Pods Frameworks */,
-				CE910FD25DE6FBFBDC37878E /* [CP] Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				745219451D4F661E00D9541E /* PBXTargetDependency */,
-			);
-			name = "NPOD Downloader-Tests";
-			productName = "NPOD Downloader-Tests";
-			productReference = 7452193F1D4F661E00D9541E /* NPOD Downloader-Tests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		74D1C6051D364CE5004DF0FE /* NPOD Downloader */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 74D1C6151D364CE5004DF0FE /* Build configuration list for PBXNativeTarget "NPOD Downloader" */;
-			buildPhases = (
-				5F1D187F0E71F8C1F505AA74 /* [CP] Check Pods Manifest.lock */,
-				74D1C6021D364CE5004DF0FE /* Sources */,
-				74D1C6031D364CE5004DF0FE /* Frameworks */,
-				74D1C6041D364CE5004DF0FE /* Resources */,
-				7420939E1D3CC64900126A52 /* ShellScript */,
-				6CDC56669AF96A5EC32B9C01 /* [CP] Embed Pods Frameworks */,
-				43DD565A2056964174C29D91 /* [CP] Copy Pods Resources */,
+				1919A24DD30C40696C7B752C /* [CP] Check Pods Manifest.lock */,
+				EF4F9C8721563DFA0016B5E4 /* Sources */,
+				EF4F9C8821563DFA0016B5E4 /* Frameworks */,
+				EF4F9C8921563DFA0016B5E4 /* Resources */,
+				9EA2566E7CA39E8F028C1E77 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = "NPOD Downloader";
-			productName = "NOPD Downloader";
-			productReference = 74D1C6061D364CE5004DF0FE /* NPOD Downloader.app */;
+			productName = "NPOD Downloader";
+			productReference = EF4F9C8B21563DFA0016B5E4 /* NPOD Downloader.app */;
 			productType = "com.apple.product-type.application";
+		};
+		EF4F9C9A21563DFC0016B5E4 /* NPOD DownloaderTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EF4F9CA721563DFC0016B5E4 /* Build configuration list for PBXNativeTarget "NPOD DownloaderTests" */;
+			buildPhases = (
+				409DC88406818834C7036A60 /* [CP] Check Pods Manifest.lock */,
+				EF4F9C9721563DFC0016B5E4 /* Sources */,
+				EF4F9C9821563DFC0016B5E4 /* Frameworks */,
+				EF4F9C9921563DFC0016B5E4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EF4F9C9D21563DFC0016B5E4 /* PBXTargetDependency */,
+			);
+			name = "NPOD DownloaderTests";
+			productName = "NPOD DownloaderTests";
+			productReference = EF4F9C9B21563DFC0016B5E4 /* NPOD DownloaderTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		74D1C5FE1D364CE5004DF0FE /* Project object */ = {
+		EF4F9C8321563DFA0016B5E4 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0820;
+				LastSwiftUpdateCheck = 0940;
+				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = "Giulio Lombardo";
 				TargetAttributes = {
-					7452193E1D4F661E00D9541E = {
-						CreatedOnToolsVersion = 7.3.1;
-						LastSwiftMigration = 0820;
-						TestTargetID = 74D1C6051D364CE5004DF0FE;
+					EF4F9C8A21563DFA0016B5E4 = {
+						CreatedOnToolsVersion = 9.4.1;
 					};
-					74D1C6051D364CE5004DF0FE = {
-						CreatedOnToolsVersion = 7.3.1;
-						LastSwiftMigration = 0820;
+					EF4F9C9A21563DFC0016B5E4 = {
+						CreatedOnToolsVersion = 9.4.1;
+						TestTargetID = EF4F9C8A21563DFA0016B5E4;
 					};
 				};
 			};
-			buildConfigurationList = 74D1C6011D364CE5004DF0FE /* Build configuration list for PBXProject "NPOD Downloader" */;
-			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			buildConfigurationList = EF4F9C8621563DFA0016B5E4 /* Build configuration list for PBXProject "NPOD Downloader" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = 74D1C5FD1D364CE5004DF0FE;
-			productRefGroup = 74D1C6071D364CE5004DF0FE /* Products */;
+			mainGroup = EF4F9C8221563DFA0016B5E4;
+			productRefGroup = EF4F9C8C21563DFA0016B5E4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				74D1C6051D364CE5004DF0FE /* NPOD Downloader */,
-				7452193E1D4F661E00D9541E /* NPOD Downloader-Tests */,
+				EF4F9C8A21563DFA0016B5E4 /* NPOD Downloader */,
+				EF4F9C9A21563DFC0016B5E4 /* NPOD DownloaderTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		7452193D1D4F661E00D9541E /* Resources */ = {
+		EF4F9C8921563DFA0016B5E4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF4F9C9121563DFB0016B5E4 /* Assets.xcassets in Resources */,
+				EF4F9C9421563DFB0016B5E4 /* MainMenu.xib in Resources */,
+				EF4F9CBF215656370016B5E4 /* AboutWindow.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		74D1C6041D364CE5004DF0FE /* Resources */ = {
+		EF4F9C9921563DFC0016B5E4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				74B4678C1D37C53900FD830E /* MainMenu.xib in Resources */,
-				74B843721D50F9E700A241F7 /* PreferencesWindow.xib in Resources */,
-				74B4678A1D37C53900FD830E /* Assets.xcassets in Resources */,
-				74B843741D50FA8E00A241F7 /* AboutWindow.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		43DD565A2056964174C29D91 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NPOD Downloader/Pods-NPOD Downloader-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		4A078BB2514CF18792337697 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-NPOD Downloader-Tests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		5F1D187F0E71F8C1F505AA74 /* [CP] Check Pods Manifest.lock */ = {
+		1919A24DD30C40696C7B752C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -303,7 +293,25 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		6CDC56669AF96A5EC32B9C01 /* [CP] Embed Pods Frameworks */ = {
+		409DC88406818834C7036A60 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NPOD DownloaderTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9EA2566E7CA39E8F028C1E77 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -312,147 +320,96 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-NPOD Downloader/Pods-NPOD Downloader-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${PODS_ROOT}/Sparkle/Sparkle.framework",
-				"${PODS_ROOT}/Sparkle/Sparkle.framework.dSYM",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Sparkle.framework",
-				"${DWARF_DSYM_FOLDER_PATH}/Sparkle.framework.dSYM",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NPOD Downloader/Pods-NPOD Downloader-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		7420939E1D3CC64900126A52 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 12;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Fabric/run\" 38b278f897f4b208e8e5af7de2f5e16c8f0484d0 cc8734d8495cb3b6145d6414a34480fb6fda713b890787184a86906aad09365c";
-		};
-		ABFF0ECB0B95B4C7CDEEDD27 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NPOD Downloader-Tests/Pods-NPOD Downloader-Tests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		CE910FD25DE6FBFBDC37878E /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NPOD Downloader-Tests/Pods-NPOD Downloader-Tests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		7452193B1D4F661E00D9541E /* Sources */ = {
+		EF4F9C8721563DFA0016B5E4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				745219421D4F661E00D9541E /* NPOD_Downloader_Tests.swift in Sources */,
-				742D12F81D50E02000CE9594 /* WallpaperHelper.swift in Sources */,
-				7468FA691D50A031008FF1BC /* GrandNetworkDispatch.swift in Sources */,
+				EF4F9CB8215647C60016B5E4 /* Dependencies.swift in Sources */,
+				EF4F9C8F21563DFA0016B5E4 /* AppDelegate.swift in Sources */,
+				EF4F9CAF215643400016B5E4 /* NetworkService.swift in Sources */,
+				EF4F9CB2215644B30016B5E4 /* Result.swift in Sources */,
+				EF4F9CBD215655EF0016B5E4 /* AboutView.swift in Sources */,
+				EF4F9CB62156462E0016B5E4 /* NetworkError.swift in Sources */,
+				EF4F9CAC2156417A0016B5E4 /* MainMenu.swift in Sources */,
+				EF4F9CB4215644D50016B5E4 /* Ubernodes.swift in Sources */,
+				EF4F9CBB21564BEE0016B5E4 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		74D1C6021D364CE5004DF0FE /* Sources */ = {
+		EF4F9C9721563DFC0016B5E4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				74811C411D3E78910079FE83 /* WallpaperHelper.swift in Sources */,
-				74E79C091D42198000BFC06A /* PreferencesView.swift in Sources */,
-				7479A6881D3815FA00580F63 /* GrandNetworkDispatch.swift in Sources */,
-				74B467891D37C53900FD830E /* AppDelegate.swift in Sources */,
-				74B4678D1D37C53900FD830E /* MainMenuController.swift in Sources */,
-				74766B5F1D4122F700CB1E7D /* AboutView.swift in Sources */,
+				EF4F9CA021563DFC0016B5E4 /* NPOD_DownloaderTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		745219451D4F661E00D9541E /* PBXTargetDependency */ = {
+		EF4F9C9D21563DFC0016B5E4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 74D1C6051D364CE5004DF0FE /* NPOD Downloader */;
-			targetProxy = 745219441D4F661E00D9541E /* PBXContainerItemProxy */;
+			target = EF4F9C8A21563DFA0016B5E4 /* NPOD Downloader */;
+			targetProxy = EF4F9C9C21563DFC0016B5E4 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		EF4F9C9221563DFB0016B5E4 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EF4F9C9321563DFB0016B5E4 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
-		745219471D4F661E00D9541E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = A81B8A22D1BEAA1F6FCA8452 /* Pods-NPOD Downloader-Tests.debug.xcconfig */;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = "NPOD Downloader-Tests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "domainname.NPOD-Downloader-Tests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NPOD Downloader.app/Contents/MacOS/NPOD Downloader";
-			};
-			name = Debug;
-		};
-		745219481D4F661E00D9541E /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8FC30651C58EB19344CCF1C1 /* Pods-NPOD Downloader-Tests.release.xcconfig */;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = "NPOD Downloader-Tests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "domainname.NPOD-Downloader-Tests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NPOD Downloader.app/Contents/MacOS/NPOD Downloader";
-			};
-			name = Release;
-		};
-		74D1C6131D364CE5004DF0FE /* Debug */ = {
+		EF4F9CA221563DFC0016B5E4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
@@ -460,7 +417,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -474,33 +431,45 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
-		74D1C6141D364CE5004DF0FE /* Release */ = {
+		EF4F9CA321563DFC0016B5E4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
@@ -508,7 +477,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -516,110 +485,129 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 3.0;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 			};
 			name = Release;
 		};
-		74D1C6161D364CE5004DF0FE /* Debug */ = {
+		EF4F9CA521563DFC0016B5E4 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4895F9EE762414DC991AAE9D /* Pods-NPOD Downloader.debug.xcconfig */;
+			baseConfigurationReference = 5A9848C6E4F5CDB5694217C7 /* Pods-NPOD Downloader.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ANALYZER_SECURITY_FLOATLOOPCOUNTER = YES;
-				CLANG_ANALYZER_SECURITY_INSECUREAPI_RAND = YES;
-				CLANG_ANALYZER_SECURITY_INSECUREAPI_STRCPY = YES;
-				CLANG_WARN_IMPLICIT_SIGN_CONVERSION = YES;
-				CLANG_WARN_NULLABLE_TO_NONNULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_EXPLICIT_OWNERSHIP_TYPE = YES;
-				CLANG_WARN_OBJC_IMPLICIT_ATOMIC_PROPERTIES = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_REPEATED_USE_OF_WEAK = YES;
+				CODE_SIGN_ENTITLEMENTS = "NPOD Downloader/NPOD_Downloader.entitlements";
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_WARN_ABOUT_MISSING_NEWLINE = YES;
-				GCC_WARN_FOUR_CHARACTER_CONSTANTS = YES;
-				GCC_WARN_INITIALIZER_NOT_FULLY_BRACKETED = YES;
-				GCC_WARN_SHADOW = YES;
-				GCC_WARN_UNUSED_LABEL = YES;
-				GCC_WARN_UNUSED_PARAMETER = YES;
-				INFOPLIST_FILE = "$(SRCROOT)/NPOD Downloader/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -DDEBUG";
-				PRODUCT_BUNDLE_IDENTIFIER = "domainname.NPOD-Downloader";
-				PRODUCT_NAME = "NPOD Downloader";
-				SWIFT_VERSION = 3.0;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = "NPOD Downloader/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "swift.giulio92.NPOD-Downloader";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
-		74D1C6171D364CE5004DF0FE /* Release */ = {
+		EF4F9CA621563DFC0016B5E4 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 24BEB835CDC86B2513F15136 /* Pods-NPOD Downloader.release.xcconfig */;
+			baseConfigurationReference = 088B61538584AA25ACD44746 /* Pods-NPOD Downloader.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ANALYZER_SECURITY_FLOATLOOPCOUNTER = YES;
-				CLANG_ANALYZER_SECURITY_INSECUREAPI_RAND = YES;
-				CLANG_ANALYZER_SECURITY_INSECUREAPI_STRCPY = YES;
-				CLANG_WARN_IMPLICIT_SIGN_CONVERSION = YES;
-				CLANG_WARN_NULLABLE_TO_NONNULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_EXPLICIT_OWNERSHIP_TYPE = YES;
-				CLANG_WARN_OBJC_IMPLICIT_ATOMIC_PROPERTIES = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_REPEATED_USE_OF_WEAK = YES;
+				CODE_SIGN_ENTITLEMENTS = "NPOD Downloader/NPOD_Downloader.entitlements";
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				GCC_OPTIMIZATION_LEVEL = fast;
-				GCC_WARN_ABOUT_MISSING_NEWLINE = YES;
-				GCC_WARN_FOUR_CHARACTER_CONSTANTS = YES;
-				GCC_WARN_INITIALIZER_NOT_FULLY_BRACKETED = YES;
-				GCC_WARN_SHADOW = YES;
-				GCC_WARN_UNUSED_LABEL = YES;
-				GCC_WARN_UNUSED_PARAMETER = YES;
-				INFOPLIST_FILE = "$(SRCROOT)/NPOD Downloader/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -DRELEASE";
-				PRODUCT_BUNDLE_IDENTIFIER = "domainname.NPOD-Downloader";
-				PRODUCT_NAME = "NPOD Downloader";
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 3.0;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = "NPOD Downloader/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "swift.giulio92.NPOD-Downloader";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+		EF4F9CA821563DFC0016B5E4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 631B7AA021AECE0C3A2D7BC7 /* Pods-NPOD DownloaderTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "NPOD DownloaderTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "swift.giulio92.NPOD-DownloaderTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NPOD Downloader.app/Contents/MacOS/NPOD Downloader";
+			};
+			name = Debug;
+		};
+		EF4F9CA921563DFC0016B5E4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A3A6A51561F17A39B97E3E6C /* Pods-NPOD DownloaderTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "NPOD DownloaderTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "swift.giulio92.NPOD-DownloaderTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NPOD Downloader.app/Contents/MacOS/NPOD Downloader";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		745219461D4F661E00D9541E /* Build configuration list for PBXNativeTarget "NPOD Downloader-Tests" */ = {
+		EF4F9C8621563DFA0016B5E4 /* Build configuration list for PBXProject "NPOD Downloader" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				745219471D4F661E00D9541E /* Debug */,
-				745219481D4F661E00D9541E /* Release */,
+				EF4F9CA221563DFC0016B5E4 /* Debug */,
+				EF4F9CA321563DFC0016B5E4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		74D1C6011D364CE5004DF0FE /* Build configuration list for PBXProject "NPOD Downloader" */ = {
+		EF4F9CA421563DFC0016B5E4 /* Build configuration list for PBXNativeTarget "NPOD Downloader" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				74D1C6131D364CE5004DF0FE /* Debug */,
-				74D1C6141D364CE5004DF0FE /* Release */,
+				EF4F9CA521563DFC0016B5E4 /* Debug */,
+				EF4F9CA621563DFC0016B5E4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		74D1C6151D364CE5004DF0FE /* Build configuration list for PBXNativeTarget "NPOD Downloader" */ = {
+		EF4F9CA721563DFC0016B5E4 /* Build configuration list for PBXNativeTarget "NPOD DownloaderTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				74D1C6161D364CE5004DF0FE /* Debug */,
-				74D1C6171D364CE5004DF0FE /* Release */,
+				EF4F9CA821563DFC0016B5E4 /* Debug */,
+				EF4F9CA921563DFC0016B5E4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 74D1C5FE1D364CE5004DF0FE /* Project object */;
+	rootObject = EF4F9C8321563DFA0016B5E4 /* Project object */;
 }

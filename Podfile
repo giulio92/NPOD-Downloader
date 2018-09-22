@@ -8,12 +8,10 @@ target 'NPOD Downloader' do
   # Pods for NPOD Downloader
   pod 'Alamofire'
   pod 'Sparkle'
-  pod 'Fabric'
-  pod 'Crashlytics'
+  pod 'SwiftLint'
 
-  target 'NPOD Downloader-Tests' do
+  target 'NPOD DownloaderTests' do
     inherit! :search_paths
     # Pods for testing
   end
-
 end
