@@ -93,8 +93,9 @@ final class NetworkService: NetworkServiceProvider {
 
         let imageName: String = nodeImage.filename
 
-        if dependencies.fileManagerService.fileExists(fileName: imageName, path: pictureDirectory) {
+        guard dependencies.fileManagerService.fileExists(fileName: imageName, path: pictureDirectory) == false else {
             completion(.success(()))
+            return
         }
 
         let destination: DownloadRequest.DownloadFileDestination = { _, _ in

@@ -57,7 +57,7 @@ enum Constants {
         }
 
         static func imageURL(name: String) -> String {
-            return API + "/sites/default/files/thumbnails/image/" + name
+            return domain + "/sites/default/files/thumbnails/image/" + name
         }
     }
 
