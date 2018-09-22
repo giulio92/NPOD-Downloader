@@ -18,9 +18,9 @@
     <img src="https://github.com/giulio92/NPOD-Downloader/blob/master/GitHub%20Page/Images/screenshot.png" width="500">
 </p>
 
-NASA Picture of the Day downloader for macOS, written in pure Swift 3.0
+NASA Picture of the Day downloader for macOS, written in pure Swift 4.1
 
 ### Requirements
-- macOS 10.10+
-- Xcode 8.0+
-- CocoaPods 1.0+
+- macOS 10.13+
+- Xcode 9.3+
+- CocoaPods 1.5.3+
