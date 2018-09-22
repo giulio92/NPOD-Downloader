@@ -6,8 +6,8 @@
 
 |**Branch**|**Status**|
 |:--------:|:--------:|
-|master|![masterCIStatus](https://travis-ci.org/giulio92/NPOD-Downloader.svg?branch=master)|
-|develop|![developCIStatus](https://travis-ci.org/giulio92/NPOD-Downloader.svg?branch=develop)|
+|master|[![masterCIStatus](https://travis-ci.org/giulio92/NPOD-Downloader.svg?branch=master)](https://travis-ci.org/giulio92/NPOD-Downloader)|
+|develop|[![developCIStatus](https://travis-ci.org/giulio92/NPOD-Downloader.svg?branch=develop)](https://travis-ci.org/giulio92/NPOD-Downloader)|
 
 ![Supported platforms](https://img.shields.io/badge/platform-macOS-lightgrey.svg)
 ![Language](https://img.shields.io/badge/language-Swift%204.1-orange.svg)
