@@ -28,5 +28,9 @@ struct Ubernodes: Decodable {
         }
     }
 
-    let ubernodes: [Ubernode]
+    private enum CodingKeys: String, CodingKey {
+        case nodes = "ubernodes"
+    }
+
+    let nodes: [Ubernode]
 }
