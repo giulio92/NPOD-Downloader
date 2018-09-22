@@ -26,6 +26,7 @@
 		EFB2863021567FD500EB4B43 /* StoryboardProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB2862F21567FD500EB4B43 /* StoryboardProtocol.swift */; };
 		EFB28632215680A500EB4B43 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB28631215680A500EB4B43 /* SettingsController.swift */; };
 		EFB28634215681F200EB4B43 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB28633215681F200EB4B43 /* SettingsView.swift */; };
+		EFB286362156879200EB4B43 /* UserDefaultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB286352156879200EB4B43 /* UserDefaultsService.swift */; };
 		EFC8C25221566760005C71FC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFC8C25121566760005C71FC /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +69,7 @@
 		EFB2862F21567FD500EB4B43 /* StoryboardProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardProtocol.swift; sourceTree = "<group>"; };
 		EFB28631215680A500EB4B43 /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		EFB28633215681F200EB4B43 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		EFB286352156879200EB4B43 /* UserDefaultsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsService.swift; sourceTree = "<group>"; };
 		EFC8C25121566760005C71FC /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -163,6 +165,7 @@
 			children = (
 				EF4F9CB7215647C60016B5E4 /* Dependencies.swift */,
 				EF4F9CAE215643400016B5E4 /* NetworkService.swift */,
+				EFB286352156879200EB4B43 /* UserDefaultsService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -411,6 +414,7 @@
 				EF4F9CB4215644D50016B5E4 /* Ubernodes.swift in Sources */,
 				EFB2863021567FD500EB4B43 /* StoryboardProtocol.swift in Sources */,
 				EFB28632215680A500EB4B43 /* SettingsController.swift in Sources */,
+				EFB286362156879200EB4B43 /* UserDefaultsService.swift in Sources */,
 				EFB2862B21567DD000EB4B43 /* NSStoryboard+NSViewController.swift in Sources */,
 				EF4F9CBB21564BEE0016B5E4 /* Constants.swift in Sources */,
 				EFB2862D21567F9F00EB4B43 /* AboutController.swift in Sources */,

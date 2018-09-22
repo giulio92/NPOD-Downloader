@@ -6,8 +6,9 @@
 //  Copyright © 2018 Giulio Lombardo. All rights reserved.
 //
 
-protocol DependenciesProtocol: HasNetworkService {}
+protocol DependenciesProtocol: HasNetworkService, HasUserDefaultsService {}
 
 final class Dependencies: DependenciesProtocol {
     lazy var networkService: NetworkServiceProvider = NetworkService()
+	lazy var userDefaultsService: UserDefaultsServiceProvider = UserDefaultsService()
 }
