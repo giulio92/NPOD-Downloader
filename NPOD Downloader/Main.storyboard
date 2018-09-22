@@ -161,11 +161,11 @@
             <objects>
                 <viewController storyboardIdentifier="AboutController" showSeguePresentationStyle="single" id="cku-zU-EgG" customClass="AboutController" customModule="NPOD_Downloader" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="wBu-Xb-bda" customClass="AboutView" customModule="NPOD_Downloader" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QT5-ZR-LfB">
-                                <rect key="frame" x="177" y="184" width="96" height="96"/>
+                                <rect key="frame" x="102" y="184" width="96" height="96"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="QT5-ZR-LfB" secondAttribute="height" multiplier="1:1" id="ODv-gB-Mtk"/>
                                     <constraint firstAttribute="width" secondItem="QT5-ZR-LfB" secondAttribute="height" multiplier="1:1" id="XeY-LU-YbP"/>
@@ -174,16 +174,15 @@
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSApplicationIcon" id="48h-i9-Znf"/>
                             </imageView>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="noK-m2-NFy">
-                                <rect key="frame" x="104" y="159" width="243" height="17"/>
+                                <rect key="frame" x="29" y="159" width="243" height="17"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="NASA Picture of the day downloader" id="tJt-Cu-H1V">
                                     <font key="font" metaFont="systemBold"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" preferredMaxLayoutWidth="235" translatesAutoresizingMaskIntoConstraints="NO" id="s4P-k9-lw2">
-                                <rect key="frame" x="106" y="134" width="239" height="17"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" preferredMaxLayoutWidth="235" translatesAutoresizingMaskIntoConstraints="NO" id="s4P-k9-lw2">
+                                <rect key="frame" x="29" y="134" width="243" height="17"/>
                                 <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="Lorem ipsum sit amet" id="c9D-xr-nMC">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -191,7 +190,7 @@
                                 </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="7Bt-zp-GSo">
-                                <rect key="frame" x="146" y="13" width="158" height="32"/>
+                                <rect key="frame" x="71" y="13" width="158" height="32"/>
                                 <buttonCell key="cell" type="push" title="Fork me on GitHub!" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="miY-Qv-faM">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -201,19 +200,21 @@
                                 </connections>
                             </button>
                             <button translatesAutoresizingMaskIntoConstraints="NO" id="KTR-OA-TWS">
-                                <rect key="frame" x="209" y="51" width="32" height="32"/>
+                                <rect key="frame" x="134" y="51" width="32" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="32" id="Fa2-i6-olR"/>
                                     <constraint firstAttribute="width" secondItem="KTR-OA-TWS" secondAttribute="height" multiplier="1:1" id="hVq-jR-IHa"/>
                                 </constraints>
-                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="GitHub logo" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="7bd-rV-giw">
+                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="GitHub Logo" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="7bd-rV-giw">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                             </button>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="s4P-k9-lw2" firstAttribute="leading" secondItem="noK-m2-NFy" secondAttribute="leading" id="25X-UE-IET"/>
                             <constraint firstItem="noK-m2-NFy" firstAttribute="centerX" secondItem="wBu-Xb-bda" secondAttribute="centerX" id="3Jh-a2-Bid"/>
+                            <constraint firstItem="s4P-k9-lw2" firstAttribute="top" secondItem="noK-m2-NFy" secondAttribute="bottom" constant="8" id="D5R-oa-DPb"/>
                             <constraint firstItem="KTR-OA-TWS" firstAttribute="centerX" secondItem="wBu-Xb-bda" secondAttribute="centerX" id="Gvb-bY-2BV"/>
                             <constraint firstItem="QT5-ZR-LfB" firstAttribute="top" secondItem="wBu-Xb-bda" secondAttribute="top" constant="20" id="IH7-mC-Fgv"/>
                             <constraint firstItem="noK-m2-NFy" firstAttribute="centerX" secondItem="wBu-Xb-bda" secondAttribute="centerX" id="JSi-6f-GPf"/>
@@ -221,6 +222,7 @@
                             <constraint firstAttribute="bottom" secondItem="7Bt-zp-GSo" secondAttribute="bottom" constant="20" id="Yqy-GT-3JR"/>
                             <constraint firstItem="QT5-ZR-LfB" firstAttribute="centerX" secondItem="wBu-Xb-bda" secondAttribute="centerX" id="aMo-6D-iBo"/>
                             <constraint firstItem="noK-m2-NFy" firstAttribute="top" secondItem="QT5-ZR-LfB" secondAttribute="bottom" constant="8" id="fcq-82-5K5"/>
+                            <constraint firstItem="s4P-k9-lw2" firstAttribute="centerX" secondItem="noK-m2-NFy" secondAttribute="centerX" id="m0j-XU-NM0"/>
                             <constraint firstItem="7Bt-zp-GSo" firstAttribute="centerX" secondItem="wBu-Xb-bda" secondAttribute="centerX" id="tzP-LH-4Z0"/>
                             <constraint firstItem="QT5-ZR-LfB" firstAttribute="centerX" secondItem="wBu-Xb-bda" secondAttribute="centerX" id="x2F-hu-BmR"/>
                             <constraint firstItem="7Bt-zp-GSo" firstAttribute="top" secondItem="KTR-OA-TWS" secondAttribute="bottom" constant="10" id="yVX-gx-JOD"/>
@@ -236,7 +238,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="GitHub logo" width="32" height="32"/>
+        <image name="GitHub Logo" width="32" height="32"/>
         <image name="NSApplicationIcon" width="128" height="128"/>
         <image name="RetinaBadge" width="50" height="50"/>
     </resources>
