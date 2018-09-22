@@ -1,0 +1,111 @@
+//
+//  NetworkService.swift
+//  NPOD Downloader
+//
+//  Created by Giulio Lombardo on 22/09/18.
+//  Copyright © 2018 Giulio Lombardo. All rights reserved.
+//
+
+import Alamofire
+
+protocol HasNetworkService: AnyObject {
+    var networkService: NetworkServiceProvider { get }
+}
+
+protocol NetworkServiceProvider: AnyObject {
+    func getUbernodes(completion: @escaping (Result<Ubernodes, NetworkError>) -> Void)
+    func getImageDetails(nodeID: String, completion: @escaping (Result<Void, NetworkError>) -> Void)
+}
+
+final class NetworkService: NetworkServiceProvider {
+    private var alamofire: SessionManager {
+        let sessionManager: SessionManager = .default
+
+        return sessionManager
+    }
+
+    private var reachable: Bool {
+        guard let reachabilityManager: NetworkReachabilityManager = NetworkReachabilityManager() else {
+            return false
+        }
+
+        return reachabilityManager.isReachable
+    }
+
+    func getUbernodes(completion: @escaping (Result<Ubernodes, NetworkError>) -> Void) {
+        performGET(url: Constants.Nasa.ubernodes(), completion: { result in
+            switch result {
+            case let .success(data):
+                let ubernodes: Ubernodes
+
+                do {
+                    let jsonDecoder: JSONDecoder = JSONDecoder()
+                    ubernodes = try jsonDecoder.decode(Ubernodes.self, from: data)
+                } catch _ {
+                    return completion(.failure(.unknown))
+                }
+
+                completion(.success(ubernodes))
+
+            case let .failure(networkError):
+                completion(.failure(networkError))
+            }
+        })
+    }
+
+    func getImageDetails(nodeID: String, completion: @escaping (Result<Void, NetworkError>) -> Void) {
+        performGET(url: Constants.Nasa.nodeURL(id: nodeID), completion: { result in
+            switch result {
+            case let .success(data):
+                completion(.success(()))
+
+            case let .failure(networkError):
+                completion(.failure(networkError))
+            }
+        })
+    }
+
+    private func performGET(url: URLConvertible, completion: @escaping (Result<Data, NetworkError>) -> Void) {
+        guard reachable else {
+            completion(.failure(.unreachable))
+            return
+        }
+
+        alamofire.request(url, method: .get, encoding: JSONEncoding.default).validate().responseData(completionHandler: { responseData in
+            #if DEBUG
+            print(responseData.timeline)
+            #endif
+
+            guard let response: HTTPURLResponse = responseData.response else {
+                completion(.failure(.notFound))
+                return
+            }
+
+            switch responseData.result {
+            case let .success(data):
+                completion(.success(data))
+
+            case .failure:
+                let networkError: NetworkError = NetworkError(rawValue: response.statusCode)
+
+                completion(.failure(networkError))
+            }
+        })
+    }
+
+    func cancelAllRequests() {
+        alamofire.session.getTasksWithCompletionHandler({ dataTasks, uploadTasks, downloadTasks in
+            dataTasks.forEach({ task in
+                task.cancel()
+            })
+
+            uploadTasks.forEach({ task in
+                task.cancel()
+            })
+
+            downloadTasks.forEach({ task in
+                task.cancel()
+            })
+        })
+    }
+}
