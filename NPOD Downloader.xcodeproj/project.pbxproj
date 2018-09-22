@@ -12,7 +12,6 @@
 		EF451A5521565BFA00EDB795 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF451A5421565BFA00EDB795 /* Node.swift */; };
 		EF4F9C8F21563DFA0016B5E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4F9C8E21563DFA0016B5E4 /* AppDelegate.swift */; };
 		EF4F9C9121563DFB0016B5E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF4F9C9021563DFB0016B5E4 /* Assets.xcassets */; };
-		EF4F9C9421563DFB0016B5E4 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF4F9C9221563DFB0016B5E4 /* MainMenu.xib */; };
 		EF4F9CA021563DFC0016B5E4 /* NPODDownloaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4F9C9F21563DFC0016B5E4 /* NPODDownloaderTests.swift */; };
 		EF4F9CAC2156417A0016B5E4 /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4F9CAB2156417A0016B5E4 /* MainMenu.swift */; };
 		EF4F9CAF215643400016B5E4 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4F9CAE215643400016B5E4 /* NetworkService.swift */; };
@@ -46,7 +45,6 @@
 		EF4F9C8B21563DFA0016B5E4 /* NPOD Downloader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NPOD Downloader.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF4F9C8E21563DFA0016B5E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EF4F9C9021563DFB0016B5E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		EF4F9C9321563DFB0016B5E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		EF4F9C9521563DFB0016B5E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EF4F9C9621563DFB0016B5E4 /* NPOD_Downloader.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NPOD_Downloader.entitlements; sourceTree = "<group>"; };
 		EF4F9C9B21563DFC0016B5E4 /* NPOD DownloaderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "NPOD DownloaderTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -128,7 +126,6 @@
 			children = (
 				EF4F9C8E21563DFA0016B5E4 /* AppDelegate.swift */,
 				EF4F9CAB2156417A0016B5E4 /* MainMenu.swift */,
-				EF4F9C9221563DFB0016B5E4 /* MainMenu.xib */,
 				EFC8C25121566760005C71FC /* Main.storyboard */,
 				EFE9B580215679DF005CAE0F /* Settings */,
 				EFE9B581215679E4005CAE0F /* About */,
@@ -280,7 +277,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF4F9C9121563DFB0016B5E4 /* Assets.xcassets in Resources */,
-				EF4F9C9421563DFB0016B5E4 /* MainMenu.xib in Resources */,
 				EFC8C25221566760005C71FC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -402,17 +398,6 @@
 			targetProxy = EF4F9C9C21563DFC0016B5E4 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		EF4F9C9221563DFB0016B5E4 /* MainMenu.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				EF4F9C9321563DFB0016B5E4 /* Base */,
-			);
-			name = MainMenu.xib;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		EF4F9CA221563DFC0016B5E4 /* Debug */ = {

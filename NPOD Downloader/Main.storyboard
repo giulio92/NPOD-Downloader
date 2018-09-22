@@ -13,6 +13,42 @@
                     <menu key="mainMenu" title="Main Menu" systemMenu="main" id="irO-Qd-Wea"/>
                 </application>
                 <customObject id="dV8-IC-hJN" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <customObject id="VjU-Bd-lBJ" customClass="MainMenu" customModule="NPOD_Downloader" customModuleProvider="target">
+                    <connections>
+                        <outlet property="applicationMenu" destination="zlj-q6-GgF" id="pIB-zh-vhI"/>
+                        <outlet property="currentImageName" destination="3hu-ZS-Pl5" id="4Lr-3i-LFi"/>
+                    </connections>
+                </customObject>
+                <menu id="zlj-q6-GgF">
+                    <items>
+                        <menuItem title="Picture of the day:" id="PlA-Sl-T0b">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                        </menuItem>
+                        <menuItem title="Lorem ipsum" id="3hu-ZS-Pl5">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                        </menuItem>
+                        <menuItem isSeparatorItem="YES" id="WKQ-8s-dsT"/>
+                        <menuItem title="Preferences..." id="6Ts-4j-AUE">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                            <connections>
+                                <action selector="preferencesAction:" target="VjU-Bd-lBJ" id="70s-C3-0dR"/>
+                            </connections>
+                        </menuItem>
+                        <menuItem isSeparatorItem="YES" id="22p-Hm-NFH"/>
+                        <menuItem title="About" id="d6N-rF-6Up">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                            <connections>
+                                <action selector="aboutAction:" target="VjU-Bd-lBJ" id="ObL-KJ-cgj"/>
+                            </connections>
+                        </menuItem>
+                        <menuItem title="Quit" id="JYS-6i-zsh">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                            <connections>
+                                <action selector="quitAction:" target="VjU-Bd-lBJ" id="wxN-hl-ebg"/>
+                            </connections>
+                        </menuItem>
+                    </items>
+                </menu>
             </objects>
             <point key="canvasLocation" x="75" y="0.0"/>
         </scene>
