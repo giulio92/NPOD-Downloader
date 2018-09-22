@@ -9,24 +9,24 @@
 import AppKit
 
 final class MainMenu: NSObject {
-    @IBOutlet private weak var applicationMenu: NSMenu!
-    @IBOutlet private weak var currentImageName: NSMenuItem!
+    @IBOutlet private var applicationMenu: NSMenu!
+    @IBOutlet private var currentImageName: NSMenuItem!
 
     private let dependencies: Dependencies = Dependencies()
 
-	private let storyboard: NSStoryboard = NSStoryboard(name: NSStoryboard.Name(rawValue: "Main"), bundle: nil)
+    private let storyboard: NSStoryboard = NSStoryboard(name: NSStoryboard.Name(rawValue: "Main"), bundle: nil)
 
     private let statusItem: NSStatusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
 
-    @IBAction private func preferencesAction(_ sender: NSMenuItem) {
-		showSettingsController()
+    @IBAction private func preferencesAction(_: NSMenuItem) {
+        showSettingsController()
     }
 
-    @IBAction private func aboutAction(_ sender: NSMenuItem) {
-		showAboutController()
+    @IBAction private func aboutAction(_: NSMenuItem) {
+        showAboutController()
     }
 
-    @IBAction private func quitAction(_ sender: NSMenuItem) {
+    @IBAction private func quitAction(_: NSMenuItem) {
         NSApplication.shared.terminate(self)
     }
 
@@ -57,23 +57,23 @@ final class MainMenu: NSObject {
         })
     }
 
-	private func showSettingsController() {
-		let viewController: SettingsController = SettingsController.initialize(from: storyboard)
+    private func showSettingsController() {
+        let viewController: SettingsController = SettingsController.initialize(from: storyboard)
 
-		presentViewController(viewController: viewController)
-	}
+        presentViewController(viewController: viewController)
+    }
 
-	private func showAboutController() {
-		let viewController: AboutController = AboutController.initialize(from: storyboard)
+    private func showAboutController() {
+        let viewController: AboutController = AboutController.initialize(from: storyboard)
 
-		presentViewController(viewController: viewController)
-	}
+        presentViewController(viewController: viewController)
+    }
 
-	private func presentViewController(viewController: NSViewController) {
-		let window: NSWindow = NSWindow(contentViewController: viewController)
-		window.makeKeyAndOrderFront(self)
+    private func presentViewController(viewController: NSViewController) {
+        let window: NSWindow = NSWindow(contentViewController: viewController)
+        window.makeKeyAndOrderFront(self)
 
-		let windowController: NSWindowController = NSWindowController(window: window)
-		windowController.showWindow(self)
-	}
+        let windowController: NSWindowController = NSWindowController(window: window)
+        windowController.showWindow(self)
+    }
 }

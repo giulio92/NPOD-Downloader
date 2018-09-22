@@ -9,9 +9,9 @@
 import AppKit
 
 final class AboutView: NSView {
-    @IBOutlet private weak var appVersionLabel: NSTextField!
+    @IBOutlet private var appVersionLabel: NSTextField!
 
-    @IBAction private func forkAction(_ sender: NSButton) {
+    @IBAction private func forkAction(_: NSButton) {
         openProjectPage()
     }
 
@@ -20,12 +20,12 @@ final class AboutView: NSView {
 
         // Drawing code here.
 
-		configureVersionLabel()
+        configureVersionLabel()
     }
 
-	private func configureVersionLabel() {
-		appVersionLabel.cell?.title = "Version: " + Constants.applicationVersion + " (" + Constants.applicationBuild + ")"
-	}
+    private func configureVersionLabel() {
+        appVersionLabel.cell?.title = "Version: " + Constants.applicationVersion + " (" + Constants.applicationBuild + ")"
+    }
 
     private func openProjectPage() {
         guard let urlAddress: URL = URL(string: Constants.gitHubPageURL) else {

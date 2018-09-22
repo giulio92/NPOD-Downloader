@@ -15,17 +15,17 @@ protocol HasNetworkService: AnyObject {
 protocol NetworkServiceProvider: AnyObject {
     func getUbernodes(completion: @escaping (Result<Ubernodes, NetworkError>) -> Void)
     func getNode(id: String, completion: @escaping (Result<Node, NetworkError>) -> Void)
-	func downloadImage(node: Node.Image, progressUpdate: @escaping (Double) -> Void, completion: @escaping (Result<Void, NetworkError>) -> Void)
+    func downloadImage(node: Node.Image, progressUpdate: @escaping (Double) -> Void, completion: @escaping (Result<Void, NetworkError>) -> Void)
 }
 
 final class NetworkService: NetworkServiceProvider {
-	typealias Dependencies = HasFileManagerService
+    typealias Dependencies = HasFileManagerService
 
-	private var dependencies: Dependencies
+    private var dependencies: Dependencies
 
-	init(dependencies: Dependencies) {
-		self.dependencies = dependencies
-	}
+    init(dependencies: Dependencies) {
+        self.dependencies = dependencies
+    }
 
     private var alamofire: SessionManager {
         let sessionManager: SessionManager = .default
@@ -66,16 +66,16 @@ final class NetworkService: NetworkServiceProvider {
         performGET(url: Constants.Nasa.nodeURL(id: id), completion: { result in
             switch result {
             case let .success(data):
-				let ubernodes: Node
+                let ubernodes: Node
 
-				do {
-					let jsonDecoder: JSONDecoder = JSONDecoder()
-					ubernodes = try jsonDecoder.decode(Node.self, from: data)
-				} catch _ {
-					return completion(.failure(.unknown))
-				}
+                do {
+                    let jsonDecoder: JSONDecoder = JSONDecoder()
+                    ubernodes = try jsonDecoder.decode(Node.self, from: data)
+                } catch _ {
+                    return completion(.failure(.unknown))
+                }
 
-				completion(.success(ubernodes))
+                completion(.success(ubernodes))
 
             case let .failure(networkError):
                 completion(.failure(networkError))
@@ -83,31 +83,31 @@ final class NetworkService: NetworkServiceProvider {
         })
     }
 
-	func downloadImage(node: Node.Image, progressUpdate: @escaping (Double) -> Void, completion: @escaping (Result<Void, NetworkError>) -> Void) {
-		guard reachable else {
-			completion(.failure(.unreachable))
-			return
-		}
+    func downloadImage(node: Node.Image, progressUpdate: @escaping (Double) -> Void, completion: @escaping (Result<Void, NetworkError>) -> Void) {
+        guard reachable else {
+            completion(.failure(.unreachable))
+            return
+        }
 
-		let pictureDirectory: URL = dependencies.fileManagerService.directoriesURL(searchPath: .picturesDirectory)[0]
+        let pictureDirectory: URL = dependencies.fileManagerService.directoriesURL(searchPath: .picturesDirectory)[0]
 
-		let imageName: String = node.filename
+        let imageName: String = node.filename
 
-		if dependencies.fileManagerService.fileExists(fileName: imageName, path: pictureDirectory) {
-			completion(.success(()))
-		}
+        if dependencies.fileManagerService.fileExists(fileName: imageName, path: pictureDirectory) {
+            completion(.success(()))
+        }
 
-		let destination: DownloadRequest.DownloadFileDestination = { (temporaryURL, response) in
-			let downloadPath: URL = pictureDirectory.appendingPathComponent(imageName)
-			return (downloadPath, [.removePreviousFile])
-		}
+        let destination: DownloadRequest.DownloadFileDestination = { _, _ in
+            let downloadPath: URL = pictureDirectory.appendingPathComponent(imageName)
+            return (downloadPath, [.removePreviousFile])
+        }
 
-		alamofire.download(Constants.Nasa.imageURL(name: node.filename), to: destination).downloadProgress(closure: { progress in
-			progressUpdate(progress.fractionCompleted)
-		}).responseData(completionHandler: { response in
-			completion(.success(()))
-		})
-	}
+        alamofire.download(Constants.Nasa.imageURL(name: node.filename), to: destination).downloadProgress(closure: { progress in
+            progressUpdate(progress.fractionCompleted)
+        }).responseData(completionHandler: { response in
+            completion(.success(()))
+        })
+    }
 
     private func performGET(url: URLConvertible, completion: @escaping (Result<Data, NetworkError>) -> Void) {
         guard reachable else {
@@ -117,7 +117,7 @@ final class NetworkService: NetworkServiceProvider {
 
         alamofire.request(url, method: .get, encoding: JSONEncoding.default).validate().responseData(completionHandler: { responseData in
             #if DEBUG
-            print(responseData.timeline)
+                print(responseData.timeline)
             #endif
 
             guard let response: HTTPURLResponse = responseData.response else {

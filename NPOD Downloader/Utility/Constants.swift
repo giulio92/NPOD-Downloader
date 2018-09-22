@@ -33,13 +33,13 @@ enum Constants {
         return name
     }
 
-	static var applicationBuild: String {
-		guard let name: String = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String else {
-			fatalError("Cannot find CFBundleVersion")
-		}
+    static var applicationBuild: String {
+        guard let name: String = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String else {
+            fatalError("Cannot find CFBundleVersion")
+        }
 
-		return name
-	}
+        return name
+    }
 
     static let gitHubPageURL: String = "https://github.com/giulio92/NPOD-Downloader"
 
@@ -56,17 +56,17 @@ enum Constants {
             return API + "/record/node/" + id + ".json"
         }
 
-		static func imageURL(name: String) -> String {
-			return API + "/sites/default/files/thumbnails/image/" + name
-		}
+        static func imageURL(name: String) -> String {
+            return API + "/sites/default/files/thumbnails/image/" + name
+        }
     }
 
     enum UserDefaultKeys {
-		static let keepImage: String = "keepImage"
+        static let keepImage: String = "keepImage"
     }
 
     enum FatalErrors {
-		static let nameSpaceError: String = "Cannot find class name from: "
-		static let storyboardError: String = "Cannot find NSViewController with identifier: "
+        static let nameSpaceError: String = "Cannot find class name from: "
+        static let storyboardError: String = "Cannot find NSViewController with identifier: "
     }
 }

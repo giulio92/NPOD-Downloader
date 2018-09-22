@@ -9,26 +9,26 @@
 import Foundation
 
 protocol HasFileManagerService: AnyObject {
-	var fileManagerService: FileManagerServiceProvider { get }
+    var fileManagerService: FileManagerServiceProvider { get }
 }
 
 protocol FileManagerServiceProvider: AnyObject {
-	func directoriesURL(searchPath: FileManager.SearchPathDirectory) -> [URL]
-	func fileExists(fileName: String, path: URL) -> Bool
+    func directoriesURL(searchPath: FileManager.SearchPathDirectory) -> [URL]
+    func fileExists(fileName: String, path: URL) -> Bool
 }
 
 final class FileManagerService: FileManagerServiceProvider {
-	private let fileManager: FileManager
+    private let fileManager: FileManager
 
-	init() {
-		fileManager = .default
-	}
+    init() {
+        fileManager = .default
+    }
 
-	func directoriesURL(searchPath: FileManager.SearchPathDirectory) -> [URL] {
-		return fileManager.urls(for: searchPath, in: .userDomainMask)
-	}
+    func directoriesURL(searchPath: FileManager.SearchPathDirectory) -> [URL] {
+        return fileManager.urls(for: searchPath, in: .userDomainMask)
+    }
 
-	func fileExists(fileName: String, path: URL) -> Bool {
-		return fileManager.fileExists(atPath: path.path + "/" + fileName)
-	}
+    func fileExists(fileName: String, path: URL) -> Bool {
+        return fileManager.fileExists(atPath: path.path + "/" + fileName)
+    }
 }

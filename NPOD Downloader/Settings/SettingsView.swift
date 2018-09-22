@@ -9,13 +9,13 @@
 import AppKit
 
 final class SettingsView: NSView {
-	@IBOutlet private weak var imageView: NSImageView!
-	@IBOutlet private weak var retinaBadgeIcon: NSImageView!
-	@IBOutlet private weak var previousImageButton: NSButton!
-	@IBOutlet private weak var nextImageButton: NSButton!
-	@IBOutlet private weak var keepImageButton: NSButton!
-	@IBOutlet private weak var imageTitle: NSTextField!
-	@IBOutlet private weak var imageDescription: NSTextField!
+    @IBOutlet private var imageView: NSImageView!
+    @IBOutlet private var retinaBadgeIcon: NSImageView!
+    @IBOutlet private var previousImageButton: NSButton!
+    @IBOutlet private var nextImageButton: NSButton!
+    @IBOutlet private var keepImageButton: NSButton!
+    @IBOutlet private var imageTitle: NSTextField!
+    @IBOutlet private var imageDescription: NSTextField!
 
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)

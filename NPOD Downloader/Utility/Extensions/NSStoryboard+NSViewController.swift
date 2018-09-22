@@ -9,13 +9,13 @@
 import AppKit
 
 extension NSStoryboard {
-	func instantiate(withIdentifier identifier: String) -> NSViewController {
-		let sceneIdentifier: NSStoryboard.SceneIdentifier = NSStoryboard.SceneIdentifier(rawValue: identifier)
+    func instantiate(withIdentifier identifier: String) -> NSViewController {
+        let sceneIdentifier: NSStoryboard.SceneIdentifier = NSStoryboard.SceneIdentifier(rawValue: identifier)
 
-		guard let viewController: NSViewController = instantiateController(withIdentifier: sceneIdentifier) as? NSViewController else {
-			fatalError(Constants.FatalErrors.storyboardError + className)
-		}
+        guard let viewController: NSViewController = instantiateController(withIdentifier: sceneIdentifier) as? NSViewController else {
+            fatalError(Constants.FatalErrors.storyboardError + className)
+        }
 
-		return viewController
-	}
+        return viewController
+    }
 }

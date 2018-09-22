@@ -9,7 +9,7 @@
 protocol DependenciesProtocol: HasNetworkService, HasFileManagerService, HasUserDefaultsService {}
 
 final class Dependencies: DependenciesProtocol {
-	lazy var fileManagerService: FileManagerServiceProvider = FileManagerService()
-	lazy var networkService: NetworkServiceProvider = NetworkService(dependencies: self)
-	lazy var userDefaultsService: UserDefaultsServiceProvider = UserDefaultsService()
+    lazy var fileManagerService: FileManagerServiceProvider = FileManagerService()
+    lazy var networkService: NetworkServiceProvider = NetworkService(dependencies: self)
+    lazy var userDefaultsService: UserDefaultsServiceProvider = UserDefaultsService()
 }

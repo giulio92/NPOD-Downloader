@@ -10,22 +10,22 @@ import Foundation
 
 struct Ubernodes: Decodable {
     struct Ubernode: Decodable {
-		private enum CodingKeys: String, CodingKey {
-			case type
-			case promoDateTime
-			case id = "nid"
-		}
+        private enum CodingKeys: String, CodingKey {
+            case type
+            case promoDateTime
+            case id = "nid"
+        }
 
         let type: String
         private let promoDateTime: String // cambiare in Date
         let id: String
 
-		var date: Date? {
-			let dateFormatter: ISO8601DateFormatter = ISO8601DateFormatter()
-			dateFormatter.formatOptions = .withInternetDateTime
+        var date: Date? {
+            let dateFormatter: ISO8601DateFormatter = ISO8601DateFormatter()
+            dateFormatter.formatOptions = .withInternetDateTime
 
-			return dateFormatter.date(from: promoDateTime)
-		}
+            return dateFormatter.date(from: promoDateTime)
+        }
     }
 
     let ubernodes: [Ubernode]
