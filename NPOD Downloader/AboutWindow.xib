@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14113" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11542"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14113"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -11,7 +11,7 @@
         <window allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="yUn-Wy-7df">
             <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
             <rect key="contentRect" x="-1724" y="400" width="300" height="300"/>
-            <rect key="screenRect" x="-1920" y="-280" width="1920" height="1080"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
             <view key="contentView" id="iEo-OU-vKg" customClass="AboutView" customModule="NPOD_Downloader" customModuleProvider="target">
                 <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
                 <autoresizingMask key="autoresizingMask"/>
@@ -47,7 +47,7 @@
                             <font key="font" metaFont="system"/>
                         </buttonCell>
                         <connections>
-                            <action selector="launchGitHubPage:" target="iEo-OU-vKg" id="YmF-E4-HGf"/>
+                            <action selector="forkAction:" target="iEo-OU-vKg" id="iih-7Y-1av"/>
                         </connections>
                     </button>
                     <button translatesAutoresizingMaskIntoConstraints="NO" id="Bbq-HB-Cgy">
@@ -55,7 +55,7 @@
                         <constraints>
                             <constraint firstAttribute="width" constant="32" id="i3g-yZ-7tX"/>
                         </constraints>
-                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="GitHub Logo" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="Nch-rn-Q80">
+                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="GitHub logo" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="Nch-rn-Q80">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
@@ -83,7 +83,7 @@
         </window>
     </objects>
     <resources>
-        <image name="GitHub Logo" width="32" height="32"/>
+        <image name="GitHub logo" width="32" height="32"/>
         <image name="NSApplicationIcon" width="128" height="128"/>
     </resources>
 </document>
