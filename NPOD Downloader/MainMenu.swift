@@ -13,10 +13,11 @@ final class MainMenu: NSObject {
     @IBOutlet private var currentImageName: NSMenuItem!
 
     private let dependencies: Dependencies = Dependencies()
-
     private let storyboard: NSStoryboard = NSStoryboard(name: NSStoryboard.Name(rawValue: "Main"), bundle: nil)
 
     private let statusItem: NSStatusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
+
+    private var currentNodes: [Ubernodes.Ubernode] = []
 
     @IBAction private func preferencesAction(_: NSMenuItem) {
         showSettingsController()
@@ -49,6 +50,23 @@ final class MainMenu: NSObject {
         dependencies.networkService.getUbernodes(completion: { result in
             switch result {
             case let .success(ubernodes):
+                self.currentNodes = ubernodes.nodes
+                self.getLatestNodeInformations()
+
+            case let .failure(networkError):
+                break
+            }
+        })
+    }
+
+    private func getLatestNodeInformations() {
+        guard let latestNode: Ubernodes.Ubernode = currentNodes.first else {
+            return
+        }
+
+        dependencies.networkService.getNode(id: latestNode.id, completion: { result in
+            switch result {
+            case let .success(node):
                 break
 
             case let .failure(networkError):
