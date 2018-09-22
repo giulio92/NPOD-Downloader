@@ -19,11 +19,11 @@ final class MainMenu: NSObject {
     private let statusItem: NSStatusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
 
     @IBAction private func preferencesAction(_ sender: NSMenuItem) {
-
+		showSettingsController()
     }
 
     @IBAction private func aboutAction(_ sender: NSMenuItem) {
-
+		showAboutController()
     }
 
     @IBAction private func quitAction(_ sender: NSMenuItem) {
@@ -56,4 +56,24 @@ final class MainMenu: NSObject {
             }
         })
     }
+
+	private func showSettingsController() {
+		let viewController: SettingsController = SettingsController.initialize(from: storyboard)
+
+		presentViewController(viewController: viewController)
+	}
+
+	private func showAboutController() {
+		let viewController: AboutController = AboutController.initialize(from: storyboard)
+
+		presentViewController(viewController: viewController)
+	}
+
+	private func presentViewController(viewController: NSViewController) {
+		let window: NSWindow = NSWindow(contentViewController: viewController)
+		window.makeKeyAndOrderFront(self)
+
+		let windowController: NSWindowController = NSWindowController(window: window)
+		windowController.showWindow(self)
+	}
 }
