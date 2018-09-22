@@ -141,6 +141,15 @@
                             <constraint firstItem="B1r-ft-tiT" firstAttribute="top" secondItem="zag-nj-z3k" secondAttribute="top" id="sn7-ry-zmp"/>
                             <constraint firstItem="xjJ-Rm-ZEG" firstAttribute="leading" secondItem="zag-nj-z3k" secondAttribute="leading" id="yca-5D-WnQ"/>
                         </constraints>
+                        <connections>
+                            <outlet property="imageDescription" destination="FcP-v4-JeJ" id="Jng-Si-ZCI"/>
+                            <outlet property="imageTitle" destination="Io4-f6-xgx" id="81a-ut-9qc"/>
+                            <outlet property="imageView" destination="zag-nj-z3k" id="ByB-rq-fdi"/>
+                            <outlet property="keepImageButton" destination="3EH-Bg-lGf" id="96m-FK-kpD"/>
+                            <outlet property="nextImageButton" destination="hco-a4-TSy" id="c7R-Lo-nOh"/>
+                            <outlet property="previousImageButton" destination="ASP-H0-rud" id="qeG-OJ-ZaX"/>
+                            <outlet property="retinaBadgeIcon" destination="B1r-ft-tiT" id="hRf-p6-dAd"/>
+                        </connections>
                     </view>
                 </viewController>
                 <customObject id="oPw-ej-Ip8" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
