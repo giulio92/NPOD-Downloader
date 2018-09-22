@@ -89,7 +89,10 @@ final class NetworkService: NetworkServiceProvider {
             return
         }
 
-        let pictureDirectory: URL = dependencies.fileManagerService.directoriesURL(searchPath: .picturesDirectory)[0]
+        guard let pictureDirectory: URL = dependencies.fileManagerService.directoriesURL(searchPath: .picturesDirectory).first else {
+            completion(.failure(.unknown))
+            return
+        }
 
         let imageName: String = nodeImage.filename
 
