@@ -52,11 +52,11 @@
             </objects>
             <point key="canvasLocation" x="75" y="0.0"/>
         </scene>
-        <!--View Controller-->
+        <!--Settings Controller-->
         <scene sceneID="el0-UI-zKg">
             <objects>
-                <viewController storyboardIdentifier="preferencesViewController" showSeguePresentationStyle="single" id="cRj-ce-IUp" sceneMemberID="viewController">
-                    <view key="view" id="XJF-vV-ekx">
+                <viewController storyboardIdentifier="SettingsController" showSeguePresentationStyle="single" id="cRj-ce-IUp" customClass="SettingsController" customModule="NPOD_Downloader" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="XJF-vV-ekx" customClass="SettingsView" customModule="NPOD_Downloader" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="410"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
@@ -73,9 +73,6 @@
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
-                                <connections>
-                                    <action selector="setImageAsWallpaper:" target="XJF-vV-ekx" id="pBS-U3-tJd"/>
-                                </connections>
                             </button>
                             <button translatesAutoresizingMaskIntoConstraints="NO" id="3EH-Bg-lGf">
                                 <rect key="frame" x="270" y="147" width="119" height="25"/>
@@ -83,9 +80,6 @@
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
-                                <connections>
-                                    <action selector="keepImage:" target="XJF-vV-ekx" id="ODo-y0-XM7"/>
-                                </connections>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="hco-a4-TSy">
                                 <rect key="frame" x="417" y="273" width="49" height="32"/>
@@ -93,9 +87,6 @@
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
-                                <connections>
-                                    <action selector="nextImage:" target="XJF-vV-ekx" id="nhq-f0-H6I"/>
-                                </connections>
                             </button>
                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="B1r-ft-tiT">
                                 <rect key="frame" x="337" y="340" width="50" height="50"/>
@@ -110,9 +101,6 @@
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
-                                <connections>
-                                    <action selector="previousImage:" target="XJF-vV-ekx" id="6Gi-FU-yBO"/>
-                                </connections>
                             </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" preferredMaxLayoutWidth="294" translatesAutoresizingMaskIntoConstraints="NO" id="Io4-f6-xgx">
                                 <rect key="frame" x="92" y="124" width="297" height="17"/>
@@ -153,25 +141,16 @@
                             <constraint firstItem="B1r-ft-tiT" firstAttribute="top" secondItem="zag-nj-z3k" secondAttribute="top" id="sn7-ry-zmp"/>
                             <constraint firstItem="xjJ-Rm-ZEG" firstAttribute="leading" secondItem="zag-nj-z3k" secondAttribute="leading" id="yca-5D-WnQ"/>
                         </constraints>
-                        <connections>
-                            <outlet property="imageDescription" destination="FcP-v4-JeJ" id="eEh-3r-0Ga"/>
-                            <outlet property="imageTitle" destination="Io4-f6-xgx" id="0tn-U8-dse"/>
-                            <outlet property="imageView" destination="zag-nj-z3k" id="rBg-UJ-QU5"/>
-                            <outlet property="keepImageButton" destination="3EH-Bg-lGf" id="IG0-XP-NzV"/>
-                            <outlet property="nextImageButton" destination="hco-a4-TSy" id="wbq-fF-etI"/>
-                            <outlet property="previousImageButton" destination="ASP-H0-rud" id="9sU-QA-Xb7"/>
-                            <outlet property="retinaBadgeIcon" destination="B1r-ft-tiT" id="CZn-a6-OzS"/>
-                        </connections>
                     </view>
                 </viewController>
                 <customObject id="oPw-ej-Ip8" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="141" y="492"/>
         </scene>
-        <!--View Controller-->
+        <!--About Controller-->
         <scene sceneID="Kbc-91-Cb4">
             <objects>
-                <viewController storyboardIdentifier="aboutViewController" showSeguePresentationStyle="single" id="cku-zU-EgG" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AboutController" showSeguePresentationStyle="single" id="cku-zU-EgG" customClass="AboutController" customModule="NPOD_Downloader" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="wBu-Xb-bda" customClass="AboutView" customModule="NPOD_Downloader" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>

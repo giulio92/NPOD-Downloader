@@ -54,6 +54,7 @@ enum Constants {
     }
 
     enum FatalErrors {
+		static let nameSpaceError: String = "Cannot find class name from: "
 		static let storyboardError: String = "Cannot find NSViewController with identifier: "
     }
 }

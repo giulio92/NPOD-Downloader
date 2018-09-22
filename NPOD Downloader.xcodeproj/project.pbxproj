@@ -22,6 +22,10 @@
 		EF4F9CBB21564BEE0016B5E4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4F9CBA21564BEE0016B5E4 /* Constants.swift */; };
 		EF4F9CBD215655EF0016B5E4 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4F9CBC215655EF0016B5E4 /* AboutView.swift */; };
 		EFB2862B21567DD000EB4B43 /* NSStoryboard+NSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB2862A21567DD000EB4B43 /* NSStoryboard+NSViewController.swift */; };
+		EFB2862D21567F9F00EB4B43 /* AboutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB2862C21567F9F00EB4B43 /* AboutController.swift */; };
+		EFB2863021567FD500EB4B43 /* StoryboardProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB2862F21567FD500EB4B43 /* StoryboardProtocol.swift */; };
+		EFB28632215680A500EB4B43 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB28631215680A500EB4B43 /* SettingsController.swift */; };
+		EFB28634215681F200EB4B43 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB28633215681F200EB4B43 /* SettingsView.swift */; };
 		EFC8C25221566760005C71FC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFC8C25121566760005C71FC /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +64,10 @@
 		EF4F9CBA21564BEE0016B5E4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		EF4F9CBC215655EF0016B5E4 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		EFB2862A21567DD000EB4B43 /* NSStoryboard+NSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSStoryboard+NSViewController.swift"; sourceTree = "<group>"; };
+		EFB2862C21567F9F00EB4B43 /* AboutController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutController.swift; sourceTree = "<group>"; };
+		EFB2862F21567FD500EB4B43 /* StoryboardProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardProtocol.swift; sourceTree = "<group>"; };
+		EFB28631215680A500EB4B43 /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
+		EFB28633215681F200EB4B43 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		EFC8C25121566760005C71FC /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -173,8 +181,9 @@
 		EF4F9CB921564BDA0016B5E4 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
-				EFB2862921567DB300EB4B43 /* Extensions */,
 				EF4F9CBA21564BEE0016B5E4 /* Constants.swift */,
+				EFB2862921567DB300EB4B43 /* Extensions */,
+				EFB2862E21567FC600EB4B43 /* Protocols */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -187,9 +196,19 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		EFB2862E21567FC600EB4B43 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				EFB2862F21567FD500EB4B43 /* StoryboardProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		EFE9B580215679DF005CAE0F /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				EFB28631215680A500EB4B43 /* SettingsController.swift */,
+				EFB28633215681F200EB4B43 /* SettingsView.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -197,6 +216,7 @@
 		EFE9B581215679E4005CAE0F /* About */ = {
 			isa = PBXGroup;
 			children = (
+				EFB2862C21567F9F00EB4B43 /* AboutController.swift */,
 				EF4F9CBC215655EF0016B5E4 /* AboutView.swift */,
 			);
 			path = About;
@@ -379,6 +399,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFB28634215681F200EB4B43 /* SettingsView.swift in Sources */,
 				EF4F9CB8215647C60016B5E4 /* Dependencies.swift in Sources */,
 				EF451A5521565BFA00EDB795 /* Node.swift in Sources */,
 				EF4F9C8F21563DFA0016B5E4 /* AppDelegate.swift in Sources */,
@@ -388,8 +409,11 @@
 				EF4F9CB62156462E0016B5E4 /* NetworkError.swift in Sources */,
 				EF4F9CAC2156417A0016B5E4 /* MainMenu.swift in Sources */,
 				EF4F9CB4215644D50016B5E4 /* Ubernodes.swift in Sources */,
+				EFB2863021567FD500EB4B43 /* StoryboardProtocol.swift in Sources */,
+				EFB28632215680A500EB4B43 /* SettingsController.swift in Sources */,
 				EFB2862B21567DD000EB4B43 /* NSStoryboard+NSViewController.swift in Sources */,
 				EF4F9CBB21564BEE0016B5E4 /* Constants.swift in Sources */,
+				EFB2862D21567F9F00EB4B43 /* AboutController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
