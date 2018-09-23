@@ -96,7 +96,11 @@ final class NetworkService: NetworkServiceProvider {
             return
         }
 
-        guard let downloadDirectory: URL = self.dependencies.fileManagerService.downloadDirectory(filename: imageName) else {
+        let downloadDirectory: URL
+
+        do {
+            downloadDirectory = try dependencies.fileManagerService.downloadDirectory(filename: imageName)
+        } catch _ {
             completion(.failure(.unknown))
             return
         }
