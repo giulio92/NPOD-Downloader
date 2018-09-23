@@ -89,24 +89,23 @@ final class NetworkService: NetworkServiceProvider {
             return
         }
 
-        guard let pictureDirectory: URL = dependencies.fileManagerService.directoriesURL(searchPath: .picturesDirectory).first else {
-            completion(.failure(.unknown))
-            return
-        }
-
         let imageName: String = nodeImage.filename
 
-        guard dependencies.fileManagerService.fileExists(fileName: imageName, path: pictureDirectory) == false else {
+        guard dependencies.fileManagerService.imageAlreadyDownloaded(imageName: imageName) == false else {
             completion(.success(()))
             return
         }
 
-        let destination: DownloadRequest.DownloadFileDestination = { _, _ in
-            let downloadPath: URL = pictureDirectory.appendingPathComponent(imageName)
-            return (downloadPath, [.removePreviousFile])
+        guard let downloadDirectory: URL = self.dependencies.fileManagerService.downloadDirectory(filename: imageName) else {
+            completion(.failure(.unknown))
+            return
         }
 
-        alamofire.download(Constants.Nasa.imageURL(name: nodeImage.filename), to: destination).downloadProgress(closure: { progress in
+        let destination: DownloadRequest.DownloadFileDestination = { _, _ in
+            (downloadDirectory, [.removePreviousFile])
+        }
+
+        alamofire.download(Constants.Nasa.imageURL(name: imageName), to: destination).downloadProgress(closure: { progress in
             progressUpdate(progress.fractionCompleted)
         }).responseData(completionHandler: { response in
             completion(.success(()))

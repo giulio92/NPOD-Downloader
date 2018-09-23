@@ -13,8 +13,8 @@ protocol HasFileManagerService: AnyObject {
 }
 
 protocol FileManagerServiceProvider: AnyObject {
-    func directoriesURL(searchPath: FileManager.SearchPathDirectory) -> [URL]
-    func fileExists(fileName: String, path: URL) -> Bool
+    func downloadDirectory(filename: String) -> URL?
+    func imageAlreadyDownloaded(imageName: String) -> Bool
 }
 
 final class FileManagerService: FileManagerServiceProvider {
@@ -24,11 +24,17 @@ final class FileManagerService: FileManagerServiceProvider {
         fileManager = .default
     }
 
-    func directoriesURL(searchPath: FileManager.SearchPathDirectory) -> [URL] {
-        return fileManager.urls(for: searchPath, in: .userDomainMask)
+    func downloadDirectory(filename: String) -> URL? {
+        let picturesDirectory: URL? = fileManager.urls(for: .picturesDirectory, in: .userDomainMask).first
+
+        return picturesDirectory?.appendingPathComponent(filename)
     }
 
-    func fileExists(fileName: String, path: URL) -> Bool {
-        return fileManager.fileExists(atPath: path.path + "/" + fileName)
+    func imageAlreadyDownloaded(imageName: String) -> Bool {
+        guard let downloadDirectory: URL = downloadDirectory(filename: imageName) else {
+            return false
+        }
+
+        return fileManager.fileExists(atPath: downloadDirectory.path)
     }
 }
