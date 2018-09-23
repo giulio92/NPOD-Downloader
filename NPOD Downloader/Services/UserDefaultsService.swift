@@ -12,7 +12,9 @@ protocol HasUserDefaultsService: AnyObject {
     var userDefaultsService: UserDefaultsServiceProvider { get }
 }
 
-protocol UserDefaultsServiceProvider: AnyObject {}
+protocol UserDefaultsServiceProvider: AnyObject {
+    var keepImage: Bool { get set }
+}
 
 final class UserDefaultsService: UserDefaultsServiceProvider {
     private let userDefaults: UserDefaults
