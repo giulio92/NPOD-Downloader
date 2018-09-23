@@ -13,6 +13,7 @@ final class MainMenu: NSObject {
     @IBOutlet private var currentImageName: NSMenuItem!
 
     private let dependencies: Dependencies = Dependencies()
+
     private let storyboard: NSStoryboard = NSStoryboard(name: NSStoryboard.Name(rawValue: "Main"), bundle: nil)
 
     private let statusItem: NSStatusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
@@ -42,7 +43,10 @@ final class MainMenu: NSObject {
     }
 
     private func configureStatusItem() {
-        statusItem.image = NSImage(named: NSImage.Name("MenuIcon"))
+        let image: NSImage? = NSImage(named: NSImage.Name("MenuIcon"))
+        image?.isTemplate = true
+
+        statusItem.image = image
         statusItem.menu = applicationMenu
     }
 
@@ -55,8 +59,8 @@ final class MainMenu: NSObject {
                 self.currentNodes = ubernodes.nodes
                 self.getLatestNodeInformations()
 
-            case let .failure(networkError):
-                break
+            case .failure:
+                self.currentImageName.title = "Failed to connect to NASA API"
             }
         })
     }
@@ -74,8 +78,8 @@ final class MainMenu: NSObject {
                 self.nodeOfTheDay = node
                 self.downloadLatestImage()
 
-            case let .failure(networkError):
-                break
+            case .failure:
+                self.currentImageName.title = "Failed to retrive image informations"
             }
         })
     }
