@@ -26,6 +26,42 @@ final class SettingsView: NSView {
     }
 
     @IBAction private func nextImageAction(_: NSButton) {
+        increaseIndex()
+    }
+
+    @IBAction private func previousImageAction(_: NSButton) {
+        decreaseIndex()
+    }
+
+    @IBAction private func keepImageAction(_: NSButton) {
+        toggleKeepImageOption()
+    }
+
+    override func draw(_ dirtyRect: NSRect) {
+        super.draw(dirtyRect)
+
+        // Drawing code here.
+        updateImage()
+        configureKeepImageButton()
+    }
+
+    private func configureKeepImageButton() {
+        if dependencies.userDefaultsService.keepImage {
+            keepImageButton.state = .on
+        } else {
+            keepImageButton.state = .off
+        }
+    }
+
+    private func toggleKeepImageOption() {
+        dependencies.userDefaultsService.keepImage = !dependencies.userDefaultsService.keepImage
+    }
+
+    private func updateImage() {
+        imageView.image = dependencies.fileManagerService.downloadedImages[currentImageIndex]
+    }
+
+    private func increaseIndex() {
         guard currentImageIndex < dependencies.fileManagerService.downloadedImages.count - 1 else {
             return
         }
@@ -33,24 +69,11 @@ final class SettingsView: NSView {
         currentImageIndex += 1
     }
 
-    @IBAction private func previousImageAction(_: NSButton) {
+    private func decreaseIndex() {
         guard currentImageIndex > 0 else {
             return
         }
 
         currentImageIndex -= 1
-    }
-
-    @IBAction private func keepImageAction(_: NSButton) {}
-
-    override func draw(_ dirtyRect: NSRect) {
-        super.draw(dirtyRect)
-
-        // Drawing code here.
-        updateImage()
-    }
-
-    private func updateImage() {
-        imageView.image = dependencies.fileManagerService.downloadedImages[currentImageIndex]
     }
 }
