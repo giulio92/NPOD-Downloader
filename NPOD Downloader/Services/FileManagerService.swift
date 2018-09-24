@@ -6,6 +6,7 @@
 //  Copyright © 2018 Giulio Lombardo. All rights reserved.
 //
 
+import AppKit
 import Foundation
 
 protocol HasFileManagerService: AnyObject {
@@ -13,7 +14,7 @@ protocol HasFileManagerService: AnyObject {
 }
 
 protocol FileManagerServiceProvider: AnyObject {
-    var downloadedImages: [URL] { get }
+    var downloadedImages: [NSImage] { get }
 
     func downloadDirectory(filename: String) throws -> URL
     func imageAlreadyDownloaded(imageName: String) -> Bool
@@ -49,19 +50,13 @@ final class FileManagerService: FileManagerServiceProvider {
         }
     }
 
-    var downloadedImages: [URL] {
+    var downloadedImages: [NSImage] {
         do {
             let filenames: [URL] = try fileManager.contentsOfDirectory(at: applicationFolder(),
                                                                        includingPropertiesForKeys: [.creationDateKey],
                                                                        options: .skipsHiddenFiles)
 
-            return try filenames.filter({ fileURL -> Bool in
-                let fileExtension: String = fileURL.pathExtension
-
-                return fileExtension == Constants.ImageExtensions.jpg ||
-                    fileExtension == Constants.ImageExtensions.jpeg ||
-                    fileExtension == Constants.ImageExtensions.png
-            }).sorted(by: { lhURL, rhURL -> Bool in
+            return try filenames.sorted(by: { lhURL, rhURL -> Bool in
                 let lhValues: URLResourceValues = try lhURL.resourceValues(forKeys: [.creationDateKey])
 
                 guard let lhDate: Date = lhValues.creationDate else {
@@ -75,6 +70,8 @@ final class FileManagerService: FileManagerServiceProvider {
                 }
 
                 return lhDate > rhDate
+            }).compactMap({ fileURL -> NSImage? in
+                NSImage(byReferencing: fileURL)
             })
         } catch _ {
             return []
