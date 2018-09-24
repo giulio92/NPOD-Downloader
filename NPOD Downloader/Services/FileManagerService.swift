@@ -51,14 +51,30 @@ final class FileManagerService: FileManagerServiceProvider {
 
     var downloadedImages: [URL] {
         do {
-            let filenames: [String] = try fileManager.contentsOfDirectory(atPath: applicationFolder().path)
+            let filenames: [URL] = try fileManager.contentsOfDirectory(at: applicationFolder(),
+                                                                       includingPropertiesForKeys: [.creationDateKey],
+                                                                       options: .skipsHiddenFiles)
 
-            return try filenames.filter({ filename -> Bool in
-                filename.hasSuffix(Constants.ImageExtensions.jpg) ||
-                    filename.hasSuffix(Constants.ImageExtensions.jpeg) ||
-                    filename.hasSuffix(Constants.ImageExtensions.png)
-            }).map({ filename -> URL in
-                try downloadDirectory(filename: filename)
+            return try filenames.filter({ fileURL -> Bool in
+                let fileExtension: String = fileURL.pathExtension
+
+                return fileExtension == Constants.ImageExtensions.jpg ||
+                    fileExtension == Constants.ImageExtensions.jpeg ||
+                    fileExtension == Constants.ImageExtensions.png
+            }).sorted(by: { lhURL, rhURL -> Bool in
+                let lhValues: URLResourceValues = try lhURL.resourceValues(forKeys: [.creationDateKey])
+
+                guard let lhDate: Date = lhValues.creationDate else {
+                    return false
+                }
+
+                let rhValues: URLResourceValues = try rhURL.resourceValues(forKeys: [.creationDateKey])
+
+                guard let rhDate: Date = rhValues.creationDate else {
+                    return false
+                }
+
+                return lhDate > rhDate
             })
         } catch _ {
             return []

@@ -62,9 +62,9 @@ enum Constants {
     }
 
     enum ImageExtensions {
-        static let jpg: String = ".jpg"
-        static let jpeg: String = ".jpeg"
-        static let png: String = ".png"
+        static let jpg: String = "jpg"
+        static let jpeg: String = "jpeg"
+        static let png: String = "png"
     }
 
     enum UserDefaultKeys {
