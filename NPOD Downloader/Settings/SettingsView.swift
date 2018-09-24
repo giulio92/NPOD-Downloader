@@ -17,9 +17,29 @@ final class SettingsView: NSView {
     @IBOutlet private var imageTitle: NSTextField!
     @IBOutlet private var imageDescription: NSTextField!
 
-    @IBAction private func nextImageAction(_: NSButton) {}
+    private let dependencies: Dependencies = Dependencies()
 
-    @IBAction private func previousImageAction(_: NSButton) {}
+    private var currentImageIndex: Int = 0 {
+        didSet {
+            updateImage()
+        }
+    }
+
+    @IBAction private func nextImageAction(_: NSButton) {
+        guard currentImageIndex < dependencies.fileManagerService.downloadedImages.count - 1 else {
+            return
+        }
+
+        currentImageIndex += 1
+    }
+
+    @IBAction private func previousImageAction(_: NSButton) {
+        guard currentImageIndex > 0 else {
+            return
+        }
+
+        currentImageIndex -= 1
+    }
 
     @IBAction private func keepImageAction(_: NSButton) {}
 
@@ -27,5 +47,10 @@ final class SettingsView: NSView {
         super.draw(dirtyRect)
 
         // Drawing code here.
+        updateImage()
+    }
+
+    private func updateImage() {
+        imageView.image = dependencies.fileManagerService.downloadedImages[currentImageIndex]
     }
 }
