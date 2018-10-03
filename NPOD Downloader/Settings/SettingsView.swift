@@ -58,7 +58,10 @@ final class SettingsView: NSView {
     }
 
     private func updateImage() {
-        imageView.image = dependencies.fileManagerService.downloadedImages[currentImageIndex]
+        let newImage: NSImage = dependencies.fileManagerService.downloadedImages[currentImageIndex]
+
+        imageView.image = newImage
+        retinaBadgeIcon.isHidden = !newImage.isRetina
     }
 
     private func increaseIndex() {

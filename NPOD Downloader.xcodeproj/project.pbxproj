@@ -21,6 +21,7 @@
 		EF4F9CB8215647C60016B5E4 /* Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4F9CB7215647C60016B5E4 /* Dependencies.swift */; };
 		EF4F9CBB21564BEE0016B5E4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4F9CBA21564BEE0016B5E4 /* Constants.swift */; };
 		EF4F9CBD215655EF0016B5E4 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4F9CBC215655EF0016B5E4 /* AboutView.swift */; };
+		EF7DAB842164EF750055A8B9 /* NSImage+Retina.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7DAB832164EF750055A8B9 /* NSImage+Retina.swift */; };
 		EFB2862B21567DD000EB4B43 /* NSStoryboard+NSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB2862A21567DD000EB4B43 /* NSStoryboard+NSViewController.swift */; };
 		EFB2862D21567F9F00EB4B43 /* AboutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB2862C21567F9F00EB4B43 /* AboutController.swift */; };
 		EFB2863021567FD500EB4B43 /* StoryboardProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB2862F21567FD500EB4B43 /* StoryboardProtocol.swift */; };
@@ -65,6 +66,7 @@
 		EF4F9CB7215647C60016B5E4 /* Dependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dependencies.swift; sourceTree = "<group>"; };
 		EF4F9CBA21564BEE0016B5E4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		EF4F9CBC215655EF0016B5E4 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		EF7DAB832164EF750055A8B9 /* NSImage+Retina.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSImage+Retina.swift"; sourceTree = "<group>"; };
 		EFB2862A21567DD000EB4B43 /* NSStoryboard+NSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSStoryboard+NSViewController.swift"; sourceTree = "<group>"; };
 		EFB2862C21567F9F00EB4B43 /* AboutController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutController.swift; sourceTree = "<group>"; };
 		EFB2862F21567FD500EB4B43 /* StoryboardProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardProtocol.swift; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				EFB2862A21567DD000EB4B43 /* NSStoryboard+NSViewController.swift */,
+				EF7DAB832164EF750055A8B9 /* NSImage+Retina.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -429,6 +432,7 @@
 				EFB2863821568DE500EB4B43 /* FileManagerService.swift in Sources */,
 				EF4F9CBD215655EF0016B5E4 /* AboutView.swift in Sources */,
 				EF4F9CB62156462E0016B5E4 /* NetworkError.swift in Sources */,
+				EF7DAB842164EF750055A8B9 /* NSImage+Retina.swift in Sources */,
 				EF4F9CAC2156417A0016B5E4 /* MainMenu.swift in Sources */,
 				EF4F9CB4215644D50016B5E4 /* Ubernodes.swift in Sources */,
 				EFB2863021567FD500EB4B43 /* StoryboardProtocol.swift in Sources */,
