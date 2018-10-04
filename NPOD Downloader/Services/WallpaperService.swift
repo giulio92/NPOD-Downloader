@@ -31,11 +31,17 @@ final class WallpaperService: WallpaperServiceProvider {
             let image: NSImage = NSImage(byReferencing: fileURL)
 
             try NSScreen.screens.forEach({ screen in
-                let options: [NSWorkspace.DesktopImageOptionKey: Any] = [:]
+                let unsatisfiedWidth: Bool = image.size.width < (screen.frame.width * screen.backingScaleFactor)
+                let unsatisfiedHeight: Bool = image.size.height < (screen.frame.height * screen.backingScaleFactor)
+
+                var options: [NSWorkspace.DesktopImageOptionKey: Any] = [:]
+
+                if unsatisfiedWidth || unsatisfiedHeight {
+                    options[.imageScaling] = NSImageScaling.scaleProportionallyUpOrDown.rawValue
+                }
 
                 try NSWorkspace.shared.setDesktopImageURL(fileURL, for: screen, options: options)
             })
-
         } catch let error {
             throw error
         }
