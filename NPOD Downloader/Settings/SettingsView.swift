@@ -33,6 +33,10 @@ final class SettingsView: NSView {
         decreaseIndex()
     }
 
+    @IBAction private func setWallpaperAction(_: NSButton) {
+        setWallpaper()
+    }
+
     @IBAction private func keepImageAction(_: NSButton) {
         toggleKeepImageOption()
     }
@@ -62,6 +66,9 @@ final class SettingsView: NSView {
 
         imageView.image = newImage
         retinaBadgeIcon.isHidden = !newImage.isRetina
+    }
+
+    private func setWallpaper() {
     }
 
     private func increaseIndex() {
