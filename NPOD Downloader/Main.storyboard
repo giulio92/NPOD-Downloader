@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14113"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Application-->
+        <scene sceneID="0Eh-xj-S2n">
+            <objects>
+                <application id="orc-D0-MVP" sceneMemberID="viewController">
+                    <menu key="mainMenu" title="Main Menu" systemMenu="main" id="irO-Qd-Wea"/>
+                </application>
+                <customObject id="dV8-IC-hJN" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <customObject id="VjU-Bd-lBJ" customClass="MainMenu" customModule="NPOD_Downloader" customModuleProvider="target">
+                    <connections>
+                        <outlet property="applicationMenu" destination="zlj-q6-GgF" id="pIB-zh-vhI"/>
+                        <outlet property="currentImageName" destination="3hu-ZS-Pl5" id="4Lr-3i-LFi"/>
+                    </connections>
+                </customObject>
+                <menu id="zlj-q6-GgF">
+                    <items>
+                        <menuItem title="Picture of the day:" id="PlA-Sl-T0b">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                        </menuItem>
+                        <menuItem title="Lorem ipsum" id="3hu-ZS-Pl5">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                        </menuItem>
+                        <menuItem isSeparatorItem="YES" id="WKQ-8s-dsT"/>
+                        <menuItem title="Preferences..." id="6Ts-4j-AUE">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                            <connections>
+                                <action selector="preferencesAction:" target="VjU-Bd-lBJ" id="70s-C3-0dR"/>
+                                <segue destination="cRj-ce-IUp" kind="show" id="y9f-gG-UgG"/>
+                            </connections>
+                        </menuItem>
+                        <menuItem isSeparatorItem="YES" id="22p-Hm-NFH"/>
+                        <menuItem title="About" id="d6N-rF-6Up">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                            <connections>
+                                <action selector="aboutAction:" target="VjU-Bd-lBJ" id="ObL-KJ-cgj"/>
+                                <segue destination="cku-zU-EgG" kind="show" id="aqG-um-JQc"/>
+                            </connections>
+                        </menuItem>
+                        <menuItem title="Quit" id="JYS-6i-zsh">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                            <connections>
+                                <action selector="quitAction:" target="VjU-Bd-lBJ" id="wxN-hl-ebg"/>
+                            </connections>
+                        </menuItem>
+                    </items>
+                </menu>
+            </objects>
+            <point key="canvasLocation" x="75" y="0.0"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="el0-UI-zKg">
+            <objects>
+                <viewController title="Settings" storyboardIdentifier="SettingsController" showSeguePresentationStyle="single" id="cRj-ce-IUp" customClass="SettingsController" customModule="NPOD_Downloader" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="XJF-vV-ekx" customClass="SettingsView" customModule="NPOD_Downloader" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="489" height="331"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zag-nj-z3k">
+                                <rect key="frame" x="95" y="108" width="299" height="206"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="dSR-ns-vhc"/>
+                                </constraints>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" imageFrameStyle="grayBezel" id="x65-f1-NQZ"/>
+                            </imageView>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="xjJ-Rm-ZEG">
+                                <rect key="frame" x="92" y="63" width="140" height="32"/>
+                                <buttonCell key="cell" type="push" title="Set as wallpaper" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Sh5-jl-VFL">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="setWallpaperAction:" target="XJF-vV-ekx" id="XgW-0R-55R"/>
+                                </connections>
+                            </button>
+                            <button translatesAutoresizingMaskIntoConstraints="NO" id="3EH-Bg-lGf">
+                                <rect key="frame" x="274" y="68" width="119" height="25"/>
+                                <buttonCell key="cell" type="check" title="Keep this image" bezelStyle="regularSquare" imagePosition="left" inset="2" id="QcC-h4-lGu">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="keepImageAction:" target="XJF-vV-ekx" id="g6v-ut-eLc"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="hco-a4-TSy">
+                                <rect key="frame" x="425" y="194" width="50" height="32"/>
+                                <buttonCell key="cell" type="push" title="&gt;" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="nw7-QE-sPA">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="nextImageAction:" target="XJF-vV-ekx" id="Yl7-AU-xk2"/>
+                                </connections>
+                            </button>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="B1r-ft-tiT">
+                                <rect key="frame" x="341" y="261" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="B1r-ft-tiT" secondAttribute="height" multiplier="1:1" id="AXS-4Q-XIB"/>
+                                </constraints>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="RetinaBadge" id="3hJ-0i-9N3"/>
+                            </imageView>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ASP-H0-rud">
+                                <rect key="frame" x="14" y="194" width="50" height="32"/>
+                                <buttonCell key="cell" type="push" title="&lt;" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="zsq-Ri-Jr7">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="previousImageAction:" target="XJF-vV-ekx" id="TLR-Q9-XvH"/>
+                                </connections>
+                            </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" preferredMaxLayoutWidth="294" translatesAutoresizingMaskIntoConstraints="NO" id="Io4-f6-xgx">
+                                <rect key="frame" x="96" y="45" width="297" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Title" id="hHK-Pi-aAJ">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" preferredMaxLayoutWidth="294" translatesAutoresizingMaskIntoConstraints="NO" id="FcP-v4-JeJ">
+                                <rect key="frame" x="96" y="20" width="297" height="17"/>
+                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Description" id="Twm-mx-obq">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="FcP-v4-JeJ" firstAttribute="centerX" secondItem="Io4-f6-xgx" secondAttribute="centerX" id="0RJ-vH-Byo"/>
+                            <constraint firstItem="xjJ-Rm-ZEG" firstAttribute="top" secondItem="zag-nj-z3k" secondAttribute="bottom" constant="20" id="3Jp-yu-pbz"/>
+                            <constraint firstItem="hco-a4-TSy" firstAttribute="leading" secondItem="zag-nj-z3k" secondAttribute="trailing" constant="40" id="7gh-ya-9GS"/>
+                            <constraint firstItem="ASP-H0-rud" firstAttribute="leading" secondItem="XJF-vV-ekx" secondAttribute="leading" constant="20" id="8wk-b1-2xw"/>
+                            <constraint firstItem="3EH-Bg-lGf" firstAttribute="trailing" secondItem="zag-nj-z3k" secondAttribute="trailing" id="B8x-OV-a5A"/>
+                            <constraint firstItem="3EH-Bg-lGf" firstAttribute="leading" secondItem="xjJ-Rm-ZEG" secondAttribute="trailing" constant="50" id="BP8-RO-HZs"/>
+                            <constraint firstItem="Io4-f6-xgx" firstAttribute="top" secondItem="xjJ-Rm-ZEG" secondAttribute="bottom" constant="8" id="CQv-EP-kj0"/>
+                            <constraint firstItem="hco-a4-TSy" firstAttribute="centerY" secondItem="ASP-H0-rud" secondAttribute="centerY" id="Goa-Og-477"/>
+                            <constraint firstItem="3EH-Bg-lGf" firstAttribute="centerY" secondItem="xjJ-Rm-ZEG" secondAttribute="centerY" id="KS0-eV-ODf"/>
+                            <constraint firstItem="ASP-H0-rud" firstAttribute="centerY" secondItem="zag-nj-z3k" secondAttribute="centerY" id="P47-Bm-EQn"/>
+                            <constraint firstItem="zag-nj-z3k" firstAttribute="centerX" secondItem="XJF-vV-ekx" secondAttribute="centerX" id="QoK-G5-AKi"/>
+                            <constraint firstItem="zag-nj-z3k" firstAttribute="top" secondItem="XJF-vV-ekx" secondAttribute="top" constant="20" id="Qzn-di-eN2"/>
+                            <constraint firstItem="Io4-f6-xgx" firstAttribute="leading" secondItem="xjJ-Rm-ZEG" secondAttribute="leading" id="W2I-6C-ozi"/>
+                            <constraint firstItem="FcP-v4-JeJ" firstAttribute="leading" secondItem="Io4-f6-xgx" secondAttribute="leading" id="XNz-0p-fII"/>
+                            <constraint firstItem="3EH-Bg-lGf" firstAttribute="top" secondItem="xjJ-Rm-ZEG" secondAttribute="top" id="YXx-eW-1e3"/>
+                            <constraint firstItem="zag-nj-z3k" firstAttribute="leading" secondItem="ASP-H0-rud" secondAttribute="trailing" constant="40" id="Z1K-hM-n4O"/>
+                            <constraint firstItem="3EH-Bg-lGf" firstAttribute="trailing" secondItem="Io4-f6-xgx" secondAttribute="trailing" id="aoq-4E-oF8"/>
+                            <constraint firstItem="B1r-ft-tiT" firstAttribute="trailing" secondItem="zag-nj-z3k" secondAttribute="trailing" id="dxH-ep-Fnx"/>
+                            <constraint firstItem="FcP-v4-JeJ" firstAttribute="top" secondItem="Io4-f6-xgx" secondAttribute="bottom" constant="8" id="goK-FT-2BG"/>
+                            <constraint firstAttribute="trailing" secondItem="hco-a4-TSy" secondAttribute="trailing" constant="20" id="o23-nW-aoK"/>
+                            <constraint firstItem="B1r-ft-tiT" firstAttribute="top" secondItem="zag-nj-z3k" secondAttribute="top" id="sn7-ry-zmp"/>
+                            <constraint firstAttribute="bottom" secondItem="FcP-v4-JeJ" secondAttribute="bottom" constant="20" id="uFC-nX-Vcr"/>
+                            <constraint firstItem="xjJ-Rm-ZEG" firstAttribute="leading" secondItem="zag-nj-z3k" secondAttribute="leading" id="yca-5D-WnQ"/>
+                        </constraints>
+                        <connections>
+                            <outlet property="imageDescription" destination="FcP-v4-JeJ" id="Jng-Si-ZCI"/>
+                            <outlet property="imageTitle" destination="Io4-f6-xgx" id="81a-ut-9qc"/>
+                            <outlet property="imageView" destination="zag-nj-z3k" id="ByB-rq-fdi"/>
+                            <outlet property="keepImageButton" destination="3EH-Bg-lGf" id="96m-FK-kpD"/>
+                            <outlet property="nextImageButton" destination="hco-a4-TSy" id="c7R-Lo-nOh"/>
+                            <outlet property="previousImageButton" destination="ASP-H0-rud" id="qeG-OJ-ZaX"/>
+                            <outlet property="retinaBadgeIcon" destination="B1r-ft-tiT" id="hRf-p6-dAd"/>
+                        </connections>
+                    </view>
+                </viewController>
+                <customObject id="oPw-ej-Ip8" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="141" y="491.5"/>
+        </scene>
+        <!--About-->
+        <scene sceneID="Kbc-91-Cb4">
+            <objects>
+                <viewController title="About" storyboardIdentifier="AboutController" showSeguePresentationStyle="single" id="cku-zU-EgG" customClass="AboutController" customModule="NPOD_Downloader" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="wBu-Xb-bda" customClass="AboutView" customModule="NPOD_Downloader" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QT5-ZR-LfB">
+                                <rect key="frame" x="102" y="184" width="96" height="96"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="QT5-ZR-LfB" secondAttribute="height" multiplier="1:1" id="ODv-gB-Mtk"/>
+                                    <constraint firstAttribute="width" secondItem="QT5-ZR-LfB" secondAttribute="height" multiplier="1:1" id="XeY-LU-YbP"/>
+                                    <constraint firstAttribute="width" constant="96" id="iIP-sP-Igb"/>
+                                </constraints>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSApplicationIcon" id="48h-i9-Znf"/>
+                            </imageView>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="noK-m2-NFy">
+                                <rect key="frame" x="18" y="159" width="264" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="NASA Picture of the day downloader" id="tJt-Cu-H1V">
+                                    <font key="font" metaFont="systemBold"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" preferredMaxLayoutWidth="235" translatesAutoresizingMaskIntoConstraints="NO" id="s4P-k9-lw2">
+                                <rect key="frame" x="18" y="134" width="264" height="17"/>
+                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="Lorem ipsum sit amet" id="c9D-xr-nMC">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="7Bt-zp-GSo">
+                                <rect key="frame" x="71" y="13" width="158" height="32"/>
+                                <buttonCell key="cell" type="push" title="Fork me on GitHub!" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="miY-Qv-faM">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="forkAction:" target="wBu-Xb-bda" id="4n8-aJ-mks"/>
+                                </connections>
+                            </button>
+                            <button translatesAutoresizingMaskIntoConstraints="NO" id="KTR-OA-TWS">
+                                <rect key="frame" x="134" y="51" width="32" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="32" id="Fa2-i6-olR"/>
+                                    <constraint firstAttribute="width" secondItem="KTR-OA-TWS" secondAttribute="height" multiplier="1:1" id="hVq-jR-IHa"/>
+                                </constraints>
+                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="GitHub Logo" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="7bd-rV-giw">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="s4P-k9-lw2" firstAttribute="leading" secondItem="noK-m2-NFy" secondAttribute="leading" id="1nT-ER-uRj"/>
+                            <constraint firstItem="noK-m2-NFy" firstAttribute="centerX" secondItem="wBu-Xb-bda" secondAttribute="centerX" id="3Jh-a2-Bid"/>
+                            <constraint firstItem="s4P-k9-lw2" firstAttribute="top" secondItem="noK-m2-NFy" secondAttribute="bottom" constant="8" id="D5R-oa-DPb"/>
+                            <constraint firstItem="KTR-OA-TWS" firstAttribute="centerX" secondItem="wBu-Xb-bda" secondAttribute="centerX" id="Gvb-bY-2BV"/>
+                            <constraint firstItem="QT5-ZR-LfB" firstAttribute="top" secondItem="wBu-Xb-bda" secondAttribute="top" constant="20" id="IH7-mC-Fgv"/>
+                            <constraint firstItem="noK-m2-NFy" firstAttribute="centerX" secondItem="wBu-Xb-bda" secondAttribute="centerX" id="JSi-6f-GPf"/>
+                            <constraint firstItem="KTR-OA-TWS" firstAttribute="centerX" secondItem="wBu-Xb-bda" secondAttribute="centerX" id="R6E-3y-RY3"/>
+                            <constraint firstAttribute="bottom" secondItem="7Bt-zp-GSo" secondAttribute="bottom" constant="20" id="Yqy-GT-3JR"/>
+                            <constraint firstItem="QT5-ZR-LfB" firstAttribute="centerX" secondItem="wBu-Xb-bda" secondAttribute="centerX" id="aMo-6D-iBo"/>
+                            <constraint firstItem="noK-m2-NFy" firstAttribute="top" secondItem="QT5-ZR-LfB" secondAttribute="bottom" constant="8" id="fcq-82-5K5"/>
+                            <constraint firstItem="s4P-k9-lw2" firstAttribute="centerX" secondItem="noK-m2-NFy" secondAttribute="centerX" id="m0j-XU-NM0"/>
+                            <constraint firstItem="noK-m2-NFy" firstAttribute="leading" secondItem="wBu-Xb-bda" secondAttribute="leading" constant="20" id="mGn-5e-pTb"/>
+                            <constraint firstItem="7Bt-zp-GSo" firstAttribute="centerX" secondItem="wBu-Xb-bda" secondAttribute="centerX" id="tzP-LH-4Z0"/>
+                            <constraint firstItem="QT5-ZR-LfB" firstAttribute="centerX" secondItem="wBu-Xb-bda" secondAttribute="centerX" id="x2F-hu-BmR"/>
+                            <constraint firstItem="7Bt-zp-GSo" firstAttribute="top" secondItem="KTR-OA-TWS" secondAttribute="bottom" constant="10" id="yVX-gx-JOD"/>
+                        </constraints>
+                        <connections>
+                            <outlet property="appVersionLabel" destination="s4P-k9-lw2" id="0J9-80-q5S"/>
+                        </connections>
+                    </view>
+                </viewController>
+                <customObject id="FPl-Pa-oDS" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="672" y="492"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="GitHub Logo" width="32" height="32"/>
+        <image name="NSApplicationIcon" width="128" height="128"/>
+        <image name="RetinaBadge" width="50" height="50"/>
+    </resources>
+</document>

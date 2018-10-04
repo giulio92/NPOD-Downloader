@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:NOPD Downloader.xcodeproj">
+      location = "self:NPOD Downloader.xcodeproj">
    </FileRef>
 </Workspace>
