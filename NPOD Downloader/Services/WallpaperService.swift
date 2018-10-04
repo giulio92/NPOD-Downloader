@@ -12,7 +12,9 @@ protocol HasWallpaperService: AnyObject {
     var wallpaperService: WallpaperServiceProvider { get }
 }
 
-protocol WallpaperServiceProvider: AnyObject {}
+protocol WallpaperServiceProvider: AnyObject {
+    func setWallpaper(imageName: String) throws
+}
 
 final class WallpaperService: WallpaperServiceProvider {
     typealias Dependencies = HasFileManagerService
