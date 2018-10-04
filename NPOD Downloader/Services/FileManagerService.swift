@@ -14,6 +14,7 @@ protocol HasFileManagerService: AnyObject {
 }
 
 protocol FileManagerServiceProvider: AnyObject {
+    var downloadedImagePaths: [URL] { get }
     var downloadedImages: [NSImage] { get }
 
     func downloadDirectory(filename: String) throws -> URL
@@ -50,7 +51,7 @@ final class FileManagerService: FileManagerServiceProvider {
         }
     }
 
-    var downloadedImages: [NSImage] {
+    var downloadedImagePaths: [URL] {
         do {
             let filenames: [URL] = try fileManager.contentsOfDirectory(at: applicationFolder(),
                                                                        includingPropertiesForKeys: [.creationDateKey],
@@ -70,12 +71,16 @@ final class FileManagerService: FileManagerServiceProvider {
                 }
 
                 return lhDate > rhDate
-            }).compactMap({ fileURL -> NSImage? in
-                NSImage(byReferencing: fileURL)
             })
         } catch _ {
             return []
         }
+    }
+
+    var downloadedImages: [NSImage] {
+        return downloadedImagePaths.compactMap({ fileURL -> NSImage? in
+            NSImage(byReferencing: fileURL)
+        })
     }
 
     func downloadDirectory(filename: String) throws -> URL {
