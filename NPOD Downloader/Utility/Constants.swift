@@ -26,19 +26,19 @@ enum Constants {
     }
 
     static var applicationVersion: String {
-        guard let name: String = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String else {
+        guard let version: String = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String else {
             fatalError("Cannot find CFBundleShortVersionString")
         }
 
-        return name
+        return version
     }
 
     static var applicationBuild: String {
-        guard let name: String = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String else {
+        guard let build: String = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String else {
             fatalError("Cannot find CFBundleVersion")
         }
 
-        return name
+        return build
     }
 
     static let gitHubPageURL: String = "https://github.com/giulio92/NPOD-Downloader"
