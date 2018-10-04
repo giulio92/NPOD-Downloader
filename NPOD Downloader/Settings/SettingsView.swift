@@ -69,6 +69,13 @@ final class SettingsView: NSView {
     }
 
     private func setWallpaper() {
+        let imagePath: URL = dependencies.fileManagerService.downloadedImagePaths[currentImageIndex]
+
+        do {
+            try dependencies.wallpaperService.setWallpaper(imageName: imagePath.lastPathComponent)
+        } catch let error {
+            return
+        }
     }
 
     private func increaseIndex() {
