@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		385DB782333E5C8B9B12AEDB /* Pods_NPOD_DownloaderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C30538EACA1484179F9A79F5 /* Pods_NPOD_DownloaderTests.framework */; };
 		C82FBEFBE47FB42E014C8114 /* Pods_NPOD_Downloader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A836D95D6DD77091E9D8CC0D /* Pods_NPOD_Downloader.framework */; };
+		EF2519032166130C00FB0B7E /* WallpaperService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2519022166130C00FB0B7E /* WallpaperService.swift */; };
 		EF451A5521565BFA00EDB795 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF451A5421565BFA00EDB795 /* Node.swift */; };
 		EF4F9C8F21563DFA0016B5E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4F9C8E21563DFA0016B5E4 /* AppDelegate.swift */; };
 		EF4F9C9121563DFB0016B5E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF4F9C9021563DFB0016B5E4 /* Assets.xcassets */; };
@@ -49,6 +50,7 @@
 		A3A6A51561F17A39B97E3E6C /* Pods-NPOD DownloaderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NPOD DownloaderTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NPOD DownloaderTests/Pods-NPOD DownloaderTests.release.xcconfig"; sourceTree = "<group>"; };
 		A836D95D6DD77091E9D8CC0D /* Pods_NPOD_Downloader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NPOD_Downloader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C30538EACA1484179F9A79F5 /* Pods_NPOD_DownloaderTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NPOD_DownloaderTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF2519022166130C00FB0B7E /* WallpaperService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpaperService.swift; sourceTree = "<group>"; };
 		EF451A5421565BFA00EDB795 /* Node.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
 		EF4F9C8B21563DFA0016B5E4 /* NPOD Downloader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NPOD Downloader.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF4F9C8E21563DFA0016B5E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 				EFB2863721568DE500EB4B43 /* FileManagerService.swift */,
 				EF4F9CAE215643400016B5E4 /* NetworkService.swift */,
 				EFB286352156879200EB4B43 /* UserDefaultsService.swift */,
+				EF2519022166130C00FB0B7E /* WallpaperService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -430,6 +433,7 @@
 				EF4F9CAF215643400016B5E4 /* NetworkService.swift in Sources */,
 				EF4F9CB2215644B30016B5E4 /* Result.swift in Sources */,
 				EFB2863821568DE500EB4B43 /* FileManagerService.swift in Sources */,
+				EF2519032166130C00FB0B7E /* WallpaperService.swift in Sources */,
 				EF4F9CBD215655EF0016B5E4 /* AboutView.swift in Sources */,
 				EF4F9CB62156462E0016B5E4 /* NetworkError.swift in Sources */,
 				EF7DAB842164EF750055A8B9 /* NSImage+Retina.swift in Sources */,
