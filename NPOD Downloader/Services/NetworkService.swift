@@ -111,7 +111,7 @@ final class NetworkService: NetworkServiceProvider {
 
         alamofire.download(Constants.Nasa.imageURL(name: imageName), to: destination).downloadProgress(closure: { progress in
             progressUpdate(progress.fractionCompleted)
-        }).responseData(completionHandler: { response in
+        }).responseData(completionHandler: { _ in
             completion(.success(()))
         })
     }

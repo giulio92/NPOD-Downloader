@@ -58,7 +58,7 @@ final class SettingsView: NSView {
     }
 
     private func toggleKeepImageOption() {
-        dependencies.userDefaultsService.keepImage = !dependencies.userDefaultsService.keepImage
+        dependencies.userDefaultsService.keepImage.toggle()
     }
 
     private func updateImage() {

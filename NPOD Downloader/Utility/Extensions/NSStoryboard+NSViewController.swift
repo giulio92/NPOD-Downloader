@@ -10,7 +10,7 @@ import AppKit
 
 extension NSStoryboard {
     func instantiate(withIdentifier identifier: String) -> NSViewController {
-        let sceneIdentifier: NSStoryboard.SceneIdentifier = NSStoryboard.SceneIdentifier(rawValue: identifier)
+        let sceneIdentifier: NSStoryboard.SceneIdentifier = identifier
 
         guard let viewController: NSViewController = instantiateController(withIdentifier: sceneIdentifier) as? NSViewController else {
             fatalError(Constants.FatalErrors.storyboardError + className)

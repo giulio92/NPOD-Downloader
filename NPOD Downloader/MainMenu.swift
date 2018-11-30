@@ -14,7 +14,7 @@ final class MainMenu: NSObject {
 
     private let dependencies: Dependencies = Dependencies()
 
-    private let storyboard: NSStoryboard = NSStoryboard(name: NSStoryboard.Name(rawValue: "Main"), bundle: nil)
+    private let storyboard: NSStoryboard = NSStoryboard(name: "Main", bundle: nil)
 
     private let statusItem: NSStatusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
 
@@ -43,10 +43,10 @@ final class MainMenu: NSObject {
     }
 
     private func configureStatusItem() {
-        let image: NSImage? = NSImage(named: NSImage.Name("MenuIcon"))
+        let image: NSImage? = NSImage(named: "MenuIcon")
         image?.isTemplate = true
 
-        statusItem.image = image
+        statusItem.button?.image = image
         statusItem.menu = applicationMenu
     }
 
